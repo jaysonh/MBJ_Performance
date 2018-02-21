@@ -18,6 +18,9 @@ class AudioFileEffect : public LaserEffect
 public:
     
     AudioFileEffect(string filepath);
+    void stopEffect();
+    void start();
+    
     void update( float timelinePos, float audioFileDamp, float audioFileMult );
     ofxIlda::Frame getFrame( ofxIlda::Frame * drawFrame );
     void sendAudio( float *input, int bufferSize, float microphoneDamp, float microphoneMult);

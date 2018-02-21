@@ -12,10 +12,12 @@ class Wipe
 {
 public:
     
-    Wipe( float startTime, float endTime )
+    Wipe( float startTime, float endTime, float startMap, float endMap )
     {
         mStart = startTime;
         mEnd   = endTime;
+        mStartMap = startMap;
+        mEndMap  = endMap;
     }
     
     bool isWipeStart( float timelinePos )
@@ -27,13 +29,19 @@ public:
     {
         if(timelinePos >= mStart && timelinePos < mEnd)
         {
-            return ofMap( timelinePos, mStart, mEnd, 0, 1);
+            
+            float mapPos =ofMap( timelinePos, mStart, mEnd, mStartMap, mEndMap);
+            
+            //if(mapPos < 0.6)
+             //   mapPos -= (mapPos / 0.6) * 0.015*0.5;
+            cout << "Mappos: " << mapPos <<endl;
+            return mapPos;
         }else
         {
             return -1.0;
         }
     }
-    
+    float mStartMap, mEndMap;
     float mStart, mEnd;
 };
 #endif /* Wipe_h */

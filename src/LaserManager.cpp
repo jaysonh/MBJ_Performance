@@ -10,6 +10,7 @@
 
 LaserManager::LaserManager()
 {
+    
     mSelectedCorner = -1;
     
     lastCheckLaserTime=0;
@@ -21,11 +22,21 @@ LaserManager::LaserManager()
     
     mTestPattern.clear();
     mTestPattern.addPoly();
-    mTestPattern.getLastPoly().lineTo(0,0);
-    mTestPattern.getLastPoly().lineTo(1,0);
-    mTestPattern.getLastPoly().lineTo(1,1);
-    mTestPattern.getLastPoly().lineTo(0,1);
-    mTestPattern.getLastPoly().lineTo(0,0);
+    mTestPattern.getLastPoly().lineToCol(0,0, ofFloatColor(1,1,1));
+    mTestPattern.getLastPoly().lineToCol(1,0, ofFloatColor(1,1,1));
+    
+    mTestPattern.addPoly();
+    mTestPattern.getLastPoly().lineToCol(1,0, ofFloatColor(1,1,1));
+    mTestPattern.getLastPoly().lineToCol(1,1, ofFloatColor(1,1,1));
+    
+    mTestPattern.addPoly();
+    mTestPattern.getLastPoly().lineToCol(1,1, ofFloatColor(1,1,1));
+    mTestPattern.getLastPoly().lineToCol(0,1, ofFloatColor(1,1,1));
+    
+    mTestPattern.addPoly();
+    mTestPattern.getLastPoly().lineToCol(0,1, ofFloatColor(1,1,1));
+    mTestPattern.getLastPoly().lineToCol(0,0, ofFloatColor(1,1,1));
+    
     mTestPattern.update();
     
     mBlankFrame.clear();
@@ -37,18 +48,215 @@ LaserManager::LaserManager()
     
     loadKeystone();
     
-    /*mWipeList.push_back( Wipe(6.0, 7.5) );
-    mWipeList.push_back( Wipe(10.0, 14.5) );
+   /* mWipeList.push_back( Wipe(4.0, 10.0) );
+    
+     mFrameList.push_back( Frame( 12.0, 16.0, ofRectangle(0.075, 0.128, 0.24, 0.14) ) );
+    mFrameList.push_back( Frame( 12.0, 16.0, ofRectangle(0.635, 0.268, 0.235, 0.71) ) );
     
     
-    mFrameList.push_back( Frame( 2.0, 5.0, ofRectangle(0.2, 0.2, 0.5, 0.5) ) );
-    mFrameList.push_back( Frame( 3.0, 4.0, ofRectangle(0.0, 0.0, 0.25, 0.25) ) );
+    mJoinList.push_back( NodeJoin( 18.0, 25.0,  ofVec2f(0.19,0.28), ofVec2f( 0.33, 0.55) ));
+    mJoinList.push_back( NodeJoin( 18.0, 25.0,  ofVec2f(0.45, 0.55), ofVec2f( 0.595,0.69) ));
+    
+    
+    
+    vector <ofVec2f> connGraphPoints;
+    connGraphPoints.push_back( ofVec2f( 0.1, 0.1 ));
+    connGraphPoints.push_back( ofVec2f( 0.5, 0.9 ));
+    connGraphPoints.push_back( ofVec2f( 0.9, 0.3 ));
+    connGraphPoints.push_back( ofVec2f( 0.5, 0.5 ));
+    connGraphPoints.push_back( ofVec2f( 0.3, 0.1 ));
+    
+    vector <Connection> connGraphConns;
+    connGraphConns.push_back( Connection(0,1) );
+    connGraphConns.push_back( Connection(1,2) );
+    connGraphConns.push_back( Connection(3,2) );
+    connGraphConns.push_back( Connection(1,4) );
+    
+    
+    mGridVanishList.push_back (GridVanishing(0.0,2.0) );
+    */
+    //mConnGraphList.push_back ( ConnectedGraph( 1.0, 4.0, connGraphPoints, connGraphConns) );
+    
+    //mGridList.push_back (Grid(0.0,2.0) );
+    //ofSleepMillis(5000);
+    //init();
+    
+    //mGridVanishList.push_back (GridVanishing(0,10000) );
+    
+    /*mGridVanishList.push_back (GridVanishing(132.0,170.0) );
+    mGridVanishList.push_back (GridVanishing(185.0,216.0) );
+    mGridVanishList.push_back (GridVanishing(294.0,313.0) );
     */
     
-    mJoinList.push_back( NodeJoin( 1.0, 4.0,  ofVec2f(0.2,0.2), ofVec2f( 0.75, 0.5) ));
-    mJoinList.push_back( NodeJoin( 2.0, 5.0,  ofVec2f(0.8,0.8), ofVec2f( 0.75, 0.5) ));
-    mJoinList.push_back( NodeJoin( 8.0, 14.0, ofVec2f(0.5,0.5), ofVec2f( 0.15, 0.95) ));
+    /*
+    //mMicroWaveList.push_back( MicroWaveTime(0,10, RED_WHITE_VER));
+    //mMicroWaveList.push_back( MicroWaveTime(12,15, RED_WHITE_VER));
     
+    mGlitchList.push_back( GlitchEffect(0,15, 0.05, 0.01) );
+    
+    //mScanLineList.push_back( ScanLineTime(0,15,SCANLINE_ICE_BLUE));
+    //mVoiceWaveList.push_back( VoiceWaveTime(0,15, RED_WHITE_VER));
+    
+    mGridVanishList.push_back (GridVanishing(329.0, 351.0) );
+    mGridVanishList.push_back (GridVanishing(399.0, 437.0) );
+    
+    mLaserGuiList.push_back( LaserGui(135.0,173.0) );
+    mLaserGuiList.push_back( LaserGui(187.0,219) );
+    mLaserGuiList.push_back( LaserGui(235.0,260) );
+    
+    mWipeList.push_back( Wipe(888.0, 895.0, 0.22, 0.796) );
+    mWipeList.push_back( Wipe(896.0, 902.0, 0.22, 0.796) );
+    mWipeList.push_back( Wipe(903.5, 910.0, 0.22, 0.796) );
+    mWipeList.push_back( Wipe(911.0, 917.0, 0.22, 0.796) );
+    mWipeList.push_back( Wipe(911.0, 917.0, 0.22, 0.796) );
+    mWipeList.push_back( Wipe(918.2, 925.0, 0.22, 0.796) );
+    
+    /*mWipeList.push_back( Wipe(7.17333, 11.3517, 0.2,   0.791341) );
+    mWipeList.push_back( Wipe(14.4033,   18.5317, 0.2, 0.791341) );
+    mWipeList.push_back( Wipe(21.6433,   25.683, 0.2,    0.791341) );
+    mWipeList.push_back( Wipe(28.805,  32.9567, 0.2,   0.791341) );
+    mWipeList.push_back( Wipe(36.0300, 40.055, 0.2,    0.791341) );
+    mWipeList.push_back( Wipe(43.1367, 47.2917, 0.2,   0.791341) );*/
+    
+    
+    // Actual show timeline
+    
+    // 1_INTELLIGENT PERSONAL ASSISTANT
+    mMicroWaveList.push_back( MicroWaveTime(9.00,43.00, GREEN_BLUE_HOR));
+    mMicroWaveList.push_back( MicroWaveTime(53.00,69.25, GREEN_BLUE_HOR));
+    
+    // 2_Fascia
+    mMicroWaveList.push_back( MicroWaveTime(85.00, 111.00, RED_WHITE_VER));
+    
+    // 3_Selfhood
+    mLaserGuiList.push_back( LaserGui(124.0,162.0) );
+    mLaserGuiList.push_back( LaserGui(173.0,209.0) );
+    mLaserGuiList.push_back( LaserGui(217.0,241.0) );
+    
+    mVoiceWaveList.push_back( VoiceWaveTime(243,272, YELLOW_BLUE));
+    
+    mVoiceWaveList.push_back( VoiceWaveTime(286,312, BLUE_VERTICAL));
+    //mVoiceWaveList.push_back( VoiceWaveTime(286,312, YELLOW_BLUE));
+    
+    // 4_AUTOREGULATION
+    mGridVanishList.push_back (GridVanishing(317.0, 336.0) );
+    
+    mVoiceWaveList.push_back( VoiceWaveTime(339,376, YELLOW_BLUE));
+    
+    mGridVanishList.push_back (GridVanishing(385.0, 420) );
+    
+    mVoiceWaveList.push_back( VoiceWaveTime(434,458, YELLOW_BLUE));
+ 
+    // 5_QuantifiedSelf
+    mVoiceWaveList.push_back( VoiceWaveTime(496,446, YELLOW_BLUE));
+    
+    
+    mVoiceWaveList.push_back( VoiceWaveTime(511,556, YELLOW_BLUE));
+    
+    mGlitchList.push_back(GlitchEffect(757, 786.5,0.02,0.001));
+        // Missing stuff here
+    
+    mScanLineList.push_back( ScanLineTime(679,699.0,SCANLINE_ICE_BLUE));
+    mScanLineList.push_back( ScanLineTime(710.0,736,SCANLINE_ICE_YELLOW));
+    
+    mMicroWaveList.push_back( MicroWaveTime(791.0, 809.0, RED_WHITE_VER));
+    
+    // 6_Anandamide
+    mWipeList.push_back( Wipe(859.0, 864.459,  0.19,   0.79250));
+    mWipeList.push_back( Wipe(865.159, 870.33,  0.19,  0.79250));
+    mWipeList.push_back( Wipe(871.183, 876.373, 0.19,  0.79250));
+    mWipeList.push_back( Wipe(877.233, 882.361, 0.19,  0.79250));
+    mWipeList.push_back( Wipe(883.303, 888.500, 0.19,  0.79250));
+    mWipeList.push_back( Wipe(889.373, 894.533, 0.19,  0.79250));
+    mWipeList.push_back( Wipe(895.433, 900.586, 0.19,  0.79250));
+    mWipeList.push_back( Wipe(901.583, 906.596, 0.19,  0.79250));
+    
+    
+    /*mWipeList.push_back( Wipe(876.2, 882.20, 0.19,   0.80841));
+    mWipeList.push_back( Wipe(882.3, 888.20, 0.19,   0.80841));
+    mWipeList.push_back( Wipe(888.2, 894.2,  0.19,   0.80841));
+    mWipeList.push_back( Wipe(894.3, 900.30, 0.19,   0.80841));
+    mWipeList.push_back( Wipe(900.3, 906.39, 0.19,   0.80841));*/
+    
+    mMicroWaveList.push_back( MicroWaveTime(908.0,1052.0, GREEN_BLUE_HOR));
+}
+
+void LaserManager::checkMicroWaveList( float timelinePos)
+{
+    for( auto &wave : mMicroWaveList )
+    {
+        if( wave.isWaveStart( timelinePos ) )
+        {
+            wave.getFrame( timelinePos, &mDrawFrame );
+        }
+    }
+}
+
+void LaserManager::checkGlitchList( float timelinePos)
+{
+    for( auto &glitch : mGlitchList )
+    {
+        if( glitch.isGlitchStart( timelinePos ) )
+        {
+            glitch.getFrame( timelinePos, &mDrawFrame );
+        }
+    }
+}
+
+void LaserManager::checkScanLineList( float timelinePos)
+{
+    for( auto &scan : mScanLineList )
+    {
+        if( scan.isScanStart( timelinePos ) )
+        {
+            scan.getFrame( timelinePos, &mDrawFrame );
+        }
+    }
+}
+
+
+void LaserManager::checkVoiceWaveList( float timelinePos)
+{
+    for( auto &voice : mVoiceWaveList )
+    {
+        if( voice.isVoiceStart( timelinePos ) )
+        {
+            voice.getFrame( timelinePos, &mDrawFrame );
+        }
+    }
+}
+
+void LaserManager::checkLoadingCirclesList( float timelinePos)
+{
+    for( auto &circle : mLoadingCirclesList )
+    {
+        if( circle.isCircleStart( timelinePos ) )
+        {
+            circle.getFrame( timelinePos, &mDrawFrame );
+        }
+    }
+}
+
+void LaserManager::checkLaserGuiList( float timelinePos)
+{
+    for( auto &laserGui : mLaserGuiList )
+    {
+        if( laserGui.isGuiStart( timelinePos ) )
+        {
+            laserGui.getFrame( timelinePos, &mDrawFrame );
+        }
+    }
+}
+
+void LaserManager::checkConnGraphList( float timelinePos)
+{
+    for( auto &connGraph : mConnGraphList )
+    {
+        if( connGraph.isJoinStart( timelinePos ) )
+        {
+            connGraph.getFrame( timelinePos, &mDrawFrame );
+        }
+    }
 }
 
 void LaserManager::checkNodeList( float timelinePos )
@@ -61,6 +269,30 @@ void LaserManager::checkNodeList( float timelinePos )
         }
     }
 }
+
+void LaserManager::checkGridList( float timelinePos )
+{
+    for( auto &grid : mGridList )
+    {
+        if( grid.isGridStart( timelinePos ) )
+        {
+            grid.getFrame( timelinePos, &mDrawFrame );
+        }
+    }
+}
+
+void LaserManager::checkGridVanishList(  float timelinePos )
+{
+    for( auto &grid : mGridVanishList )
+    {
+        if( grid.isGridStart( timelinePos ) )
+        {
+            grid.getFrame( timelinePos, &mDrawFrame );
+        }
+    }
+    
+}
+
 
 void LaserManager::checkFrameList( float timelinePos )
 {
@@ -82,10 +314,9 @@ void LaserManager::checkWipeList( float timelinePos )
             float wipePos = wipe.getWipePos( timelinePos );
             
             mDrawFrame.addPoly();
-            mDrawFrame.getLastPoly().color = ofFloatColor(1,1,1);
-            mDrawFrame.getLastPoly().lineTo( wipePos, 0 );
-            mDrawFrame.getLastPoly().lineTo( wipePos, 1 );
-        
+            mDrawFrame.getLastPoly().lineToCol( wipePos, 0 );
+            mDrawFrame.getLastPoly().lineToCol( wipePos, 1 );
+            mDrawFrame.colMode = ICE;
         }
     }
 }
@@ -147,6 +378,9 @@ void LaserManager::init()
         cout << "CONNECTING TO ETHERDREAM: " << endl;
         mEtherDream.setup(true, 0);
         mEtherDream.setPPS( ETHER_DREAM_PPS );
+    
+    
+        audioFileEffect1 = new AudioFileEffect( "audio/wetware_test_44100.wav" );
 }
 
 void LaserManager::draw( ofTrueTypeFont * font )
@@ -162,7 +396,7 @@ void LaserManager::draw( ofTrueTypeFont * font )
     
     float w = ofGetWidth() / 2;
     ofSetColor(ofColor::white);
-    font->drawString("Laser Output", w+ 10, 20);
+    font->drawString("Laser Status " + mEtherDream.getStateLabel(), w+ 10, 20);
     ofSetColor(255,0,255);
     ofBeginShape();
     ofVertex( w + mCorners[0].x * w, mCorners[0].y * w );
@@ -199,6 +433,9 @@ void LaserManager::blank()
 
 void LaserManager::setEffect( LaserEffecType type )
 {
+    //if(mEffect != NULL)
+        mEffect->stopEffect();
+    
     mEffectType = type;
     mShowTestPattern=false;
     mBlank=false;
@@ -209,12 +446,33 @@ void LaserManager::setEffect( LaserEffecType type )
             mEffect = new NoEffect();
             break;
             
-        case VOICE:
-            mEffect = new MicrophoneEffect();
+        case VOICE_SKIN:
+            mEffect = new MicrophoneEffect(RED_WHITE_VER);
+            break;
+            
+        case VOICE_GREENBLUE:
+            mEffect = new MicrophoneEffect(GREEN_BLUE_HOR);
             break;
             
         case AUDIOFILE1:
-            mEffect = new AudioFileEffect( "audio/wetware_test_44100.wav" );
+            audioFileEffect1->start();
+            mEffect = audioFileEffect1;
+            break;
+            
+        case VOICEWAVE_YELLOW:
+            mEffect = new VoiceWave(YELLOW_BLUE);
+            break;
+            
+        case VOICEWAVE_BLUE:
+            mEffect = new VoiceWave(BLUE_VERTICAL);
+            break;
+            
+        case BLUE_SCAN_LINE:
+            mEffect = new GreenScanLine(SCANLINE_ICE_BLUE);
+            break;
+            
+        case YELLOW_SCAN_LINE:
+            mEffect = new GreenScanLine(SCANLINE_ICE_YELLOW);
             break;
     }
 }
@@ -228,42 +486,77 @@ void LaserManager::update( float timelinePos , float audioFileDamp, float audioF
 {
     // wait 10 seconds to start running these checks
     
-    
+    //mEtherDream.checkConnection();
+    //enum dac_state {
+    //    ST_DISCONNECTED,
+    //    ST_READY,
+    //    ST_RUNNING,
+    //    ST_BROKEN,
+    //    ST_SHUTDOWN
+    //};
     if((ofGetElapsedTimef()-lastCheckLaserTime) > CHECK_TIME ) // every one minute make sure it is connected ok
     {
-        //printf("Checking lasers\n");
+        printf("Checking lasers: %i %i %i\n",mEtherDream.getState(),ST_SHUTDOWN,ST_DISCONNECTED);
         lastCheckLaserTime=ofGetElapsedTimef();
         
-        if( mEtherDream.getState() == ST_SHUTDOWN )
+        if( mEtherDream.getState() == ST_SHUTDOWN || mEtherDream.getState() == ST_DISCONNECTED )
         {
+            cout << "Reconnecting to laser" << endl;
             init();
+        }else
+        {
+            //ETHERDREAM_DISCONNECTED;
+            //cout << "Internal state: " << mEtherDream.getInternalState() <<endl;
+                   //if(mEtherDream.getInternalState() ==
+                   //{
+                   //cout << "Reconnecting to laser" << endl;
+                   //init();
+                   //}
+            //ETHERDREAM_NOTFOUND = 0,
+            //ETHERDREAM_FOUND,
+            //ETHERDREAM_DISCONNECTED
+            
         }
         
     }
-    if(mShowTestPattern)
+    
+    if(ofGetElapsedTimef() > 5.0)
     {
-        sendFrames(mTestPattern);
-        mDrawFrame=mTestPattern;
-    }else if(mBlank)
-    {
-        sendFrames(mBlankFrame);
-        mDrawFrame = mBlankFrame;
-    }else
-    {
-        mEffect->update( timelinePos,  audioFileDamp, audioFileMult);
-        
-        mDrawFrame.clear();
-        
-        mEffect->getFrame( &mDrawFrame );
-        
-        clearForTimelineEffects(timelinePos);
-        
-        checkWipeList(  timelinePos );
-        checkFrameList( timelinePos );
-        checkNodeList(  timelinePos );
-        mDrawFrame.update();
-        
-        sendFrames(mDrawFrame);
+        if(mShowTestPattern)
+        {
+            sendFrames(mTestPattern);
+            mDrawFrame=mTestPattern;
+        }else if(mBlank)
+        {
+            sendFrames(mBlankFrame);
+            mDrawFrame = mBlankFrame;
+        }else
+        {
+            mEffect->update( timelinePos,  audioFileDamp, audioFileMult);
+            
+            mDrawFrame.clear();
+            mDrawFrame.colMode = DEFAULT;
+            mEffect->getFrame( &mDrawFrame );
+            
+            clearForTimelineEffects(timelinePos);
+            
+            checkScanLineList(timelinePos);
+            checkVoiceWaveList(timelinePos);
+            checkMicroWaveList(timelinePos);
+            checkWipeList(  timelinePos );
+            checkFrameList( timelinePos );
+            checkNodeList(  timelinePos );
+            checkGridList ( timelinePos );
+            checkGridVanishList(timelinePos);
+            checkConnGraphList(timelinePos);
+            checkLaserGuiList(timelinePos);
+            checkLoadingCirclesList(timelinePos);
+            checkGlitchList(timelinePos);
+            
+            mDrawFrame.update();
+            
+            sendFrames(mDrawFrame);
+        }
     }
 }
 
@@ -272,6 +565,22 @@ void LaserManager::clearForTimelineEffects(float timelinePos)
     for( auto &join : mJoinList )
     {
         if( join.isJoinStart( timelinePos ) )
+        {
+            mDrawFrame.clear();
+        }
+    }
+    
+    for( auto &circles : mLoadingCirclesList )
+    {
+        if( circles.isCircleStart( timelinePos ) )
+        {
+            mDrawFrame.clear();
+        }
+    }
+    
+    for( auto &laserGui : mLaserGuiList )
+    {
+        if( laserGui.isGuiStart( timelinePos ) )
         {
             mDrawFrame.clear();
         }
@@ -324,9 +633,11 @@ ofxIlda::Frame LaserManager::applyHomography( ofxIlda::Frame inputFrame)
         {
             ofVec3f warpedPoint = p.getVertices()[j] * H;
             
-            warpedFrame.getLastPoly().lineTo(warpedPoint.x, warpedPoint.y);
+            warpedFrame.getLastPoly().lineToCol(warpedPoint.x, warpedPoint.y);
         }
     }
+    
+    warpedFrame.colMode = inputFrame.colMode;
     
     warpedFrame.update();
     
@@ -465,6 +776,7 @@ void LaserManager::mousePressed( ofVec2f mouse )
         // scale position
         ofVec2f scaledPos = ofVec2f((mouse.x - w)/w, mouse.y/w);
         
+        printf("Scaled pos: %f %f\n", scaledPos.x, scaledPos.y);
         mSelectedCorner = -1;
         
         for(int i = 0; i < 4; i++)
@@ -503,6 +815,28 @@ void LaserManager::mouseDragged( ofVec2f mouse )
     
 }
 
+void LaserManager::sendAudio(float *input, int bufferSize, float microphoneDamp, float microphoneMult, float timelinePos)
+{
+    cout << "updating microphone waves" << endl;
+    for( auto &wave : mMicroWaveList )
+    {
+        //if( wave.isWaveStart( timelinePos ) )
+        //{
+            wave.sendAudio(input, bufferSize,microphoneDamp,microphoneMult, timelinePos);
+            
+        //}
+    }
+    
+    cout << "updating voice waves" << endl;
+    for( auto &voice : mVoiceWaveList )
+    {
+        //if( wave.isWaveStart( timelinePos ) )
+        //{
+        voice.sendAudio(input, bufferSize,microphoneDamp,microphoneMult, timelinePos);
+        
+        //}
+    }
+}
 
 
 

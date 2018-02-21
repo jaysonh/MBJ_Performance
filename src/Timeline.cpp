@@ -10,6 +10,7 @@
 void Timeline::init()
 {
     oscRecv.setup(OSC_RECV_PORT);
+    mTimelinePos = -1.0;
 }
 
 float Timeline::getPos()
@@ -19,7 +20,8 @@ float Timeline::getPos()
 
 void Timeline::draw( ofTrueTypeFont * font)
 {
-    font->drawString("Timeline: " + ofToString(mTimelinePos), TIMELINE_DRAW_POS.x,TIMELINE_DRAW_POS.y);
+    ofSetColor(ofColor::white);
+    font->drawString("Timeline: " + ofToString(mTimelinePos), TIMELINE_DRAW_POS.x,TIMELINE_DRAW_POS.y );
     
     // Draw timeline bar
     ofSetColor(125);

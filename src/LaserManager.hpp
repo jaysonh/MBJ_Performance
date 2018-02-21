@@ -21,12 +21,23 @@
 #include "NoEffect.hpp"
 #include "Frame.h"
 #include "NodeJoin.h"
+#include "Grid.h"
+#include "GridVanishing.h"
+#include "ConnectedGraph.h"
+#include "VoiceWave.hpp"
+#include "GreenScanLine.hpp"
+#include "laserGui.hpp"
+#include "LoadingCircle.h"
+#include "MicroWaveTime.h"
+#include "VoiceWaveTime.h"
+#include "ScanLineTime.h"
+#include "GlitchEffect.h"
 
-#define ETHER_DREAM_PPS  50000
+#define ETHER_DREAM_PPS  40000
 
-#define CHECK_TIME 25.0
+#define CHECK_TIME 10.0
 
-enum LaserEffecType { NONE, VOICE, AUDIOFILE1, WIPE, FRAME, NODEJOIN };
+enum LaserEffecType { NONE, VOICE_SKIN, VOICE_GREENBLUE, AUDIOFILE1, WIPE, FRAME, NODEJOIN, VOICEWAVE_YELLOW, VOICEWAVE_BLUE, BLUE_SCAN_LINE, YELLOW_SCAN_LINE, LOADING_CIRCLE };
 
 #define KEYSTONE_FILE "keystone.txt"
 
@@ -68,18 +79,36 @@ public:
     void gaussian_elimination(float *input, int n);
     
     LaserEffect * getCurrEffect();
-    
+    void sendAudio(float *input, int bufferSize, float microphoneDamp, float microphoneMult, float timelinePos);
 private:
     void findHomography(ofPoint src[4], ofPoint dst[4], float homography[16]);
     void checkWipeList(  float timelinePos );
     void checkFrameList( float timelinePos );
     void checkNodeList(  float timelinePos );
+    void checkGridList(  float timelinePos );
+    void checkConnGraphList( float timelinePos);
+    void checkLaserGuiList( float timelinePos);
+    void checkLoadingCirclesList(float timelinePos);
+    void checkGridVanishList(  float timelinePos );
+    void checkMicroWaveList( float timelinePos);
+    void checkVoiceWaveList( float timelinePos);
+    void checkScanLineList(float timelinePos);
+    void checkGlitchList(float timelinePos);
     
     void clearForTimelineEffects(float timelinePos);
     
     vector <Wipe>     mWipeList;
     vector <Frame>    mFrameList;
     vector <NodeJoin> mJoinList;
+    vector <Grid> mGridList;
+    vector <GridVanishing> mGridVanishList;
+    vector <ConnectedGraph> mConnGraphList;
+    vector <LaserGui>  mLaserGuiList;
+    vector <LoadingCircle> mLoadingCirclesList;
+    vector <MicroWaveTime> mMicroWaveList;
+    vector <VoiceWaveTime> mVoiceWaveList;
+    vector <ScanLineTime>  mScanLineList;
+    vector <GlitchEffect>  mGlitchList;
     
     LaserEffect *mEffect;
     bool mShowTestPattern;
@@ -95,6 +124,9 @@ private:
     
     ofRectangle mBoundingRect;
     ofxIlda::Frame mDrawFrame;
+    
+    
+    AudioFileEffect * audioFileEffect1;
 };
 
 #endif /* LaserManager_hpp */

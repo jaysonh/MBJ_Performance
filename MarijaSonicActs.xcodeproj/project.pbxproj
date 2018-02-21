@@ -36,6 +36,8 @@
 		87C50BA2BBD5B23272DAA6D5 /* etherdream.c in Sources */ = {isa = PBXBuildFile; fileRef = E472D66E13960563DF74BB41 /* etherdream.c */; };
 		8F5205AEF8861EF234F0651A /* ofxOscSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81967292BFC87A0144BD32C6 /* ofxOscSender.cpp */; };
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
+		9A08E9A02039E77A004304B9 /* VoiceWave.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A08E99E2039E77A004304B9 /* VoiceWave.cpp */; };
+		9A0C78AB203AE8C600E82390 /* GreenScanLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C78A9203AE8C600E82390 /* GreenScanLine.cpp */; };
 		9A90F650202A69C600304660 /* NoEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A90F64E202A69C600304660 /* NoEffect.cpp */; };
 		9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832BDC407620CDBA568B713D /* tinyxmlerror.cpp */; };
 		A7936996C1DBDACFDC89B3A1 /* % in Sources */ = {isa = PBXBuildFile; fileRef = B2E1EB0F30B9F14A9B7FA4D6 /* % */; };
@@ -151,6 +153,19 @@
 		907C5B5E104864A2D3A25745 /* ofxToggle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxToggle.cpp; path = ../../../addons/ofxGui/src/ofxToggle.cpp; sourceTree = SOURCE_ROOT; };
 		9604B925D32EE39065747725 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseGui.cpp; path = ../../../addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
 		998154314347A01197567C72 /* test.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = test.c; path = ../../../addons/ofxEtherdream/libs/driver/libetherdream/test.c; sourceTree = SOURCE_ROOT; };
+		9A08E99E2039E77A004304B9 /* VoiceWave.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VoiceWave.cpp; sourceTree = "<group>"; };
+		9A08E99F2039E77A004304B9 /* VoiceWave.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VoiceWave.hpp; sourceTree = "<group>"; };
+		9A0C78A9203AE8C600E82390 /* GreenScanLine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GreenScanLine.cpp; sourceTree = "<group>"; };
+		9A0C78AA203AE8C600E82390 /* GreenScanLine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GreenScanLine.hpp; sourceTree = "<group>"; };
+		9A5280C2203C535B0014DD25 /* LaserGui.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LaserGui.hpp; sourceTree = "<group>"; };
+		9A5280C6203CB9110014DD25 /* LoadingCircle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingCircle.h; sourceTree = "<group>"; };
+		9A57E61B20348D4200AFEEE0 /* Grid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
+		9A57E61C203491F000AFEEE0 /* GridVanishing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridVanishing.h; sourceTree = "<group>"; };
+		9A57E61D2035839300AFEEE0 /* ConnectedGraph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectedGraph.h; sourceTree = "<group>"; };
+		9A89BAF8203D718C006C51DA /* MicroWaveTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MicroWaveTime.h; sourceTree = "<group>"; };
+		9A89BAF9203D7A0C006C51DA /* VoiceWaveTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoiceWaveTime.h; sourceTree = "<group>"; };
+		9A89BAFA203D8040006C51DA /* ScanLineTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanLineTime.h; sourceTree = "<group>"; };
+		9A89BAFB203DA358006C51DA /* GlitchEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlitchEffect.h; sourceTree = "<group>"; };
 		9A90F64D202A654100304660 /* Wipe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wipe.h; sourceTree = "<group>"; };
 		9A90F64E202A69C600304660 /* NoEffect.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NoEffect.cpp; sourceTree = "<group>"; };
 		9A90F64F202A69C600304660 /* NoEffect.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NoEffect.hpp; sourceTree = "<group>"; };
@@ -457,6 +472,19 @@
 				9A90F64F202A69C600304660 /* NoEffect.hpp */,
 				9A90F651202A6AB000304660 /* Frame.h */,
 				9A90F652202A79F600304660 /* NodeJoin.h */,
+				9A57E61B20348D4200AFEEE0 /* Grid.h */,
+				9A57E61C203491F000AFEEE0 /* GridVanishing.h */,
+				9A57E61D2035839300AFEEE0 /* ConnectedGraph.h */,
+				9A08E99E2039E77A004304B9 /* VoiceWave.cpp */,
+				9A08E99F2039E77A004304B9 /* VoiceWave.hpp */,
+				9A0C78A9203AE8C600E82390 /* GreenScanLine.cpp */,
+				9A0C78AA203AE8C600E82390 /* GreenScanLine.hpp */,
+				9A5280C2203C535B0014DD25 /* LaserGui.hpp */,
+				9A5280C6203CB9110014DD25 /* LoadingCircle.h */,
+				9A89BAF8203D718C006C51DA /* MicroWaveTime.h */,
+				9A89BAF9203D7A0C006C51DA /* VoiceWaveTime.h */,
+				9A89BAFA203D8040006C51DA /* ScanLineTime.h */,
+				9A89BAFB203DA358006C51DA /* GlitchEffect.h */,
 			);
 			path = LaserEffects;
 			sourceTree = SOURCE_ROOT;
@@ -759,6 +787,7 @@
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
+				9A0C78AB203AE8C600E82390 /* GreenScanLine.cpp in Sources */,
 				EF842A3192C6F109057E4633 /* NodeJoinEffect.cpp in Sources */,
 				FB8B04BAF4F0B6676B3B2E67 /* LaserManager.cpp in Sources */,
 				E122A99D018EA883C3AD36AC /* WipeEffect.cpp in Sources */,
@@ -792,6 +821,7 @@
 				67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */,
 				510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */,
 				ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */,
+				9A08E9A02039E77A004304B9 /* VoiceWave.cpp in Sources */,
 				7CAF1A5AEF6F06B39340FF34 /* ofxSoundPlayerObject.cpp in Sources */,
 				26A94B3736756ADEB2293EDD /* ofxSoundMultiplexer.cpp in Sources */,
 				7840F332D7330DAAD11D2250 /* ofxSoundMixer.cpp in Sources */,

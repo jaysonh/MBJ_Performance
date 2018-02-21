@@ -7,10 +7,12 @@
 
 #include "MicrophoneEffect.hpp"
 
-MicrophoneEffect::MicrophoneEffect()
+MicrophoneEffect::MicrophoneEffect(ColorMode colMode)
 {
-    int bufferSize = 256;
+    mCol = colMode;
     
+    int bufferSize = 256;
+    open=0.0;
     
     left.assign(bufferSize, 0.0);
     right.assign(bufferSize, 0.0);
@@ -20,6 +22,8 @@ MicrophoneEffect::MicrophoneEffect()
         
         left[i]  = 0.0;
         right[i] = 0.0;
+        prevLeftMic[i] =0;
+        prevRightMic[i]=0;
         
     }
     
@@ -47,23 +51,31 @@ ofxIlda::Frame MicrophoneEffect::getFrame( ofxIlda::Frame * drawFrame )
     
     ofVec2f lastPos;
     
-    for (unsigned int i = 0; i < microphoneWave.size(); i++)
+    drawFrame->addPoly();
+    for (unsigned int i = 0; i < microphoneWave.size(); i+=10)
     {
         ofVec2f p = ofVec2f( ofMap(i, 0, right.size(),0,1), ofClamp(microphoneWave[i]* mMicrophoneMult, -0.5, 0.5) + 0.5 );
         
-        if(i > 0)
+        if(p.y < 0.1) p.y = 0.1;
+        if(p.y > 0.9) p.y = 0.9;
+        
+        if(i > 0 && p.x > 0.5 *(1.0-open) && p.x < 0.5 + (0.5*open) )
         {
-            drawFrame->addPoly();
-            float colB = ofMap(i, 0, microphoneWave.size(), 0, 1);
-            drawFrame->getLastPoly().color = ofFloatColor(1.0,0.0,colB);
+            float colB = ofRandom(1);
             
-            drawFrame->getLastPoly().lineTo( lastPos.x, lastPos.y );
-            drawFrame->getLastPoly().lineTo( p.x,       p.y );
+            drawFrame->getLastPoly().color = ofFloatColor(1.0,0.0,colB);
+            drawFrame->getLastPoly().lineToCol( p.x, p.y );
         }
         lastPos = p ;
     }
     
+    drawFrame->colMode = mCol;
+    //drawFrame->colMode = RED_WHITE_VER;
+    //drawFrame->colMode = GREEN_BLUE_HOR;
     drawFrame->update();
+    
+    if(open < 1.0)
+        open += 0.02;
     
     return *drawFrame;
 }
@@ -85,17 +97,19 @@ void MicrophoneEffect::sendAudio( float *input, int bufferSize, float microphone
             float curLeft  = (input[i*2]   * 0.5);
             float curRight = (input[i*2+1] * 0.5);
             
-            
-            left[i]        = curLeft  * (1.0-microphoneDamp) + prevLeftMic[i]  * microphoneDamp;
-            right[i]       = curRight * (1.0-microphoneDamp) + prevRightMic[i] * microphoneDamp;
-            
-            if(isnan(left[i]))
-                left[i] = 0.0;
-            if(isnan(right[i]))
-                right[i] = 0.0;
-            
-            prevLeftMic[i]  = left[i];
-            prevRightMic[i] = right[i];
+            if(open >= 1.0)
+            {
+                left[i]        = curLeft  * (1.0-microphoneDamp) + prevLeftMic[i]  * microphoneDamp;
+                right[i]       = curRight * (1.0-microphoneDamp) + prevRightMic[i] * microphoneDamp;
+           
+                if(isnan(left[i]))
+                    left[i] = 0.0;
+                if(isnan(right[i]))
+                    right[i] = 0.0;
+                
+                prevLeftMic[i]  = left[i];
+                prevRightMic[i] = right[i];
+            }
             
         }else
         {

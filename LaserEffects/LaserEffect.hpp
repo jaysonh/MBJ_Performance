@@ -18,6 +18,7 @@ public:
     virtual void update( float timelinePos, float audioFileDamp, float audioFileMult ) = 0;
     virtual ofxIlda::Frame getFrame( ofxIlda::Frame * drawFrame) = 0;
     virtual void sendAudio( float *input, int bufferSize, float microphoneDamp, float microphoneMult) = 0;
+    virtual void stopEffect() =0;
 };
 
 #endif /* LaserEffect_hpp */

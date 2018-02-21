@@ -7,29 +7,40 @@
 
 #include "AudioFileEffect.hpp"
 
-AudioFileEffect::AudioFileEffect(string audioFile)
+AudioFileEffect::AudioFileEffect(string audioFile )
 {
-    if(player.load( ofToDataPath(audioFile) ))
-    {
-        stream.setup(2, 2, player.getSoundFile().getSampleRate(), 256, 1);
-        stream.setOutput(output);
-        
-        player.play();
-        player.setLoop(true);
-        
-        
-        wave.setup(0, 0, ofGetWidth()/2, ofGetHeight()/2);
-        
-        
-        player.connectTo(wave).connectTo(output);
-    }else
-    {
-        cout << "cannot load audio file"<<endl;
-    }
+    cout << "Loading audio file: " << audioFile <<endl;
+  
+        if(player.load( ofToDataPath(audioFile) ))
+        {
+            stream.setup(2, 2, player.getSoundFile().getSampleRate(), 256, 1);
+            stream.setOutput(output);
+            
+            //player.play();
+            //player.setLoop(false);
+            
+            wave.setup(0, 0, ofGetWidth()/2, ofGetHeight()/2);
+            
+            player.connectTo(wave).connectTo(output);
+        }else
+        {
+            cout << "cannot load audio file"<<endl;
+        }
+   
     prevSamplesWav.resize(512);
     
 }
 
+void AudioFileEffect::start()
+{
+    player.play();
+    player.setLoop(false);
+}
+void AudioFileEffect::stopEffect()
+{
+    cout << "Stopping effect" <<endl;
+    player.stop();
+}
 void AudioFileEffect::update( float timelinePos, float audioFileDamp, float audioFileMult )
 {
     mAudioMult = audioFileMult;
@@ -56,18 +67,25 @@ void AudioFileEffect::update( float timelinePos, float audioFileDamp, float audi
 }
 ofxIlda::Frame AudioFileEffect::getFrame( ofxIlda::Frame * drawFrame )
 {
-    //drawFrame = &mIldaFrame;
     drawFrame->clear();
     drawFrame->addPoly();
-    drawFrame->getLastPoly().color = ofFloatColor(1.0,0.0,1.0);
     for (unsigned int i = 0; i < audioFileWave.size(); i++)
     {
         float h = ofClamp(audioFileWave[i]* mAudioMult, -0.5, 0.5);
+        float b = ofMap(i, 0, audioFileWave.size(), 0,1);
         
-        drawFrame->getLastPoly().lineTo( ofMap(i, 0, audioFileWave.size(),0,1), h + 0.5);
+        drawFrame->getLastPoly().color = ofFloatColor(ofRandom(1),ofRandom(1),ofRandom(1));
+        drawFrame->getLastPoly().lineToCol( ofMap(i, 0, audioFileWave.size(),0,1), h + 0.5, ofFloatColor(0,1,b));
+        
+        //vector <ofPoint> pointsList;
+        //pointsList.push_back( ofPoint(ofMap(i, 0, audioFileWave.size(),0,1), h + 0.5));
+        //drawFrame->addPoly( pointsList,ofFloatColor(0,1,b));
+                             
     }
+    drawFrame->colMode = GREEN_BLUE_HOR;
+    //drawFrame->update();
     
-    drawFrame->update();
+    
     
     return *drawFrame;
 }

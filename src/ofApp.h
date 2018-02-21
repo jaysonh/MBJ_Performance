@@ -32,10 +32,15 @@ class ofApp : public ofBaseApp{
     
         void laserResetBtnPressed();
         void blankLaserBtnPressed();
-        void laserMicrophoneBtnPressed();
+        void laserMicrophoneSkinBtnPressed();
+        void laserMicrophoneBlueGreenBtnPressed();
         void laserVoice1BtnPressed();
         void testPatternBtnPressed();
         void noEffectBtnPressed();
+        void voiceWaveYellowBtnPressed();
+        void voiceWaveBlueBtnPressed();
+        void blueScanLineBtnPressed();
+        void yellowScanLineBtnPressed();
     
         void loadKeystone();
         void saveKeystone();
@@ -59,10 +64,16 @@ class ofApp : public ofBaseApp{
     
         ofxButton      laserResetBtn;
         ofxButton      blankLaserBtn;
-        ofxButton      laserMicrophoneBtn;
+        ofxButton      laserMicrophoneSkinBtn;
+        ofxButton      laserMicrophoneBlueGreenBtn;
         ofxButton      laserVoice1Btn;
         ofxButton      testPatternBtn;
         ofxButton      noEffectBtn;
+        ofxButton      voiceWaveYellowEffectBtn;
+        ofxButton      voiceWaveBlueEffectBtn;
+        ofxButton      blueScanEffectBtn;
+        ofxButton      yellowScanEffectBtn;
+        
     
         ofxButton      loadKeystoneBtn;
         ofxButton      saveKeystoneBtn;

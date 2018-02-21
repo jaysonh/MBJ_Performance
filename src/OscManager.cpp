@@ -9,6 +9,8 @@
 
 OscManager::OscManager()
 {
+    mTimelinePos=0.0;
+    mLastTime=0;
 }
 
 void OscManager::init()
@@ -32,6 +34,9 @@ void OscManager::update()
         if(m.getAddress() == TIMELINE_OSC_ADDR )
         {
             mTimelinePos = m.getArgAsFloat(0);
+            float timeDiff = mTimelinePos - mLastTime;
+            mLastTime = mTimelinePos;
+            
         }
     }
 }

@@ -19,6 +19,7 @@ public:
     void update( float timelinePos, float audioFileDamp, float audioFileMult );
     ofxIlda::Frame getFrame( ofxIlda::Frame * drawFrame );
     void sendAudio( float *input, int bufferSize, float microphoneDamp, float microphoneMult);
+    void stopEffect() {}
 };
 
 #endif /* WipeEffect_hpp */

@@ -1,22 +1,33 @@
 //
-//  NodeJoinEffect.hpp
+//  VoiceEffect.hpp
 //  MarijaSonicActs
 //
 //  Created by Jayson Haebich on 31/01/2018.
 //
 
-#ifndef NodeJoinEffect_hpp
-#define NodeJoinEffect_hpp
+#ifndef GreenScanLine_hpp
+#define GreenScanLine_hpp
 
 #include <stdio.h>
 #include "LaserEffect.hpp"
 
-class NodeJoinEffect : public LaserEffect
+class GreenScanLine : public LaserEffect
 {
 public:
+    GreenScanLine( ColorMode colMode);
     void update( float timelinePos, float audioFileDamp, float audioFileMult );
     ofxIlda::Frame getFrame( ofxIlda::Frame * drawFrame );
     void sendAudio( float *input, int bufferSize, float microphoneDamp, float microphoneMult);
     void stopEffect() {}
+private:
+    
+    ofxIlda::Frame mIldaFrame;
+    
+    float mScan;
+    ColorMode mCol;
+    
 };
-#endif /* NodeJoinEffect_hpp */
+
+#endif /* VoiceEffect_hpp */
+
+

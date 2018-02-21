@@ -28,6 +28,7 @@ private:
     
     ofxOscReceiver mReceiver;
     float mTimelinePos;
+    float mLastTime;
 };
 
 #endif /* OscManager_hpp */

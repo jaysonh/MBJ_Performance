@@ -5,23 +5,21 @@
 //  Created by Jayson Haebich on 31/01/2018.
 //
 
-#ifndef VoiceEffect_hpp
-#define VoiceEffect_hpp
+#ifndef VoiceWave_hpp
+#define VoiceWave_hpp
 
 #include <stdio.h>
 #include "LaserEffect.hpp"
 
-class MicrophoneEffect : public LaserEffect
+class VoiceWave : public LaserEffect
 {
 public:
-    MicrophoneEffect(ColorMode colMode);
+    VoiceWave( ColorMode col );
     void update( float timelinePos, float audioFileDamp, float audioFileMult );
     ofxIlda::Frame getFrame( ofxIlda::Frame * drawFrame );
     void sendAudio( float *input, int bufferSize, float microphoneDamp, float microphoneMult);
     void stopEffect() {}
 private:
-    
-    ColorMode mCol;
     
     ofxIlda::Frame mIldaFrame;
     
@@ -41,7 +39,11 @@ private:
     float smoothedVol;
     float scaledVol;
     
-    float open;
+    float v,w;
+    
+    ColorMode mCol;
+    
 };
 
 #endif /* VoiceEffect_hpp */
+

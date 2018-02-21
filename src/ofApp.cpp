@@ -3,7 +3,6 @@
 //--------------------------------------------------------------
 void ofApp::setup()
 {
-    laserManager.init();
     
     font.load("verdana.ttf", 12);
     
@@ -19,15 +18,26 @@ void ofApp::setup()
     laserResetBtn.addListener(this, &ofApp::laserResetBtnPressed);
     blankLaserBtn.addListener(this, &ofApp::blankLaserBtnPressed);
     noEffectBtn.addListener(this, &ofApp::noEffectBtnPressed);
-    laserMicrophoneBtn.addListener(this, &ofApp::laserMicrophoneBtnPressed);
+    laserMicrophoneSkinBtn.addListener(this, &ofApp::laserMicrophoneSkinBtnPressed);
+    laserMicrophoneBlueGreenBtn.addListener(this, &ofApp::laserMicrophoneBlueGreenBtnPressed);
     laserVoice1Btn.addListener(this, &ofApp::laserVoice1BtnPressed);
+    voiceWaveYellowEffectBtn.addListener(this,&ofApp::voiceWaveYellowBtnPressed);
+    voiceWaveBlueEffectBtn.addListener(this,&ofApp::voiceWaveBlueBtnPressed);
+    yellowScanEffectBtn.addListener(this,&ofApp::yellowScanLineBtnPressed);
+    blueScanEffectBtn.addListener(this,&ofApp::blueScanLineBtnPressed);
     
     gui.add(testPatternBtn.setup("test pattern"));
     gui.add(laserResetBtn.setup("reset laser"));
-    gui.add(blankLaserBtn.setup("blank laser"));
+    //gui.add(blankLaserBtn.setup("blank laser"));
+    //gui.add(laserMicrophoneSkinBtn.setup("laser microphone skin"));
+    //gui.add(laserMicrophoneBlueGreenBtn.setup("laser microphone bluegreen"));
+    //gui.add(laserVoice1Btn.setup("laser voice 1"));
+    //gui.add(voiceWaveYellowEffectBtn.setup("voicewaveYellow"));
+    //gui.add(voiceWaveBlueEffectBtn.setup("voicewaveBlue"));
+    //gui.add(blueScanEffectBtn.setup("blue scan line"));
+    //gui.add(yellowScanEffectBtn.setup("yellow scan line"));
     gui.add(noEffectBtn.setup("no effect"));
-    gui.add(laserMicrophoneBtn.setup("laser microphone"));
-    gui.add(laserVoice1Btn.setup("laser voice 1"));
+    
     gui.setPosition(10,10);
     
     guiKeystone.setup();
@@ -55,6 +65,8 @@ void ofApp::setup()
     
     ofSetFrameRate(60);
     oscManager.init();
+    
+    laserManager.init();
 }
 
 void ofApp::resetKeystone()
@@ -83,6 +95,15 @@ void ofApp::laserResetBtnPressed()
     
 }
 
+void ofApp::voiceWaveYellowBtnPressed()
+{
+    laserManager.setEffect( VOICEWAVE_YELLOW );
+}
+void ofApp::voiceWaveBlueBtnPressed()
+{
+    laserManager.setEffect( VOICEWAVE_BLUE );
+}
+
 void ofApp::blankLaserBtnPressed()
 {
     
@@ -90,14 +111,27 @@ void ofApp::blankLaserBtnPressed()
     
 }
 
-void ofApp::laserMicrophoneBtnPressed()
+void ofApp::laserMicrophoneBlueGreenBtnPressed()
 {
-    laserManager.setEffect( VOICE );
+    laserManager.setEffect( VOICE_GREENBLUE );
+}
+void ofApp::laserMicrophoneSkinBtnPressed()
+{
+    laserManager.setEffect( VOICE_SKIN );
 }
 
 void ofApp::laserVoice1BtnPressed()
 {
     laserManager.setEffect( AUDIOFILE1 );
+}
+
+void ofApp::blueScanLineBtnPressed()
+{
+    laserManager.setEffect( BLUE_SCAN_LINE );
+}
+void ofApp::yellowScanLineBtnPressed()
+{
+    laserManager.setEffect( YELLOW_SCAN_LINE );
 }
 
 void ofApp::testPatternBtnPressed()
@@ -110,9 +144,10 @@ void ofApp::update()
 {
     ofSetWindowTitle( ofToString(ofGetFrameRate()) );
     oscManager.update();
+    timeline.update( oscManager.getTimelinePos() );
+    
     laserManager.update( oscManager.getTimelinePos(), audioFileDamp, audioFileMult );
     
-    timeline.update( oscManager.getTimelinePos() );
     
     int w = ofGetWidth();
     int h = ofGetHeight();
@@ -187,6 +222,7 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 
 void ofApp::audioIn(float * input, int bufferSize, int nChannels)
 {
+    laserManager.sendAudio(input,bufferSize, microphoneDamp, microphoneMult, oscManager.getTimelinePos());
     LaserEffect * laserEffect = laserManager.getCurrEffect();
     laserEffect->sendAudio(input,bufferSize, microphoneDamp, microphoneMult);
 }

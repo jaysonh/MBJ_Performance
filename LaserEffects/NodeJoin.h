@@ -30,8 +30,8 @@ public:
             if( timelinePos >= mTimelineStart && timelinePos < mTimelineEnd)
             {
                 frame->addPoly();
-                frame->getLastPoly().lineTo( mLineStart.x, mLineStart.y );
-                frame->getLastPoly().lineTo( mLineEnd.x,   mLineEnd.y );
+                frame->getLastPoly().lineToCol( mLineStart.x, mLineStart.y );
+                frame->getLastPoly().lineToCol( mLineEnd.x,   mLineEnd.y );
             }
             
             return *frame;
