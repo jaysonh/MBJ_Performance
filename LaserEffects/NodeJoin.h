@@ -27,11 +27,12 @@ public:
     
         ofxIlda::Frame getFrame( float timelinePos, ofxIlda::Frame *frame )
         {
+            frame->setColMode( ColourMode::PLAIN );
             if( timelinePos >= mTimelineStart && timelinePos < mTimelineEnd)
             {
                 frame->addPoly();
-                frame->getLastPoly().lineToCol( mLineStart.x, mLineStart.y );
-                frame->getLastPoly().lineToCol( mLineEnd.x,   mLineEnd.y );
+                frame->getLastPoly().lineTo( mLineStart.x, mLineStart.y );
+                frame->getLastPoly().lineTo( mLineEnd.x,   mLineEnd.y );
             }
             
             return *frame;

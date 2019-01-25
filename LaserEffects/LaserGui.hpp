@@ -58,39 +58,35 @@ public:
             
             frame->addPoly();
             frame->getLastPoly().color = ofFloatColor(1,1,1);
-            frame->getLastPoly().lineToCol( 0.05,               0.5-0.4*opening );
-            frame->getLastPoly().lineToCol( 0.05+0.025*legOpen,  0.5-0.4*opening );
+            frame->getLastPoly().lineTo( 0.05+0.025*legOpen,  0.5-0.4*opening );
+            frame->getLastPoly().lineTo( 0.05,               0.5-0.4*opening );
             
             frame->addPoly();
             frame->getLastPoly().color = ofFloatColor(1,1,1);
-            frame->getLastPoly().lineToCol( 0.05,  0.5-0.4*opening );
-            frame->getLastPoly().lineToCol( 0.05,  0.5+0.4*opening );
+            frame->getLastPoly().lineTo( 0.05,  0.5-0.4*opening );
+            frame->getLastPoly().lineTo( 0.05,  0.5+0.4*opening );
             
             frame->addPoly();
             frame->getLastPoly().color = ofFloatColor(1,1,1);
-            frame->getLastPoly().lineToCol( 0.05,               0.5+0.4*opening );
-            frame->getLastPoly().lineToCol( 0.05+0.025*legOpen, 0.5+0.4*opening );
-            
-            
-            frame->addPoly();
-            frame->getLastPoly().color = ofFloatColor(1,1,1);
-            frame->getLastPoly().lineToCol( 0.95,               0.5+0.4*opening );
-            frame->getLastPoly().lineToCol( 0.95-0.025*legOpen, 0.5+0.4*opening );
+            frame->getLastPoly().lineTo( 0.05,               0.5+0.4*opening );
+            frame->getLastPoly().lineTo( 0.05+0.025*legOpen, 0.5+0.4*opening );
             
             frame->addPoly();
             frame->getLastPoly().color = ofFloatColor(1,1,1);
-            frame->getLastPoly().lineToCol( 0.95,  0.5+0.4*opening );
-            frame->getLastPoly().lineToCol( 0.95,  0.5-0.4*opening );
-            
-            
+            frame->getLastPoly().lineTo( 0.95-0.025*legOpen, 0.5+0.4*opening );
+            frame->getLastPoly().lineTo( 0.95,               0.5+0.4*opening );
             
             frame->addPoly();
             frame->getLastPoly().color = ofFloatColor(1,1,1);
-            frame->getLastPoly().lineToCol( 0.95,               0.5-0.4*opening );
-            frame->getLastPoly().lineToCol( 0.95-0.025*legOpen, 0.5-0.4*opening );
+            frame->getLastPoly().lineTo( 0.95,  0.5+0.4*opening );
+            frame->getLastPoly().lineTo( 0.95,  0.5-0.4*opening );
             
+            frame->addPoly();
+            frame->getLastPoly().color = ofFloatColor(1,1,1);
+            frame->getLastPoly().lineTo( 0.95,               0.5-0.4*opening );
+            frame->getLastPoly().lineTo( 0.95-0.025*legOpen, 0.5-0.4*opening );
             
-            frame->colMode = ICE;
+            //frame->colMode = ICE;
         }
         
         return *frame;

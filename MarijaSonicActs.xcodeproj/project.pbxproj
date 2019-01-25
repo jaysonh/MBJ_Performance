@@ -157,6 +157,10 @@
 		9A08E99F2039E77A004304B9 /* VoiceWave.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VoiceWave.hpp; sourceTree = "<group>"; };
 		9A0C78A9203AE8C600E82390 /* GreenScanLine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GreenScanLine.cpp; sourceTree = "<group>"; };
 		9A0C78AA203AE8C600E82390 /* GreenScanLine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GreenScanLine.hpp; sourceTree = "<group>"; };
+		9A2E7D3C21F9CA7A00A394AB /* LaserGuiCircle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LaserGuiCircle.hpp; sourceTree = "<group>"; };
+		9A2E7D3E21F9D67500A394AB /* LoadingBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingBar.h; sourceTree = "<group>"; };
+		9A2E7D3F21F9EB3600A394AB /* LiquidVoice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiquidVoice.h; sourceTree = "<group>"; };
+		9A2E7D4121FB31F400A394AB /* LineHighlight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineHighlight.h; sourceTree = "<group>"; };
 		9A5280C2203C535B0014DD25 /* LaserGui.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LaserGui.hpp; sourceTree = "<group>"; };
 		9A5280C6203CB9110014DD25 /* LoadingCircle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingCircle.h; sourceTree = "<group>"; };
 		9A57E61B20348D4200AFEEE0 /* Grid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
@@ -485,6 +489,10 @@
 				9A89BAF9203D7A0C006C51DA /* VoiceWaveTime.h */,
 				9A89BAFA203D8040006C51DA /* ScanLineTime.h */,
 				9A89BAFB203DA358006C51DA /* GlitchEffect.h */,
+				9A2E7D3C21F9CA7A00A394AB /* LaserGuiCircle.hpp */,
+				9A2E7D3E21F9D67500A394AB /* LoadingBar.h */,
+				9A2E7D3F21F9EB3600A394AB /* LiquidVoice.h */,
+				9A2E7D4121FB31F400A394AB /* LineHighlight.h */,
 			);
 			path = LaserEffects;
 			sourceTree = SOURCE_ROOT;

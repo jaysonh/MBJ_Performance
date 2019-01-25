@@ -13,6 +13,7 @@
 
 #define PORT              12345
 #define TIMELINE_OSC_ADDR "/FromVDMX/timelinePos"
+#define PERFORMANCE_START "/FromAbleton/start"
 
 class OscManager
 {
@@ -23,8 +24,10 @@ public:
     void update();
     
     float getTimelinePos();
+    void  startPerformance();
     
 private:
+    float mStartTime = -1.0;
     
     ofxOscReceiver mReceiver;
     float mTimelinePos;

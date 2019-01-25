@@ -34,7 +34,7 @@ public:
             
             //if(mapPos < 0.6)
              //   mapPos -= (mapPos / 0.6) * 0.015*0.5;
-            cout << "Mappos: " << mapPos <<endl;
+            //cout << "Mappos: " << mapPos <<endl;
             return mapPos;
         }else
         {

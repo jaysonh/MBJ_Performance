@@ -32,20 +32,20 @@ public:
         if(timelinePos >= mStart && timelinePos < mEnd)
         {
             frame->addPoly();
-            frame->getLastPoly().lineToCol( mDrawRect.x,                   mDrawRect.y );
-            frame->getLastPoly().lineToCol( mDrawRect.x + mDrawRect.width, mDrawRect.y );
+            frame->getLastPoly().lineTo( mDrawRect.x,                   mDrawRect.y );
+            frame->getLastPoly().lineTo( mDrawRect.x + mDrawRect.width, mDrawRect.y );
             
             frame->addPoly();
-            frame->getLastPoly().lineToCol( mDrawRect.x + mDrawRect.width, mDrawRect.y );
-            frame->getLastPoly().lineToCol( mDrawRect.x + mDrawRect.width, mDrawRect.y + mDrawRect.height );
+            frame->getLastPoly().lineTo( mDrawRect.x + mDrawRect.width, mDrawRect.y );
+            frame->getLastPoly().lineTo( mDrawRect.x + mDrawRect.width, mDrawRect.y + mDrawRect.height );
             
             frame->addPoly();
-            frame->getLastPoly().lineToCol( mDrawRect.x + mDrawRect.width, mDrawRect.y + mDrawRect.height );
-            frame->getLastPoly().lineToCol( mDrawRect.x,                   mDrawRect.y + mDrawRect.height );
+            frame->getLastPoly().lineTo( mDrawRect.x + mDrawRect.width, mDrawRect.y + mDrawRect.height );
+            frame->getLastPoly().lineTo( mDrawRect.x,                   mDrawRect.y + mDrawRect.height );
             
             frame->addPoly();
-            frame->getLastPoly().lineToCol( mDrawRect.x,                   mDrawRect.y + mDrawRect.height );
-            frame->getLastPoly().lineToCol( mDrawRect.x,                   mDrawRect.y );
+            frame->getLastPoly().lineTo( mDrawRect.x,                   mDrawRect.y + mDrawRect.height );
+            frame->getLastPoly().lineTo( mDrawRect.x,                   mDrawRect.y );
             
         }
         

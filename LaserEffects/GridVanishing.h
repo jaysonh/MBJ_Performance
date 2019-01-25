@@ -16,8 +16,7 @@ public:
     {
         mStart = startTime;
         mEnd   = endTime;
-        off1    =0;
-        off2=0;
+        
     }
     
     bool isGridStart( float timelinePos )
@@ -103,69 +102,71 @@ public:
             frame->getLastPoly().lineToCol( 0.0,  0.75 );
             frame->getLastPoly().lineToCol( 0.25, 0.5);
             */
+            float top = 0.75;
+            float open = 1.0;
+            float timeRunning = timelinePos - mStart;
+            if(timeRunning < 4.0)
+            {
+                top = ofMap(timeRunning,0,4,0.95,0.75);
+                open = ofMap(timeRunning,0,4,0.0,1.0);
+            }
+            frame->setColMode(ColourMode::WHITE_FADE);
             frame->addPoly();
             frame->getLastPoly().color = ofFloatColor(1,1,1);
-            frame->getLastPoly().lineToCol( 0.95, 0.75 );
-            frame->getLastPoly().lineToCol( 0.05, 0.75);
+            frame->getLastPoly().lineTo( 0.05, top );
+            frame->getLastPoly().lineTo( 0.95, top );
             
             
-            
-            
-            
-            frame->addPoly();
-            frame->getLastPoly().color = ofFloatColor(1,1,1);
-            frame->getLastPoly().lineToCol( 0.95, 0.95 );
-            frame->getLastPoly().lineToCol( 0.65, 0.75);
-            
-            
-            frame->addPoly();
-            frame->getLastPoly().color = ofFloatColor(1,1,1);
-            frame->getLastPoly().lineToCol( 0.75, 0.95 );
-            frame->getLastPoly().lineToCol( 0.555, 0.75);
-            
-            
-            frame->addPoly();
-            frame->getLastPoly().color = ofFloatColor(1,1,1);
-            frame->getLastPoly().lineToCol( 0.95,  0.8 );
-            frame->getLastPoly().lineToCol( 0.775, 0.75);
             
             
             
             frame->addPoly();
             frame->getLastPoly().color = ofFloatColor(1,1,1);
-            frame->getLastPoly().lineToCol( 0.5, 0.95 );
-            frame->getLastPoly().lineToCol( 0.5, 0.75);
+            frame->getLastPoly().lineTo( 0.95, 0.95 );
+            frame->getLastPoly().lineTo( 0.65, top);
             
             
             frame->addPoly();
             frame->getLastPoly().color = ofFloatColor(1,1,1);
-            frame->getLastPoly().lineToCol( 0.05, 0.95 );
-            frame->getLastPoly().lineToCol( 0.35, 0.75);
-            
-            frame->addPoly();
-            frame->getLastPoly().color = ofFloatColor(1,1,1);
-            frame->getLastPoly().lineToCol( 0.25, 0.95 );
-            frame->getLastPoly().lineToCol( 0.445, 0.75);
+            frame->getLastPoly().lineTo( 0.555, top);
+            frame->getLastPoly().lineTo( 0.75, 0.95 );
             
             
             frame->addPoly();
             frame->getLastPoly().color = ofFloatColor(1,1,1);
-            frame->getLastPoly().lineToCol( 0.05,  0.8 );
-            frame->getLastPoly().lineToCol( 0.25, 0.75);
+            frame->getLastPoly().lineTo( 0.775, top);
+            frame->getLastPoly().lineTo( 0.95,  0.95 - 0.1 * open );
             
-            frame->colMode = YELLOW;//WHITE_FADE;
+            
+            
+            frame->addPoly();
+            frame->getLastPoly().color = ofFloatColor(1,1,1);
+            frame->getLastPoly().lineTo( 0.5, top);
+            frame->getLastPoly().lineTo( 0.5, 0.95 );
+            
+            
+            frame->addPoly();
+            frame->getLastPoly().color = ofFloatColor(1,1,1);
+            frame->getLastPoly().lineTo( 0.05, 0.95 );
+            frame->getLastPoly().lineTo( 0.35, top);
+            
+            frame->addPoly();
+            frame->getLastPoly().color = ofFloatColor(1,1,1);
+            frame->getLastPoly().lineTo( 0.445, top);
+            frame->getLastPoly().lineTo( 0.25, 0.95 );
+            
+            
+            frame->addPoly();
+            frame->getLastPoly().color = ofFloatColor(1,1,1);
+            frame->getLastPoly().lineTo( 0.25, top);
+            frame->getLastPoly().lineTo( 0.05, 0.95 - 0.1 * open );
+            
+            //frame->colMode = YELLOW;//WHITE_FADE;
         }
-        off1 += 0.01;
-        off2 += 0.05;
-        if(off1 > PI/2)
-            off1=0;
-        
-        if(off2 > PI/2)
-            off2=0;
         
         return *frame;
     }
-    float off1,off2;
+    
     float mStart, mEnd;
 };
 #endif /* Wipe_h */

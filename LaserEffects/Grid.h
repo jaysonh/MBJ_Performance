@@ -35,12 +35,12 @@ public:
                 float yPos = ((float)y / 5.0);
                 if(y % 2==0)
                 {
-                    frame->getLastPoly().lineToCol( 0, yPos );
-                    frame->getLastPoly().lineToCol( 1.0,yPos);
+                    frame->getLastPoly().lineTo( 0, yPos );
+                    frame->getLastPoly().lineTo( 1.0,yPos);
                 }else
                 {
-                    frame->getLastPoly().lineToCol( 1.0, yPos );
-                    frame->getLastPoly().lineToCol( 0.0,yPos);
+                    frame->getLastPoly().lineTo( 1.0, yPos );
+                    frame->getLastPoly().lineTo( 0.0,yPos);
                 }
             }
             for( int x = 0; x < 5; x++)
@@ -51,12 +51,12 @@ public:
                 float xPos = ((float)x / 5.0);
                 if(x % 2==0)
                 {
-                    frame->getLastPoly().lineToCol( xPos,0 );
-                    frame->getLastPoly().lineToCol( xPos,1);
+                    frame->getLastPoly().lineTo( xPos,0 );
+                    frame->getLastPoly().lineTo( xPos,1);
                 }else
                 {
-                    frame->getLastPoly().lineToCol( xPos,1 );
-                    frame->getLastPoly().lineToCol( xPos,0);
+                    frame->getLastPoly().lineTo( xPos,1 );
+                    frame->getLastPoly().lineTo( xPos,0);
                 }
             }
         }

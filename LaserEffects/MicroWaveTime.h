@@ -12,7 +12,7 @@ class MicroWaveTime
 {
 public:
     
-    MicroWaveTime( float startTime, float endTime, ColorMode colMode )
+    MicroWaveTime( float startTime, float endTime, ColourMode colMode )
     {
         mStart = startTime;
         mEnd   = endTime;
@@ -84,7 +84,7 @@ public:
                     float colB = ofRandom(1);
                     
                     frame->getLastPoly().color = ofFloatColor(1.0,0.0,colB);
-                    frame->getLastPoly().lineToCol( p.x, p.y );
+                    frame->getLastPoly().lineTo( p.x, p.y );
                    
                 }
             }
@@ -152,7 +152,7 @@ private:
     
     float mStart, mEnd;
     
-    ColorMode mCol;
+    ColourMode mCol;
     
     float mMicrophoneMult;
     

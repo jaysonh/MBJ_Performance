@@ -41,6 +41,7 @@ class ofApp : public ofBaseApp{
         void voiceWaveBlueBtnPressed();
         void blueScanLineBtnPressed();
         void yellowScanLineBtnPressed();
+        void startPerformanceBtnPressed();
     
         void loadKeystone();
         void saveKeystone();
@@ -73,7 +74,7 @@ class ofApp : public ofBaseApp{
         ofxButton      voiceWaveBlueEffectBtn;
         ofxButton      blueScanEffectBtn;
         ofxButton      yellowScanEffectBtn;
-        
+        ofxButton      startPerformanceBtn;
     
         ofxButton      loadKeystoneBtn;
         ofxButton      saveKeystoneBtn;

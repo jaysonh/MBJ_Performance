@@ -54,7 +54,7 @@ public:
                 frame->getLastPoly().lineTo( randPos.x + lineSize, randPos.y );
             }
             
-            frame->colMode = ICE;
+           // frame->colMode = ICE;
         }
         
        

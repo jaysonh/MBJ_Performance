@@ -14,7 +14,7 @@
 class GreenScanLine : public LaserEffect
 {
 public:
-    GreenScanLine( ColorMode colMode);
+    GreenScanLine( ColourMode colMode);
     void update( float timelinePos, float audioFileDamp, float audioFileMult );
     ofxIlda::Frame getFrame( ofxIlda::Frame * drawFrame );
     void sendAudio( float *input, int bufferSize, float microphoneDamp, float microphoneMult);
@@ -24,7 +24,7 @@ private:
     ofxIlda::Frame mIldaFrame;
     
     float mScan;
-    ColorMode mCol;
+    ColourMode mCol;
     
 };
 

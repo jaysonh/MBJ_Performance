@@ -12,7 +12,7 @@ class VoiceWaveTime
 {
 public:
     
-    VoiceWaveTime( float startTime, float endTime, ColorMode col )
+    VoiceWaveTime( float startTime, float endTime, ColourMode col )
     {
         mStart = startTime;
         mEnd   = endTime;
@@ -45,7 +45,6 @@ public:
     {
         if( timelinePos >= mStart && timelinePos < mEnd)
         {
-            cout << "updating audio"<<endl;
             mMicrophoneMult = microphoneMult;
             float curVol = 0.0;
             
@@ -199,7 +198,7 @@ public:
     
     float v,w;
     
-    ColorMode mCol;
+    ColourMode mCol;
 };
 #endif /* Wipe_h */
 

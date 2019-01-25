@@ -48,8 +48,8 @@ public:
                 
                 frame->addPoly();
                 frame->getLastPoly().color = ofFloatColor(1,1,1);
-                frame->getLastPoly().lineToCol( p1.x, p1.y );
-                frame->getLastPoly().lineToCol( p2.x, p2.y );
+                frame->getLastPoly().lineTo( p1.x, p1.y );
+                frame->getLastPoly().lineTo( p2.x, p2.y );
             }
         }
         

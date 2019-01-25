@@ -7,7 +7,7 @@
 
 #include "GreenScanLine.hpp"
 
-GreenScanLine::GreenScanLine(ColorMode colMode)
+GreenScanLine::GreenScanLine(ColourMode colMode)
 {
     mCol  = colMode;
     mScan = 0.0;

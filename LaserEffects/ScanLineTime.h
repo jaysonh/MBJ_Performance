@@ -12,7 +12,7 @@ class ScanLineTime
 {
 public:
     
-    ScanLineTime( float startTime, float endTime, ColorMode colMode )
+    ScanLineTime( float startTime, float endTime, ColourMode colMode )
     {
         mStart = startTime;
         mEnd   = endTime;
@@ -51,7 +51,7 @@ public:
     }
     
     float mScan;
-    ColorMode mCol;
+    ColourMode mCol;
     float mStart, mEnd;
 };
 #endif /* Wipe_h */

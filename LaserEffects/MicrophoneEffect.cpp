@@ -7,7 +7,7 @@
 
 #include "MicrophoneEffect.hpp"
 
-MicrophoneEffect::MicrophoneEffect(ColorMode colMode)
+MicrophoneEffect::MicrophoneEffect(ColourMode colMode)
 {
     mCol = colMode;
     
@@ -52,6 +52,8 @@ ofxIlda::Frame MicrophoneEffect::getFrame( ofxIlda::Frame * drawFrame )
     ofVec2f lastPos;
     
     drawFrame->addPoly();
+    drawFrame->setColMode(mCol);
+    
     for (unsigned int i = 0; i < microphoneWave.size(); i+=10)
     {
         ofVec2f p = ofVec2f( ofMap(i, 0, right.size(),0,1), ofClamp(microphoneWave[i]* mMicrophoneMult, -0.5, 0.5) + 0.5 );
@@ -64,7 +66,7 @@ ofxIlda::Frame MicrophoneEffect::getFrame( ofxIlda::Frame * drawFrame )
             float colB = ofRandom(1);
             
             drawFrame->getLastPoly().color = ofFloatColor(1.0,0.0,colB);
-            drawFrame->getLastPoly().lineToCol( p.x, p.y );
+            drawFrame->getLastPoly().lineTo( p.x, p.y );
         }
         lastPos = p ;
     }

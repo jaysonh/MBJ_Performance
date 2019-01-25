@@ -75,14 +75,14 @@ ofxIlda::Frame AudioFileEffect::getFrame( ofxIlda::Frame * drawFrame )
         float b = ofMap(i, 0, audioFileWave.size(), 0,1);
         
         drawFrame->getLastPoly().color = ofFloatColor(ofRandom(1),ofRandom(1),ofRandom(1));
-        drawFrame->getLastPoly().lineToCol( ofMap(i, 0, audioFileWave.size(),0,1), h + 0.5, ofFloatColor(0,1,b));
+        drawFrame->getLastPoly().lineTo( ofMap(i, 0, audioFileWave.size(),0,1), h + 0.5);//, ofFloatColor(0,1,b));
         
         //vector <ofPoint> pointsList;
         //pointsList.push_back( ofPoint(ofMap(i, 0, audioFileWave.size(),0,1), h + 0.5));
         //drawFrame->addPoly( pointsList,ofFloatColor(0,1,b));
                              
     }
-    drawFrame->colMode = GREEN_BLUE_HOR;
+    drawFrame->colMode = PLAIN;//GREEN_BLUE_HOR;
     //drawFrame->update();
     
     

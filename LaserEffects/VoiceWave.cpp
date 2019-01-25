@@ -7,7 +7,7 @@
 
 #include "VoiceWave.hpp"
 
-VoiceWave::VoiceWave(ColorMode col)
+VoiceWave::VoiceWave(ColourMode col)
 {
     int bufferSize = 256;
     

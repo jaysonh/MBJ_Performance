@@ -9,7 +9,7 @@ void ofApp::setup()
     // Load gui
     gui.setup();
     gui.add(microphoneDamp.setup("microphoneDamp", 0.95, 0, 1));
-    gui.add(microphoneMult.setup("microphoneMult", 19.0, 0, 50.0));
+    gui.add(microphoneMult.setup("microphoneMult", 29.0, 0, 50.0));
     gui.add(audioFileDamp.setup("audioFileDamp",   0.95, 0, 1));
     gui.add(audioFileMult.setup("audioFileMult",   19.0, 0, 50.0));
     
@@ -25,9 +25,12 @@ void ofApp::setup()
     voiceWaveBlueEffectBtn.addListener(this,&ofApp::voiceWaveBlueBtnPressed);
     yellowScanEffectBtn.addListener(this,&ofApp::yellowScanLineBtnPressed);
     blueScanEffectBtn.addListener(this,&ofApp::blueScanLineBtnPressed);
+    startPerformanceBtn.addListener(&oscManager, &OscManager::startPerformance);
     
     gui.add(testPatternBtn.setup("test pattern"));
     gui.add(laserResetBtn.setup("reset laser"));
+    gui.add(startPerformanceBtn.setup("start performance"));
+    
     //gui.add(blankLaserBtn.setup("blank laser"));
     //gui.add(laserMicrophoneSkinBtn.setup("laser microphone skin"));
     //gui.add(laserMicrophoneBlueGreenBtn.setup("laser microphone bluegreen"));

@@ -32,10 +32,14 @@
 #include "VoiceWaveTime.h"
 #include "ScanLineTime.h"
 #include "GlitchEffect.h"
+#include "LaserGuiCircle.hpp"
+#include "LoadingBar.h"
+#include "LiquidVoice.h"
+#include "LineHighlight.h"
 
 #define ETHER_DREAM_PPS  40000
-
-#define CHECK_TIME 10.0
+#define STARTUP_DELAY  3.0
+#define CHECK_TIME 10000.0//10.0
 
 enum LaserEffecType { NONE, VOICE_SKIN, VOICE_GREENBLUE, AUDIOFILE1, WIPE, FRAME, NODEJOIN, VOICEWAVE_YELLOW, VOICEWAVE_BLUE, BLUE_SCAN_LINE, YELLOW_SCAN_LINE, LOADING_CIRCLE };
 
@@ -94,9 +98,13 @@ private:
     void checkVoiceWaveList( float timelinePos);
     void checkScanLineList(float timelinePos);
     void checkGlitchList(float timelinePos);
-    
+    void checkCircleGuiList(float timelinePos);
+    void checkLoadingBarList(float timelinePos);
+    void checkLiquidVoiceList(float timelinePos);
+    void checkLineHighlightList(float timelinePos);
     void clearForTimelineEffects(float timelinePos);
     
+    vector <LaserGuiCircle> mCircleGuiList;
     vector <Wipe>     mWipeList;
     vector <Frame>    mFrameList;
     vector <NodeJoin> mJoinList;
@@ -109,6 +117,9 @@ private:
     vector <VoiceWaveTime> mVoiceWaveList;
     vector <ScanLineTime>  mScanLineList;
     vector <GlitchEffect>  mGlitchList;
+    vector <LoadingBar> mLoadingBarList;
+    vector <LiquidVoice> mLiquidVoiceList;
+    vector <LineHighlight> mLineHighlightList;
     
     LaserEffect *mEffect;
     bool mShowTestPattern;

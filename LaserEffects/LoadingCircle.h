@@ -37,7 +37,7 @@ public:
             
             
             
-            frame->colMode = YELLOW;//WHITE_FADE;
+         //   frame->colMode = YELLOW;//WHITE_FADE;
         }
         
         off += 0.0200;
