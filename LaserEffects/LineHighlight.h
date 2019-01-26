@@ -10,9 +10,9 @@
 
 
 #include <stdio.h>
-#include "LaserEffect.hpp"
+#include "ofxIldaFrame.h"
 
-class LineHighlight
+class LineHighlight 
 {
 public:
     
@@ -39,22 +39,23 @@ public:
             
             
             float lineSize = ofMap(timeRunning,0, (mEnd-mStart), 0, mLineLength);
-            ofVec2f startPos = ofVec2f(mLinePos.x, mLinePos.y);
+            ofVec2f startPos = ofVec2f( mLinePos.x, mLinePos.y);
             ofVec2f endPos   = ofVec2f( mLinePos.x + lineSize, mLinePos.y);
             
-            if(endPos.x > 0.995)endPos.x = 0.995;
+            if(endPos.x > 0.995) endPos.x = 0.995;
             
             frame->addPoly();
             frame->getLastPoly().color = ofFloatColor(1,1,1);
-            frame->getLastPoly().lineTo(startPos.x, startPos.y);
-            frame->getLastPoly().lineTo(endPos.x,   endPos.y);
-            
-            
-            
+            frame->getLastPoly().lineTo( startPos.x, startPos.y );
+            frame->getLastPoly().lineTo( endPos.x,   endPos.y   );
         }
         
         return *frame;
     }
+    
+    void update( float timelinePos, float audioFileDamp, float audioFileMult ){}
+    void sendAudio( float *input, int bufferSize, float microphoneDamp, float microphoneMult){}
+    void stopEffect() {}
     
     float mStart, mEnd;
     float mLineLength=0.0;

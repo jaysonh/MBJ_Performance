@@ -9,7 +9,6 @@
 
 void Timeline::init()
 {
-    oscRecv.setup(OSC_RECV_PORT);
     mTimelinePos = -1.0;
 }
 
@@ -21,7 +20,8 @@ float Timeline::getPos()
 void Timeline::draw( ofTrueTypeFont * font)
 {
     ofSetColor(ofColor::white);
-    font->drawString("Timeline: " + ofToString(mTimelinePos), TIMELINE_DRAW_POS.x,TIMELINE_DRAW_POS.y );
+    font->drawString("Timeline:       " + ofToString(mTimelinePos), TIMELINE_DRAW_POS.x,TIMELINE_DRAW_POS.y );
+    font->drawString("AbletonTime: " + ofToString(mAbletonTime), TIMELINE_DRAW_POS.x,TIMELINE_DRAW_POS.y +20 );
     
     // Draw timeline bar
     ofSetColor(125);
@@ -40,7 +40,8 @@ void Timeline::draw( ofTrueTypeFont * font)
     
 }
 
-void Timeline::update( float timelinePos )
+void Timeline::update( float timelinePos, float abletonTime )
 {
     mTimelinePos = timelinePos;
+    mAbletonTime = abletonTime;
 }

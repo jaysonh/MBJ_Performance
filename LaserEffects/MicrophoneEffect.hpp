@@ -9,9 +9,9 @@
 #define VoiceEffect_hpp
 
 #include <stdio.h>
-#include "LaserEffect.hpp"
+#include "ofxIldaFrame.h"
 
-class MicrophoneEffect : public LaserEffect
+class MicrophoneEffect 
 {
 public:
     MicrophoneEffect(ColourMode colMode);

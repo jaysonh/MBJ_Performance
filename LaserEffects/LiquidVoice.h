@@ -9,9 +9,9 @@
 #define VoiceLiquidVoice_hppWave_hpp
 
 #include <stdio.h>
-#include "LaserEffect.hpp"
+#include "ofxIldaFrame.h"
 
-class LiquidVoice : public LaserEffect
+class LiquidVoice 
 {
 public:
     LiquidVoice(float startTime, float endTime, ColourMode col)

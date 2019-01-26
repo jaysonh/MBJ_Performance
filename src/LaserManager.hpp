@@ -12,30 +12,6 @@
 #include <stdio.h>
 #include "ofxEtherDream.h"
 #include "LaserEffect.hpp"
-#include "WipeEffect.hpp"
-#include "FrameEffect.hpp"
-#include "NodeJoinEffect.hpp"
-#include "MicrophoneEffect.hpp"
-#include "AudioFileEffect.hpp"
-#include "Wipe.h"
-#include "NoEffect.hpp"
-#include "Frame.h"
-#include "NodeJoin.h"
-#include "Grid.h"
-#include "GridVanishing.h"
-#include "ConnectedGraph.h"
-#include "VoiceWave.hpp"
-#include "GreenScanLine.hpp"
-#include "laserGui.hpp"
-#include "LoadingCircle.h"
-#include "MicroWaveTime.h"
-#include "VoiceWaveTime.h"
-#include "ScanLineTime.h"
-#include "GlitchEffect.h"
-#include "LaserGuiCircle.hpp"
-#include "LoadingBar.h"
-#include "LiquidVoice.h"
-#include "LineHighlight.h"
 
 #define ETHER_DREAM_PPS  40000
 #define STARTUP_DELAY  3.0
@@ -102,7 +78,14 @@ private:
     void checkLoadingBarList(float timelinePos);
     void checkLiquidVoiceList(float timelinePos);
     void checkLineHighlightList(float timelinePos);
+    void checkGui2List(float timelinePos);
+    void checkTerrainList(float timelinePos);
+    
     void clearForTimelineEffects(float timelinePos);
+    
+    float toTotalSeconds(int min, int sec);
+    
+    vector <LaserEffect*> mEffectList;
     
     vector <LaserGuiCircle> mCircleGuiList;
     vector <Wipe>     mWipeList;
@@ -120,6 +103,8 @@ private:
     vector <LoadingBar> mLoadingBarList;
     vector <LiquidVoice> mLiquidVoiceList;
     vector <LineHighlight> mLineHighlightList;
+    vector <LaserGui2> mGui2List;
+    vector <TerrainContours> mTerrainList;
     
     LaserEffect *mEffect;
     bool mShowTestPattern;

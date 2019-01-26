@@ -8,6 +8,8 @@
 #ifndef LoadingCircle_h
 #define LoadingCircle_h
 
+#include "ofxIldaFrame.h"
+
 class LoadingCircle
 {
 public:

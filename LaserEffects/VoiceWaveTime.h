@@ -8,6 +8,8 @@
 #ifndef VoiceWaveTime_h
 #define VoiceWaveTime_h
 
+#include "ofxIldaFrame.h"
+
 class VoiceWaveTime
 {
 public:

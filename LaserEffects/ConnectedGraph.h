@@ -8,6 +8,7 @@
 #ifndef ConnectedGraph_H
 #define ConnectedGraph_H
 
+#include "ofxIldaFrame.h"
 struct Connection {
     
     Connection(int i1, int i2)

@@ -11,9 +11,9 @@
 #include <stdio.h>
 #include "ofxSoundPlayerObject.h"
 #include "waveformDraw.h"
-#include "LaserEffect.hpp"
+#include "ofxIldaFrame.h"
 
-class AudioFileEffect : public LaserEffect
+class AudioFileEffect 
 {
 public:
     

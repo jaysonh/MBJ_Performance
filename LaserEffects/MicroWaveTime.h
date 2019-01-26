@@ -8,6 +8,8 @@
 #ifndef MicroWave_h
 #define MicroWave_h
 
+#include "ofxIldaFrame.h"
+
 class MicroWaveTime
 {
 public:

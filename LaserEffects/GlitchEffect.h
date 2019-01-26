@@ -9,6 +9,8 @@
 #define GlitchEffect_h
 
 
+#include "ofxIldaFrame.h"
+
 class GlitchEffect
 {
 public:

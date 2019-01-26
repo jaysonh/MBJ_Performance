@@ -161,6 +161,8 @@
 		9A2E7D3E21F9D67500A394AB /* LoadingBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingBar.h; sourceTree = "<group>"; };
 		9A2E7D3F21F9EB3600A394AB /* LiquidVoice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiquidVoice.h; sourceTree = "<group>"; };
 		9A2E7D4121FB31F400A394AB /* LineHighlight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineHighlight.h; sourceTree = "<group>"; };
+		9A2E7D4221FCA59000A394AB /* LaserGui2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaserGui2.h; sourceTree = "<group>"; };
+		9A2E7D4621FCB05B00A394AB /* TerrainContours.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TerrainContours.h; sourceTree = "<group>"; };
 		9A5280C2203C535B0014DD25 /* LaserGui.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LaserGui.hpp; sourceTree = "<group>"; };
 		9A5280C6203CB9110014DD25 /* LoadingCircle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingCircle.h; sourceTree = "<group>"; };
 		9A57E61B20348D4200AFEEE0 /* Grid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
@@ -493,6 +495,8 @@
 				9A2E7D3E21F9D67500A394AB /* LoadingBar.h */,
 				9A2E7D3F21F9EB3600A394AB /* LiquidVoice.h */,
 				9A2E7D4121FB31F400A394AB /* LineHighlight.h */,
+				9A2E7D4221FCA59000A394AB /* LaserGui2.h */,
+				9A2E7D4621FCB05B00A394AB /* TerrainContours.h */,
 			);
 			path = LaserEffects;
 			sourceTree = SOURCE_ROOT;

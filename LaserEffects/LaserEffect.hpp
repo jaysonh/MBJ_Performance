@@ -10,6 +10,32 @@
 
 #include <stdio.h>
 #include "ofxIldaFrame.h"
+#include "WipeEffect.hpp"
+#include "FrameEffect.hpp"
+#include "NodeJoinEffect.hpp"
+#include "MicrophoneEffect.hpp"
+#include "AudioFileEffect.hpp"
+#include "Wipe.h"
+#include "NoEffect.hpp"
+#include "Frame.h"
+#include "NodeJoin.h"
+#include "Grid.h"
+#include "GridVanishing.h"
+#include "ConnectedGraph.h"
+#include "VoiceWave.hpp"
+#include "GreenScanLine.hpp"
+#include "laserGui.hpp"
+#include "LoadingCircle.h"
+#include "MicroWaveTime.h"
+#include "VoiceWaveTime.h"
+#include "ScanLineTime.h"
+#include "GlitchEffect.h"
+#include "LaserGuiCircle.hpp"
+#include "LoadingBar.h"
+#include "LiquidVoice.h"
+#include "LaserGui2.h"
+#include "LineHighlight.h"
+#include "TerrainContours.h"
 
 class LaserEffect
 {

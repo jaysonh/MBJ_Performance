@@ -7,7 +7,7 @@
 
 #ifndef Wipe_h
 #define Wipe_h
-
+#include "ofMain.h"
 class Wipe
 {
 public:

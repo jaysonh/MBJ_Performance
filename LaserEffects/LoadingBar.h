@@ -8,6 +8,8 @@
 #ifndef LoadingBar_h
 #define LoadingBar_h
 
+#include "ofxIldaFrame.h"
+
 class LoadingBar
 {
 public:

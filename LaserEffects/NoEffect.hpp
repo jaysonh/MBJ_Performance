@@ -8,12 +8,11 @@
 #ifndef NoEffect_hpp
 #define NoEffect_hpp
 
-
-#include "LaserEffect.hpp"
 #include <stdio.h>
 #include "Wipe.h"
+#include "ofxIldaFrame.h"
 
-class NoEffect : public LaserEffect
+class NoEffect 
 {
 public:
     

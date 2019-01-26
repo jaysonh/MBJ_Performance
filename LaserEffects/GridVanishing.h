@@ -8,6 +8,8 @@
 #ifndef GridVanishing_h
 #define GridVanishing_h
 
+#include "ofxIldaFrame.h"
+
 class GridVanishing
 {
 public:

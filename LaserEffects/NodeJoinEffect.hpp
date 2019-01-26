@@ -9,9 +9,9 @@
 #define NodeJoinEffect_hpp
 
 #include <stdio.h>
-#include "LaserEffect.hpp"
+#include "ofxIldaFrame.h"
 
-class NodeJoinEffect : public LaserEffect
+class NodeJoinEffect
 {
 public:
     void update( float timelinePos, float audioFileDamp, float audioFileMult );

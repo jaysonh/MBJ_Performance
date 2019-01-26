@@ -9,9 +9,9 @@
 #define GreenScanLine_hpp
 
 #include <stdio.h>
-#include "LaserEffect.hpp"
+#include "ofxIldaFrame.h"
 
-class GreenScanLine : public LaserEffect
+class GreenScanLine  
 {
 public:
     GreenScanLine( ColourMode colMode);

@@ -8,11 +8,11 @@
 #ifndef WipeEffect_hpp
 #define WipeEffect_hpp
 
-#include "LaserEffect.hpp"
 #include <stdio.h>
 #include "Wipe.h"
+#include "ofxIldaFrame.h"
 
-class WipeEffect : public LaserEffect
+class WipeEffect
 {
 public:
     

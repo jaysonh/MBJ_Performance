@@ -26,6 +26,14 @@ float OscManager::getTimelinePos()
         return ofGetElapsedTimef() - mStartTime;
 }
 
+float OscManager::getAbletonPos()
+{
+    if(mAbletonTime >= 0.0)
+        return mAbletonTime + ofClamp(ofGetElapsedTimef() - lastBeatTime, 0.0, (60.0 /BPM ));
+    else
+        return 0.0;
+}
+
 void OscManager::update()
 {
     while(mReceiver.hasWaitingMessages())
@@ -33,13 +41,12 @@ void OscManager::update()
         // get the next message
         ofxOscMessage m;
         mReceiver.getNextMessage(m);
-        
+        cout << m.getAddress() <<endl;
         if(m.getAddress() == TIMELINE_OSC_ADDR )
         {
-            mTimelinePos = m.getArgAsFloat(0);
-            
-            mLastTime = mTimelinePos;
-            
+            int beatNum = m.getArgAsInt(0);
+            mAbletonTime = (60.0 /BPM ) * beatNum;
+            lastBeatTime = ofGetElapsedTimef();
         }
         
         if(m.getAddress() == PERFORMANCE_START)

@@ -9,9 +9,9 @@
 #define VoiceWave_hpp
 
 #include <stdio.h>
-#include "LaserEffect.hpp"
+#include "ofxIldaFrame.h"
 
-class VoiceWave : public LaserEffect
+class VoiceWave
 {
 public:
     VoiceWave( ColourMode col );

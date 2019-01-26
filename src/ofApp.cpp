@@ -147,7 +147,7 @@ void ofApp::update()
 {
     ofSetWindowTitle( ofToString(ofGetFrameRate()) );
     oscManager.update();
-    timeline.update( oscManager.getTimelinePos() );
+    timeline.update( oscManager.getTimelinePos(), oscManager.getAbletonPos() );
     
     laserManager.update( oscManager.getTimelinePos(), audioFileDamp, audioFileMult );
     
@@ -226,6 +226,6 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 void ofApp::audioIn(float * input, int bufferSize, int nChannels)
 {
     laserManager.sendAudio(input,bufferSize, microphoneDamp, microphoneMult, oscManager.getTimelinePos());
-    LaserEffect * laserEffect = laserManager.getCurrEffect();
-    laserEffect->sendAudio(input,bufferSize, microphoneDamp, microphoneMult);
+    //LaserEffect * laserEffect = laserManager.getCurrEffect();
+    //laserEffect->sendAudio(input,bufferSize, microphoneDamp, microphoneMult);
 }

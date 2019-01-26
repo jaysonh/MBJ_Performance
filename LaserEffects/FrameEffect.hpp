@@ -9,9 +9,9 @@
 #define FrameEffect_hpp
 
 #include <stdio.h>
-#include "LaserEffect.hpp"
+#include "ofxIldaFrame.h"
 
-class FrameEffect : public LaserEffect
+class FrameEffect 
 {
 public:
     void update( float timelinePos, float audioFileDamp, float audioFileMult );

@@ -8,6 +8,8 @@
 #ifndef ScanLineTime_h
 #define ScanLineTime_h
 
+#include "ofxIldaFrame.h"
+
 class ScanLineTime
 {
 public:
