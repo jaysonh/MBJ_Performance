@@ -7,6 +7,7 @@
 
 #ifndef NodeJoin_h
 #define NodeJoin_h
+#include "EffectTime.h"
 
 class NodeJoin
 {
@@ -18,6 +19,7 @@ public:
             
             mLineStart = lineBegin;
             mLineEnd   = lineEnd;
+            mEffectTime = EffectTime(mTimelineStart,mTimelineEnd);
         }
     
         bool isJoinStart( float timelinePos )
@@ -37,6 +39,12 @@ public:
             
             return *frame;
         }
+    
+    std::pair <string, EffectTime> getInfo()
+    {
+        return std::make_pair("NodeJoin", mEffectTime);
+    }
+    EffectTime mEffectTime;
     
         ofVec2f mLineStart, mLineEnd;
     

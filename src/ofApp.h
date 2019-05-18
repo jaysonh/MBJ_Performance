@@ -32,24 +32,20 @@ class ofApp : public ofBaseApp{
     
         void laserResetBtnPressed();
         void blankLaserBtnPressed();
-        void laserMicrophoneSkinBtnPressed();
-        void laserMicrophoneBlueGreenBtnPressed();
-        void laserVoice1BtnPressed();
         void testPatternBtnPressed();
-        void noEffectBtnPressed();
-        void voiceWaveYellowBtnPressed();
-        void voiceWaveBlueBtnPressed();
-        void blueScanLineBtnPressed();
-        void yellowScanLineBtnPressed();
         void startPerformanceBtnPressed();
-    
         void loadKeystone();
         void saveKeystone();
         void resetKeystone();
+        void timeSourceAbletonPressed();
+        void timeSourceStartPressed();
+        void timeSourceSelectionPressed();
+    
     
         void audioIn(float * input, int bufferSize, int nChannels);
     
         ofTrueTypeFont font;
+    ofTrueTypeFont fontBig;
         LaserManager laserManager;
 		
         ofxIlda::Frame warpedFrame;
@@ -60,26 +56,27 @@ class ofApp : public ofBaseApp{
     
         ofxFloatSlider microphoneDamp;
         ofxFloatSlider microphoneMult;
-        ofxFloatSlider audioFileDamp;
-        ofxFloatSlider audioFileMult;
-    
+       
         ofxButton      laserResetBtn;
         ofxButton      blankLaserBtn;
-        ofxButton      laserMicrophoneSkinBtn;
-        ofxButton      laserMicrophoneBlueGreenBtn;
-        ofxButton      laserVoice1Btn;
         ofxButton      testPatternBtn;
         ofxButton      noEffectBtn;
-        ofxButton      voiceWaveYellowEffectBtn;
-        ofxButton      voiceWaveBlueEffectBtn;
-        ofxButton      blueScanEffectBtn;
-        ofxButton      yellowScanEffectBtn;
         ofxButton      startPerformanceBtn;
-    
+        ofxButton      timeSourceAbleton;
+        ofxButton      timeSourceStart;
+        ofxButton      startFromSelectedBtn;
         ofxButton      loadKeystoneBtn;
         ofxButton      saveKeystoneBtn;
         ofxButton      resetKeystoneBtn;
+        ofxButton      revertStartBtn;
+        ofxButton      clearOffsetBtn;
     
+        ofxButton      skipBackBtn;
+        ofxButton      skipForwardBtn;
+    
+    
+        ofxIntSlider      startTimeMinSlider;
+        ofxIntSlider      startTimeSecSlider;
         ofSoundStream soundStream;
     
         OscManager      oscManager;

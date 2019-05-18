@@ -163,8 +163,15 @@
 		9A2E7D4121FB31F400A394AB /* LineHighlight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineHighlight.h; sourceTree = "<group>"; };
 		9A2E7D4221FCA59000A394AB /* LaserGui2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaserGui2.h; sourceTree = "<group>"; };
 		9A2E7D4621FCB05B00A394AB /* TerrainContours.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TerrainContours.h; sourceTree = "<group>"; };
+		9A2E7D4721FCB59200A394AB /* MorphShape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MorphShape.h; sourceTree = "<group>"; };
+		9A2E7D4821FCDC5300A394AB /* GridHorAndVer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridHorAndVer.h; sourceTree = "<group>"; };
+		9A2E7D4B21FDC8D600A394AB /* ShapeExplorer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShapeExplorer.h; sourceTree = "<group>"; };
+		9A2E7D4C21FDEE2800A394AB /* LoadingLines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingLines.h; sourceTree = "<group>"; };
+		9A2E7D4D21FE00D500A394AB /* VoiceSpikes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VoiceSpikes.h; sourceTree = "<group>"; };
+		9A3FEE3A2201A4F600638DE6 /* EffectTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EffectTime.h; sourceTree = "<group>"; };
 		9A5280C2203C535B0014DD25 /* LaserGui.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LaserGui.hpp; sourceTree = "<group>"; };
 		9A5280C6203CB9110014DD25 /* LoadingCircle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadingCircle.h; sourceTree = "<group>"; };
+		9A551B3421FE496800013018 /* CursorEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CursorEffect.h; sourceTree = "<group>"; };
 		9A57E61B20348D4200AFEEE0 /* Grid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Grid.h; sourceTree = "<group>"; };
 		9A57E61C203491F000AFEEE0 /* GridVanishing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridVanishing.h; sourceTree = "<group>"; };
 		9A57E61D2035839300AFEEE0 /* ConnectedGraph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectedGraph.h; sourceTree = "<group>"; };
@@ -497,6 +504,13 @@
 				9A2E7D4121FB31F400A394AB /* LineHighlight.h */,
 				9A2E7D4221FCA59000A394AB /* LaserGui2.h */,
 				9A2E7D4621FCB05B00A394AB /* TerrainContours.h */,
+				9A2E7D4721FCB59200A394AB /* MorphShape.h */,
+				9A2E7D4821FCDC5300A394AB /* GridHorAndVer.h */,
+				9A2E7D4B21FDC8D600A394AB /* ShapeExplorer.h */,
+				9A2E7D4C21FDEE2800A394AB /* LoadingLines.h */,
+				9A2E7D4D21FE00D500A394AB /* VoiceSpikes.h */,
+				9A551B3421FE496800013018 /* CursorEffect.h */,
+				9A3FEE3A2201A4F600638DE6 /* EffectTime.h */,
 			);
 			path = LaserEffects;
 			sourceTree = SOURCE_ROOT;

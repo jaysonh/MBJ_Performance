@@ -9,6 +9,7 @@
 #define LaserGuiCircle_h
 
 #include "ofxIldaFrame.h"
+#include "EffectTime.h"
 
 class LaserGuiCircle
 {
@@ -19,6 +20,7 @@ public:
         mStart = startTime;
         mEnd   = endTime;
         
+        mEffectTime = EffectTime(startTime,endTime);
     }
     
     bool isGuiStart( float timelinePos )
@@ -115,6 +117,11 @@ public:
         
         return *frame;
     }
+    std::pair <string, EffectTime> getInfo()
+    {
+        return std::make_pair("Gui", mEffectTime);
+    }
+    EffectTime mEffectTime;
     const float OPEN_TIME = 4.0;
     
     float mStart, mEnd;

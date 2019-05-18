@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include "ofxIldaFrame.h"
+#include "EffectTime.h"
 
 class NodeJoinEffect
 {
@@ -18,5 +19,10 @@ public:
     ofxIlda::Frame getFrame( ofxIlda::Frame * drawFrame );
     void sendAudio( float *input, int bufferSize, float microphoneDamp, float microphoneMult);
     void stopEffect() {}
+    std::pair <string, EffectTime> getInfo()
+    {
+        return std::make_pair("NodeJoin", mEffectTime);
+    }
+    EffectTime mEffectTime;
 };
 #endif /* NodeJoinEffect_hpp */

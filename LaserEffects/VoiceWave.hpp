@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include "ofxIldaFrame.h"
+#include "EffectTime.h"
 
 class VoiceWave
 {
@@ -19,6 +20,11 @@ public:
     ofxIlda::Frame getFrame( ofxIlda::Frame * drawFrame );
     void sendAudio( float *input, int bufferSize, float microphoneDamp, float microphoneMult);
     void stopEffect() {}
+    std::pair <string, EffectTime> getInfo()
+    {
+        return std::make_pair("VoiceWave", mEffectTime);
+    }
+    EffectTime mEffectTime;
 private:
     
     ofxIlda::Frame mIldaFrame;

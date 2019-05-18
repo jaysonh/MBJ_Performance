@@ -9,6 +9,7 @@
 #define ConnectedGraph_H
 
 #include "ofxIldaFrame.h"
+#include "EffectTime.h"
 struct Connection {
     
     Connection(int i1, int i2)
@@ -28,6 +29,7 @@ public:
         mTimelineStart = timelineStart;
         mTimelineEnd   = timelineEnd;
         
+        mEffectTime = EffectTime(mTimelineStart,mTimelineEnd);
         mPoints = points;
         mConnections = connections;
         
@@ -56,7 +58,11 @@ public:
         
         return *frame;
     }
-    
+    std::pair <string, EffectTime> getInfo()
+    {
+        return std::make_pair("ConnectedGraph", mEffectTime);
+    }
+    EffectTime mEffectTime;
     vector <ofVec2f>    mPoints;
     vector <Connection> mConnections;
     

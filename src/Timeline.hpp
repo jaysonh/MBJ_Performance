@@ -16,23 +16,24 @@
 #define OSC_RECV_PORT 12345
 
 #define TIMELINE_DRAW_POS ofVec2f( 10, 230)
-#define TIMELINE_BAR ofRectangle(10, 255, 400, 15)
+#define TIMELINE_BAR ofRectangle(10, 275, 400, 25)
 
 class Timeline
 {
 public:
     
     void init();
-    void draw( ofTrueTypeFont * font);
-    void update( float timelinePos, float abletonTime );
+    void draw( ofTrueTypeFont * font, ofTrueTypeFont * fontBig);
+    void update( float timelinePos, float abletonTime, float usedTime, float off );
+    void clearOffset();
     
     float getPos();
     
 private:
-    
+    float mTotalOffset;
     float mTimelinePos;
     float mAbletonTime;
-    
+    float mUsedTime;
     
 };
 #endif /* Timeline_hpp */

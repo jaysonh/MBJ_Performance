@@ -24,7 +24,7 @@
 #include "ConnectedGraph.h"
 #include "VoiceWave.hpp"
 #include "GreenScanLine.hpp"
-#include "laserGui.hpp"
+#include "LaserGui.hpp"
 #include "LoadingCircle.h"
 #include "MicroWaveTime.h"
 #include "VoiceWaveTime.h"
@@ -36,6 +36,12 @@
 #include "LaserGui2.h"
 #include "LineHighlight.h"
 #include "TerrainContours.h"
+#include "MorphShape.h"
+#include "GridHorAndVer.h"
+#include "ShapeExplorer.h"
+#include "LoadingLines.h"
+#include "VoiceSpikes.h"
+#include "CursorEffect.h"
 
 class LaserEffect
 {

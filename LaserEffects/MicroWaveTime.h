@@ -10,16 +10,18 @@
 
 #include "ofxIldaFrame.h"
 
+#include "EffectTime.h"
 class MicroWaveTime
 {
 public:
     
-    MicroWaveTime( float startTime, float endTime, ColourMode colMode )
+    MicroWaveTime( float startTime, float endTime, ColourMode colMode, float centreY )
     {
         mStart = startTime;
         mEnd   = endTime;
+        mEffectTime = EffectTime(startTime,endTime);
         mCol   = colMode;
-        
+        mCentreY = centreY;
         int bufferSize = 256;
         open=0.0;
         
@@ -57,6 +59,7 @@ public:
                 microphoneWave.push_back(right[i]);
             }
             frame->addPoly();
+            frame->colMode = mCol;
             
             float timeSinceStart = timelinePos - mStart;
             float totalTime      = mEnd - mStart;
@@ -72,9 +75,11 @@ public:
             {
                 open = 1.0;
             }
-            for (unsigned int i = 0; i < microphoneWave.size(); i+=10)
+            for (unsigned int i = 0; i < microphoneWave.size(); i+=4)
             {
-                ofVec2f p = ofVec2f( ofMap(i, 0, right.size(),0.05,0.95), ofClamp(microphoneWave[i]* mMicrophoneMult, -0.5, 0.5) + 0.5 );
+                ofVec2f p = ofVec2f( ofMap(i, 0, right.size(),0.05,0.95),
+                                     ofClamp(microphoneWave[i]* mMicrophoneMult, -(1.0 - mCentreY), (1.0 - mCentreY)) + mCentreY
+                                    );
                 
                 if(p.y < 0.1) p.y = 0.1;
                 if(p.y > 0.9) p.y = 0.9;
@@ -85,20 +90,15 @@ public:
                 {
                     float colB = ofRandom(1);
                     
-                    frame->getLastPoly().color = ofFloatColor(1.0,0.0,colB);
-                    frame->getLastPoly().lineTo( p.x, p.y );
+                    //frame->getLastPoly().color = ofFloatColor(1.0,0.0,colB);
+                    frame->getLastPoly().lineTo( p.x, 1.0-p.y );
                    
                 }
             }
             
-            frame->colMode = mCol;
             
             frame->update();
             
-            /*if(open < 1.0)
-                open += 0.02;
-            else
-                open=1.0;*/
 
         }
         
@@ -109,6 +109,7 @@ public:
     {
         if( timelinePos >= mStart && timelinePos < mEnd)
         {
+           
             mMicrophoneMult = microphoneMult;
             float curVol = 0.0;
             
@@ -121,8 +122,8 @@ public:
                 if(ofGetFrameNum()%3==0)
                 {
                     
-                    float curLeft  = (input[i*2]   * 0.5);
-                    float curRight = (input[i*2+1] * 0.5);
+                    float curLeft  = (input[i*2]   * 0.5) * mMicrophoneMult;
+                    float curRight = (input[i*2+1] * 0.5) * mMicrophoneMult;
                     
                     if(open >= 1.0)
                     {
@@ -150,6 +151,12 @@ public:
         
     }
     
+    std::pair <string, EffectTime> getInfo()
+    {
+        return std::make_pair("VoiceLine", mEffectTime);
+    }
+    EffectTime mEffectTime;
+    
 private:
     
     float mStart, mEnd;
@@ -171,7 +178,7 @@ private:
     
     float smoothedVol;
     float scaledVol;
-    
+    float mCentreY;
     float open;
     
 };

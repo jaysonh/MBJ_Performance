@@ -9,6 +9,7 @@
 
 void Timeline::init()
 {
+    mTotalOffset=0.0;
     mTimelinePos = -1.0;
 }
 
@@ -16,12 +17,18 @@ float Timeline::getPos()
 {
     return mTimelinePos;
 }
-
-void Timeline::draw( ofTrueTypeFont * font)
+void Timeline::clearOffset()
 {
+    mTotalOffset = 0.0;
+}
+void Timeline::draw( ofTrueTypeFont * font,ofTrueTypeFont * fontBig )
+{
+    ofPushMatrix();
+    ofTranslate(0,140);
     ofSetColor(ofColor::white);
-    font->drawString("Timeline:       " + ofToString(mTimelinePos), TIMELINE_DRAW_POS.x,TIMELINE_DRAW_POS.y );
-    font->drawString("AbletonTime: " + ofToString(mAbletonTime), TIMELINE_DRAW_POS.x,TIMELINE_DRAW_POS.y +20 );
+    font->drawString("Offset:       " + ofToString(mTotalOffset), TIMELINE_DRAW_POS.x,TIMELINE_DRAW_POS.y - 10 );
+    font->drawString("Timeline:       " + ofToString(mTimelinePos), TIMELINE_DRAW_POS.x,TIMELINE_DRAW_POS.y + 10 );
+    font->drawString("AbletonTime: " + ofToString(mAbletonTime), TIMELINE_DRAW_POS.x,TIMELINE_DRAW_POS.y    + 30 );
     
     // Draw timeline bar
     ofSetColor(125);
@@ -38,10 +45,18 @@ void Timeline::draw( ofTrueTypeFont * font)
     ofSetColor( ofColor::gray );
     ofDrawLine( TIMELINE_BAR.x + xOff, TIMELINE_BAR.y, TIMELINE_BAR.x + xOff, TIMELINE_BAR.y + TIMELINE_BAR.height);
     
+    ofSetColor( ofColor::black);
+    string displayTime =  ofToString((int)(mUsedTime / 60)) + "." + ofToString((int)mUsedTime % 60) + "/" + ofToString(mUsedTime);
+    ofDrawBitmapString(displayTime, TIMELINE_BAR.x + 5, TIMELINE_BAR.y+17);
+    ofPopMatrix();
+    
+    fontBig->drawString(displayTime, 20,550);
 }
 
-void Timeline::update( float timelinePos, float abletonTime )
+void Timeline::update( float timelinePos, float abletonTime, float usedTime, float off )
 {
+    mTotalOffset = off;
     mTimelinePos = timelinePos;
     mAbletonTime = abletonTime;
+    mUsedTime    = usedTime;
 }

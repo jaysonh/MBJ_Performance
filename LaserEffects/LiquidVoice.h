@@ -10,14 +10,18 @@
 
 #include <stdio.h>
 #include "ofxIldaFrame.h"
+#include "EffectTime.h"
 
 class LiquidVoice 
 {
 public:
-    LiquidVoice(float startTime, float endTime, ColourMode col)
+    LiquidVoice(float startTime, float endTime, ColourMode col, ofFloatColor col1, ofFloatColor col2)
     {
         mStart = startTime;
         mEnd = endTime;
+        mEffectTime = EffectTime(startTime,endTime);
+        mCol1 = col1;
+        mCol2 = col2;
         
         int bufferSize = 256;
         
@@ -57,11 +61,24 @@ public:
         
         
     }
-    ofxIlda::Frame getFrame( ofxIlda::Frame * drawFrame )
+    ofxIlda::Frame getFrame(float timelinePos, ofxIlda::Frame * drawFrame )
     {
         drawFrame->setColMode(mCol);
         drawFrame->clear();
+        float totalTime = mEnd-mStart;
         
+        float timeRunning = timelinePos - mStart;
+        float open = 1.0;
+        
+        if(timeRunning < 8.0)
+        {
+            open = ofMap(timeRunning,0,8.0,0,1.0);
+        }
+        if (timeRunning > totalTime-8.0)
+        {
+            open =  ofMap(timeRunning, totalTime-8.0,totalTime,1,0);
+        }
+            
         ofVec2f lastPos;
         
         float loudness=0.0;
@@ -71,43 +88,54 @@ public:
             loudness += abs(right[i]);
             
         }
-        loudness *= 0.1;
+        
         if(loudness>1.0)loudness=1.0;
         
-       
         
-        drawFrame->addPoly();
-        t1 += (ofGetElapsedTimef()- lastTime) * 10.5 * loudness + 0.005;
-        t2 += (ofGetElapsedTimef()- lastTime) * 7.5 * loudness  + 0.005;
+        loudness = lastLoudness * 0.95 + loudness*0.05;
+        
+        lastLoudness = loudness;
+        
+        t1 += (ofGetElapsedTimef()- lastTime) * 10.0 * loudness + 0.000;
+        t2 += (ofGetElapsedTimef()- lastTime) * 5.0 * loudness  + 0.000;
         lastTime = ofGetElapsedTimef();
         
         float period = 2.0;
-        float amp    = 0.25;
+        float amp    = 0.1 + 0.2 * loudness*10.0;
+        if(amp > 0.5) amp =0.5;
         
-        for(float a = 0; a < 1.0; a+= 0.01)
+        drawFrame->colMode = mCol;
+        
+        drawFrame->addPoly();
+        drawFrame->getLastPoly().color =mCol2;
+        for(float a = 0; a < 1.0 * open; a+= 0.01)
         {
             float angle = TWO_PI * a * period;
             
             float h = amp * sin(a);
-            drawFrame->getLastPoly().lineTo(a, 0.5 + h * cos( angle + t1 ));
+            float x = a;
+            float y = (0.5 + h * cos( angle + t1 )) * 0.5 + 0.5;
+            
+            drawFrame->getLastPoly().lineTo(x,1.0- y);
         }
-        drawFrame->addPoly();
+        
         period = 1.0;
         amp    = 0.15;
         
-        for(float a = 0.99; a >=0.0; a-= 0.01)
+        drawFrame->addPoly();
+        drawFrame->getLastPoly().color = mCol1;
+        for(float a = 0.99 * open; a >=0.0; a-= 0.01)
         {
             float angle = TWO_PI * a * period;
             
-            float h = amp * cos(a);
-            
-            drawFrame->getLastPoly().lineTo(a, 0.5 + h * cos( angle + t1 ));
+            float h = amp *0.9 * cos(a);
+            float x = a;
+            float y = (0.5 + h * cos( angle + t1 )) * 0.5 + 0.5;
+            drawFrame->getLastPoly().lineTo(x, 1.0-y);
         }
         
-        
-        
-        drawFrame->colMode = mCol;
         drawFrame->update();
+        
         return *drawFrame;
     }
     
@@ -125,8 +153,8 @@ public:
             if(ofGetFrameNum()%3==0)
             {
                 
-                float curLeft  = (input[i*2]   * 0.5);
-                float curRight = (input[i*2+1] * 0.5);
+                float curLeft  = (input[i*2]   * 0.5) * mMicrophoneMult;
+                float curRight = (input[i*2+1] * 0.5) * mMicrophoneMult;
                 
                 
                 left[i]        = curLeft  * (1.0-microphoneDamp) + prevLeftMic[i]  * microphoneDamp;
@@ -157,7 +185,11 @@ public:
     }
     
     void stopEffect() {}
-    
+    std::pair <string, EffectTime> getInfo()
+    {
+        return std::make_pair("Liquid", mEffectTime);
+    }
+    EffectTime mEffectTime;
 private:
     
     ofxIlda::Frame mIldaFrame;
@@ -179,11 +211,13 @@ private:
     float scaledVol;
     
     float v,w;
-    
+    float lastLoudness=0.0;
     float mStart, mEnd;
     float t1=0.0 ,t2=0.0;
     ColourMode mCol;
     float lastTime=0.0;
+    
+    ofFloatColor mCol1, mCol2;
 };
 
 #endif /* VoiceEffect_hpp */

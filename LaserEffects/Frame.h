@@ -10,6 +10,7 @@
 
 #include "ofMain.h"
 #include "ofxIldaFrame.h"
+#include "EffectTime.h"
 
 class Frame
 {
@@ -20,6 +21,7 @@ public:
         mStart    = startPos;
         mEnd      = endPos;
         mDrawRect = drawRect;
+        mEffectTime = EffectTime(mStart,mEnd);
     }
     
     bool isFrameStart( float timelinePos )
@@ -51,7 +53,11 @@ public:
         
         return *frame;
     }
-    
+    std::pair <string, EffectTime> getInfo()
+    {
+        return std::make_pair("Frame", mEffectTime);
+    }
+    EffectTime mEffectTime;
     float mStart, mEnd;
     ofRectangle mDrawRect;
 };

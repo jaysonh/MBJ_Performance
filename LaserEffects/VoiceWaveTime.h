@@ -9,6 +9,7 @@
 #define VoiceWaveTime_h
 
 #include "ofxIldaFrame.h"
+#include "EffectTime.h"
 
 class VoiceWaveTime
 {
@@ -19,9 +20,10 @@ public:
         mStart = startTime;
         mEnd   = endTime;
         
-        int bufferSize = 256;
+        mEffectTime = EffectTime(startTime,endTime);
         
         mCol = col;
+        int bufferSize = 256;
         
         left.assign(bufferSize, 0.0);
         right.assign(bufferSize, 0.0);
@@ -59,8 +61,8 @@ public:
                 if(ofGetFrameNum()%3==0)
                 {
                     
-                    float curLeft  = (input[i*2]   * 0.5);
-                    float curRight = (input[i*2+1] * 0.5);
+                    float curLeft  = (input[i*2]   * 0.5) * mMicrophoneMult;
+                    float curRight = (input[i*2+1] * 0.5) * mMicrophoneMult;
                     
                     
                     left[i]        = curLeft  * (1.0-microphoneDamp) + prevLeftMic[i]  * microphoneDamp;
@@ -110,12 +112,12 @@ public:
             float timeTillEnd    = mEnd - timelinePos;
             float open=0;
             
-            if(timeSinceStart < 2.0)
+            if(timeSinceStart < 5.0)
             {
-                open = ofMap(timeSinceStart,0,2, 0,1);
-            }else if(timeTillEnd < 2.0)
+                open = ofMap(timeSinceStart,0,5, 0,1);
+            }else if(timeTillEnd < 5.0)
             {
-                open = ofMap(timeTillEnd, 0, 2, 0,1);
+                open = ofMap(timeTillEnd, 0, 5, 0,1);
             }else
             {
                 open = 1.0;
@@ -125,7 +127,7 @@ public:
             
             for (unsigned int i = 0; i < microphoneWave.size(); i++)
             {
-                loudness += abs(microphoneWave[i]);
+                loudness += abs(microphoneWave[i]) * 0.2;
                 
             }
             loudness *= 0.1;
@@ -135,7 +137,6 @@ public:
             float height =400;
             float mX =30.0;
             float mY = 10.0;
-            
             
             frame->addPoly();
             
@@ -168,18 +169,18 @@ public:
             v -= 0.02* loudness * 30.0;
             w += 0.04* loudness * 30.0;
             
-            
-            
-            
-            
-            
             frame->colMode = mCol;//WHITE_FADE;
         }
         
-       
-        
         return *frame;
     }
+    
+    std::pair <string, EffectTime> getInfo()
+    {
+        return std::make_pair("HeartBeatVoice", mEffectTime);
+    }
+    EffectTime mEffectTime;
+    
     float mStart, mEnd;
     
     float mMicrophoneMult;
@@ -198,7 +199,7 @@ public:
     float smoothedVol;
     float scaledVol;
     
-    float v,w;
+    float v =0.0,w=0.0;
     
     ColourMode mCol;
 };

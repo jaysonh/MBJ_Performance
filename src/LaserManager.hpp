@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "ofxEtherDream.h"
 #include "LaserEffect.hpp"
+#include "EffectTime.h"
 
 #define ETHER_DREAM_PPS  40000
 #define STARTUP_DELAY  3.0
@@ -21,6 +22,8 @@ enum LaserEffecType { NONE, VOICE_SKIN, VOICE_GREENBLUE, AUDIOFILE1, WIPE, FRAME
 
 #define KEYSTONE_FILE "keystone.txt"
 
+bool compareEffectTime(std::pair<string,EffectTime> t1, std::pair<string,EffectTime> t2);
+
 class LaserManager
 {
 public:
@@ -29,12 +32,11 @@ public:
     
     void init();
     
-    void update( float timelinePos, float audioFileDamp, float audioFileMult );
+    void update( float timelinePos );
     
     ofxIlda::Frame sendFrames(ofxIlda::Frame frame);
     
-    void setEffect( LaserEffecType type );
-    void draw( ofTrueTypeFont * font);
+    void draw( ofTrueTypeFont * font,float timelinePos );
     
     void reset( );
     void blank();
@@ -57,7 +59,7 @@ public:
     LaserEffecType mEffectType;
     
     void gaussian_elimination(float *input, int n);
-    
+    string getTimeString( float time );
     LaserEffect * getCurrEffect();
     void sendAudio(float *input, int bufferSize, float microphoneDamp, float microphoneMult, float timelinePos);
 private:
@@ -80,6 +82,12 @@ private:
     void checkLineHighlightList(float timelinePos);
     void checkGui2List(float timelinePos);
     void checkTerrainList(float timelinePos);
+    void checkMorphShapeList(float timelinePos);
+    void checkGridHorVerShapeList(float timelinePos);
+    void checkShapeExplorerList(float timelinePos);
+    void checkLoadingLinesList(float timelinePos);
+    void checkSpikeList(float timelinePos);
+    void checkCursorEffectList(float timelinePos);
     
     void clearForTimelineEffects(float timelinePos);
     
@@ -87,25 +95,31 @@ private:
     
     vector <LaserEffect*> mEffectList;
     
-    vector <LaserGuiCircle> mCircleGuiList;
-    vector <Wipe>     mWipeList;
-    vector <Frame>    mFrameList;
-    vector <NodeJoin> mJoinList;
-    vector <Grid> mGridList;
-    vector <GridVanishing> mGridVanishList;
-    vector <ConnectedGraph> mConnGraphList;
-    vector <LaserGui>  mLaserGuiList;
-    vector <LoadingCircle> mLoadingCirclesList;
-    vector <MicroWaveTime> mMicroWaveList;
-    vector <VoiceWaveTime> mVoiceWaveList;
-    vector <ScanLineTime>  mScanLineList;
-    vector <GlitchEffect>  mGlitchList;
-    vector <LoadingBar> mLoadingBarList;
-    vector <LiquidVoice> mLiquidVoiceList;
-    vector <LineHighlight> mLineHighlightList;
-    vector <LaserGui2> mGui2List;
+    vector <VoiceSpikes>     mVoiceSpikesList;
+    vector <LoadingLines>    mLoadingLinesList;
+    vector <GridHorAndVer>   mGridHorVerList;
+    vector <MorphShape>      mMorphShapeList;
+    vector <LaserGuiCircle>  mCircleGuiList;
+    vector <Wipe>            mWipeList;
+    vector <Frame>           mFrameList;
+    vector <NodeJoin>        mJoinList;
+    vector <Grid>            mGridList;
+    vector <GridVanishing>   mGridVanishList;
+    vector <ConnectedGraph>  mConnGraphList;
+    vector <LaserGui>        mLaserGuiList;
+    vector <LoadingCircle>   mLoadingCirclesList;
+    vector <MicroWaveTime>   mMicroWaveList;
+    vector <VoiceWaveTime>   mVoiceWaveList;
+    vector <ScanLineTime>    mScanLineList;
+    vector <GlitchEffect>    mGlitchList;
+    vector <LoadingBar>      mLoadingBarList;
+    vector <LiquidVoice>     mLiquidVoiceList;
+    vector <LineHighlight>   mLineHighlightList;
+    vector <LaserGui2>       mGui2List;
     vector <TerrainContours> mTerrainList;
-    
+    vector <ShapeExplorer>   mShapeExplorerList;
+    vector <CursorEffect>    mCursorEffectList;
+   
     LaserEffect *mEffect;
     bool mShowTestPattern;
     ofPoint mCorners[4];
@@ -121,8 +135,12 @@ private:
     ofRectangle mBoundingRect;
     ofxIlda::Frame mDrawFrame;
     
+    bool flipY = true;
     
     AudioFileEffect * audioFileEffect1;
+    
+    
+    vector<std::pair<string,EffectTime>> effectDisplayList;
 };
 
 #endif /* LaserManager_hpp */

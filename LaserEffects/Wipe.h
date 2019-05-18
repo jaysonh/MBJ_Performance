@@ -8,6 +8,7 @@
 #ifndef Wipe_h
 #define Wipe_h
 #include "ofMain.h"
+#include "EffectTime.h"
 class Wipe
 {
 public:
@@ -16,6 +17,7 @@ public:
     {
         mStart = startTime;
         mEnd   = endTime;
+        mEffectTime = EffectTime(startTime,endTime);
         mStartMap = startMap;
         mEndMap  = endMap;
     }
@@ -41,6 +43,11 @@ public:
             return -1.0;
         }
     }
+    std::pair <string, EffectTime> getInfo()
+    {
+        return std::make_pair("Wipe", mEffectTime);
+    }
+    EffectTime mEffectTime;
     float mStartMap, mEndMap;
     float mStart, mEnd;
 };

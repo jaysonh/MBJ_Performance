@@ -10,6 +10,8 @@
 
 #include "ofxIldaFrame.h"
 
+#include "EffectTime.h"
+
 class GridVanishing
 {
 public:
@@ -19,6 +21,7 @@ public:
         mStart = startTime;
         mEnd   = endTime;
         
+        mEffectTime = EffectTime(startTime,endTime);
     }
     
     bool isGridStart( float timelinePos )
@@ -168,7 +171,11 @@ public:
         
         return *frame;
     }
-    
+    std::pair <string, EffectTime> getInfo()
+    {
+        return std::make_pair("Grid", mEffectTime);
+    }
+    EffectTime mEffectTime;
     float mStart, mEnd;
 };
 #endif /* Wipe_h */

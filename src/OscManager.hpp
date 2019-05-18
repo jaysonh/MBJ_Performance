@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include "ofxOsc.h"
 
-#define PORT              9001
+#define PORT              12345
 #define TIMELINE_OSC_ADDR "/live/beat"
 #define PERFORMANCE_START "/Velocity1"
 #define BPM               120.0
@@ -24,13 +24,32 @@ public:
     void init();
     void update();
     
+    float getTime();
     float getTimelinePos();
-    void  startPerformance();
     float getAbletonPos();
+
+    void setUseAbletonTime(int status);
+    void startPerformance();
+    void startPerformanceFrom();
+    void setStartTime(int min, int sec);
+    void startManual();
+    void revertSavedStartTime();
+    void skipForward();
+    void skipBackward();
+    float getTotalOffset();
     
 private:
-    float mStartTime = -1.0;
-    float mAbletonTime  = -1.0;
+    float totalOffset = 0.0;
+    
+    int startMin, startSec;
+    
+    int useAbletonTime = 1;
+    
+    float mStartTime      = -10000.0;
+    float mSavedStartTime = -10000.0;
+    float mAbletonTime    = -10000.0;
+    
+    float mManualTime      = -10000.0;
     
     ofxOscReceiver mReceiver;
     float mTimelinePos;

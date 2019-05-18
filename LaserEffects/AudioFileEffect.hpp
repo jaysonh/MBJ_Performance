@@ -12,6 +12,7 @@
 #include "ofxSoundPlayerObject.h"
 #include "waveformDraw.h"
 #include "ofxIldaFrame.h"
+#include "EffectTime.h"
 
 class AudioFileEffect 
 {
@@ -24,6 +25,11 @@ public:
     void update( float timelinePos, float audioFileDamp, float audioFileMult );
     ofxIlda::Frame getFrame( ofxIlda::Frame * drawFrame );
     void sendAudio( float *input, int bufferSize, float microphoneDamp, float microphoneMult);
+    std::pair <string, EffectTime> getInfo()
+    {
+        return std::make_pair("AudioFile", mEffectTime);
+    }
+    EffectTime mEffectTime;
     
 private:
     

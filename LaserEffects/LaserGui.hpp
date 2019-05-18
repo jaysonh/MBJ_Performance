@@ -8,14 +8,19 @@
 #ifndef LaserGui_h
 #define LaserGui_h
 
+#include "ofxIldaFrame.h"
+#include "EffectTime.h"
+
 class LaserGui
 {
 public:
     
-    LaserGui( float startTime, float endTime )
+    LaserGui( float startTime, float endTime, ColourMode col )
     {
         mStart = startTime;
         mEnd   = endTime;
+        mEffectTime = EffectTime(startTime,endTime);
+        mCol = col;
         
     }
     
@@ -88,10 +93,15 @@ public:
             
             //frame->colMode = ICE;
         }
-        
         return *frame;
     }
+    std::pair <string, EffectTime> getInfo()
+    {
+        return std::make_pair("Gui", mEffectTime);
+    }
+    EffectTime mEffectTime;
     
+    ColourMode mCol;
     float mStart, mEnd;
 };
 #endif

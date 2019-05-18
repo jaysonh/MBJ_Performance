@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "ofxIldaFrame.h"
 
+#include "EffectTime.h"
 class LineHighlight 
 {
 public:
@@ -20,6 +21,7 @@ public:
     {
         mStart = startTime;
         mEnd   = endTime;
+        mEffectTime = EffectTime(startTime,endTime);
         mLinePos = startPos;
         mLineLength = lineLength;
         
@@ -56,6 +58,11 @@ public:
     void update( float timelinePos, float audioFileDamp, float audioFileMult ){}
     void sendAudio( float *input, int bufferSize, float microphoneDamp, float microphoneMult){}
     void stopEffect() {}
+    std::pair <string, EffectTime> getInfo()
+    {
+        return std::make_pair("Line", mEffectTime);
+    }
+    EffectTime mEffectTime;
     
     float mStart, mEnd;
     float mLineLength=0.0;
