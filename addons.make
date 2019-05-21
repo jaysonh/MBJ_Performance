@@ -3,4 +3,5 @@ ofxGui
 ofxIlda
 ofxOsc
 ofxSoundObjects
+ofxSyphon
 ofxXmlSettings

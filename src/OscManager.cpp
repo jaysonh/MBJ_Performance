@@ -32,12 +32,14 @@ float OscManager::getTimelinePos()
 
 float OscManager::getTime()
 {
-    if(useAbletonTime == 1)
+    /*if(useAbletonTime == 1)
         return getAbletonPos();
     else if(useAbletonTime == 0)
         return getTimelinePos();
     else if(useAbletonTime == 2)
-        return mManualTime;
+        return mManualTime;*/
+    
+    return mVDMXTime;
 }
 
 void  OscManager::setUseAbletonTime(int status)
@@ -60,10 +62,10 @@ void OscManager::update()
         ofxOscMessage m;
         mReceiver.getNextMessage(m);
         
-        if(m.getAddress() == "/vdmx/timeline")
+        if(m.getAddress() == "/FromVDMX/timeline")
         {
-            float val = m.getArgAsFloat(0);
-            cout <<"timeline: " << val << endl;
+            mVDMXTime = m.getArgAsFloat(0);
+            
         }
         
         if(m.getAddress() == TIMELINE_OSC_ADDR )

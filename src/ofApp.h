@@ -6,6 +6,7 @@
 #include "ofxGui.h"
 #include "OscManager.hpp"
 #include "DEFINITIONS.h"
+#include "SyphonManager.h"
 
 #define WINDOW_WIDTH 1280
 #define WINDOW_HEIGHT 640
@@ -43,6 +44,8 @@ class ofApp : public ofBaseApp{
     
     
         void audioIn(float * input, int bufferSize, int nChannels);
+    
+        SyphonManager syphonManager;
     
         ofTrueTypeFont font;
     ofTrueTypeFont fontBig;

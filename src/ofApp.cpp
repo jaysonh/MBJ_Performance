@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup()
 {
-    
+    syphonManager.init();
     font.load("verdana.ttf", 12);
     fontBig.load("verdana.ttf", 64);
     
@@ -25,15 +25,15 @@ void ofApp::setup()
     gui.add(laserResetBtn.setup("reset laser"));
     gui.add(startPerformanceBtn.setup("start performance"));
     gui.add(noEffectBtn.setup("blank"));
-    gui.add(timeSourceAbleton.setup("TimeSourceAbleton"));
-    gui.add(timeSourceStart.setup("TimeSourceStart"));
-    gui.add(startFromSelectedBtn.setup("TimeStartSelection"));
-    gui.add(revertStartBtn.setup("Revert to prev start"));
-    gui.add(skipForwardBtn.setup("Skip Forward"));
-    gui.add(skipBackBtn.setup("Skip Back (if G comp pauses)"));
-    gui.add(startTimeMinSlider.setup("startMin",0,0,31));
-    gui.add(startTimeSecSlider.setup("startSec",0,0,59));
-    gui.add(clearOffsetBtn.setup("clear"));
+    //gui.add(timeSourceAbleton.setup("TimeSourceAbleton"));
+    //gui.add(timeSourceStart.setup("TimeSourceStart"));
+    //gui.add(startFromSelectedBtn.setup("TimeStartSelection"));
+    //gui.add(revertStartBtn.setup("Revert to prev start"));
+    //gui.add(skipForwardBtn.setup("Skip Forward"));
+    //gui.add(skipBackBtn.setup("Skip Back (if G comp pauses)"));
+    //gui.add(startTimeMinSlider.setup("startMin",0,0,31));
+    //gui.add(startTimeSecSlider.setup("startSec",0,0,59));
+    //gui.add(clearOffsetBtn.setup("clear"));
     
     gui.setPosition(10,10);
     
@@ -121,6 +121,7 @@ void ofApp::testPatternBtnPressed()
 void ofApp::update()
 {
     ofSetWindowTitle( ofToString(ofGetFrameRate()) );
+    
     oscManager.update();
     timeline.update( oscManager.getTimelinePos(),
                      oscManager.getAbletonPos(),
@@ -140,12 +141,20 @@ void ofApp::update()
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofBackgroundGradient(ofColor(125), ofColor(60));
-    laserManager.draw( &font, oscManager.getTime() );
+    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    ofPushMatrix();
+    syphonManager.update();
+    syphonManager.draw();
+    ofPopMatrix();
+    
+    /*laserManager.draw( &font, oscManager.getTime() );
     timeline.draw( &font, &fontBig );
     
     gui.draw();
-    guiKeystone.draw();
+    guiKeystone.draw();*/
+    
 }
 
 //--------------------------------------------------------------

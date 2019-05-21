@@ -48,6 +48,7 @@ private:
     float mStartTime      = -10000.0;
     float mSavedStartTime = -10000.0;
     float mAbletonTime    = -10000.0;
+    float mVDMXTime       = 0.0;
     
     float mManualTime      = -10000.0;
     
