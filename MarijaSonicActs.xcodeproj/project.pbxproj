@@ -47,6 +47,7 @@
 		9AFB6F2E22907CA3005AE512 /* VoiceWave.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6F1B22907CA2005AE512 /* VoiceWave.cpp */; };
 		9AFB6F2F22907CA3005AE512 /* AudioFileEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6F2322907CA2005AE512 /* AudioFileEffect.cpp */; };
 		9AFB6F3122907D7F005AE512 /* SyphonManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6F3022907D7F005AE512 /* SyphonManager.cpp */; };
+		9AFB6F3922947A3A005AE512 /* DualLaserManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6F3822947A3A005AE512 /* DualLaserManager.cpp */; };
 		9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832BDC407620CDBA568B713D /* tinyxmlerror.cpp */; };
 		A7936996C1DBDACFDC89B3A1 /* % in Sources */ = {isa = PBXBuildFile; fileRef = B2E1EB0F30B9F14A9B7FA4D6 /* % */; };
 		ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD194746185E2DA11468377 /* IpEndpointName.cpp */; };
@@ -213,6 +214,9 @@
 		9AFB6F2522907CA3005AE512 /* ShapeExplorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShapeExplorer.h; path = LaserEffects/ShapeExplorer.h; sourceTree = "<group>"; };
 		9AFB6F2622907CA3005AE512 /* LineHighlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineHighlight.h; path = LaserEffects/LineHighlight.h; sourceTree = "<group>"; };
 		9AFB6F3022907D7F005AE512 /* SyphonManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SyphonManager.cpp; sourceTree = "<group>"; };
+		9AFB6F3622947966005AE512 /* DualLaserEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DualLaserEffect.h; sourceTree = "<group>"; };
+		9AFB6F3722947A2C005AE512 /* DualLaserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DualLaserManager.h; sourceTree = "<group>"; };
+		9AFB6F3822947A3A005AE512 /* DualLaserManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DualLaserManager.cpp; sourceTree = "<group>"; };
 		9B8F196757CB9ABD91A5F87A /* Timeline.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Timeline.cpp; path = src/Timeline.cpp; sourceTree = SOURCE_ROOT; };
 		9BF3AA0D4FAA89D0F8A0E545 /* OscReceivedElements.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscReceivedElements.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.cpp; sourceTree = SOURCE_ROOT; };
 		9C10C5DAD721456271310627 /* audiodecodercoreaudio.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = audiodecodercoreaudio.h; path = ../../../addons/ofxSoundObjects/libs/libaudiodecoder/include/audiodecodercoreaudio.h; sourceTree = SOURCE_ROOT; };
@@ -740,6 +744,9 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				9AFB6F3722947A2C005AE512 /* DualLaserManager.h */,
+				9AFB6F3822947A3A005AE512 /* DualLaserManager.cpp */,
+				9AFB6F3622947966005AE512 /* DualLaserEffect.h */,
 				9AFB6EFB22907C98005AE512 /* LaserEffects */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
@@ -950,6 +957,7 @@
 				67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */,
 				510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */,
 				ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */,
+				9AFB6F3922947A3A005AE512 /* DualLaserManager.cpp in Sources */,
 				9AFB6F2922907CA3005AE512 /* NoEffect.cpp in Sources */,
 				7CAF1A5AEF6F06B39340FF34 /* ofxSoundPlayerObject.cpp in Sources */,
 				26A94B3736756ADEB2293EDD /* ofxSoundMultiplexer.cpp in Sources */,
