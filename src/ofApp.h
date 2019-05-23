@@ -7,6 +7,7 @@
 #include "OscManager.hpp"
 #include "DEFINITIONS.h"
 #include "SyphonManager.h"
+#include "DualLaserManager.h"
 
 #define WINDOW_WIDTH 1280
 #define WINDOW_HEIGHT 640
@@ -48,9 +49,10 @@ class ofApp : public ofBaseApp{
         SyphonManager syphonManager;
     
         ofTrueTypeFont font;
-    ofTrueTypeFont fontBig;
-        LaserManager laserManager;
-		
+        ofTrueTypeFont fontBig;
+        //LaserManager laserManager;
+        DualLaserManager dualLaserManager;
+    
         ofxIlda::Frame warpedFrame;
         Timeline timeline;
     
@@ -60,9 +62,11 @@ class ofApp : public ofBaseApp{
         ofxFloatSlider microphoneDamp;
         ofxFloatSlider microphoneMult;
        
-        ofxButton      laserResetBtn;
+        ofxButton      laserResetLeftBtn;
+        ofxButton      testPatternLeftBtn;
+        ofxButton      laserResetRightBtn;
+        ofxButton      testPatternRightBtn;
         ofxButton      blankLaserBtn;
-        ofxButton      testPatternBtn;
         ofxButton      noEffectBtn;
         ofxButton      startPerformanceBtn;
         ofxButton      timeSourceAbleton;

@@ -8,16 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3AA0D4FAA89D0F8A0E545 /* OscReceivedElements.cpp */; };
+		08EF0231AD8A15BD002A68B4 /* DualLaserManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90EB7257E0523AFDA861EB1D /* DualLaserManager.cpp */; };
 		11DF9AB1B4EAA63E3B190CA0 /* ofxSyphonServerDirectory.mm in Sources */ = {isa = PBXBuildFile; fileRef = E723BEF4C55D236E24639608 /* ofxSyphonServerDirectory.mm */; };
+		153CC0AED6870061C578FD5F /* DualLaserGrid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6676296F87FC5CF9EE967E00 /* DualLaserGrid.cpp */; };
 		1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 907C5B5E104864A2D3A25745 /* ofxToggle.cpp */; };
 		1F558B76FB3412843DDAA031 /* ofxSyphonClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03EA4DA95B5E1B8409FC058E /* ofxSyphonClient.mm */; };
 		24B475D09D396FD37823F959 /* test.c in Sources */ = {isa = PBXBuildFile; fileRef = 998154314347A01197567C72 /* test.c */; };
 		26A94B3736756ADEB2293EDD /* ofxSoundMultiplexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3AD8F94BAD3A849BA69DA14 /* ofxSoundMultiplexer.cpp */; };
 		3BB5196CADF7BC9A7777C5D9 /* audiodecoderbase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DC8BB4888D53830E1BCB1732 /* audiodecoderbase.cpp */; };
+		422507DBF4FE2A2197364DEA /* SyphonManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E13C66DEB15CEC8FCC07FFC /* SyphonManager.cpp */; };
+		446AC9835A9F52B70320E6C2 /* NoEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA0760BA25D8DB25347840B8 /* NoEffect.cpp */; };
 		483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78D67A00EB899FAC09430597 /* ofxLabel.cpp */; };
 		4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AED834CE4DEC5260AF302A2 /* ofxOscParameterSync.cpp */; };
+		4D2726E8409267A764CB395D /* FrameEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 570C0A54C0BA24103BFB29D5 /* FrameEffect.cpp */; };
 		4D508D34156E7076531D9084 /* Syphon.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D58DCB2C0AEFDE6171E29540 /* Syphon.framework */; };
 		510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6DEF695B88BA5FAACEAA937 /* UdpSocket.cpp */; };
+		5380354EC9286E169E117B2C /* GreenScanLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7334676F223096F129E530ED /* GreenScanLine.cpp */; };
+		56100385BAC2A3D8ABA304FE /* KeystoneWarper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4179C0C4642985C3B098260E /* KeystoneWarper.cpp */; };
 		5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF49D76C45D5DB505A234880 /* ofxOscMessage.cpp */; };
 		5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC5DA1C87211D4F6377DA719 /* tinyxmlparser.cpp */; };
 		5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C88333E71C9457E441C33474 /* ofxButton.cpp */; };
@@ -26,7 +33,9 @@
 		640279EE111671BD026CB013 /* ofxOscReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2FAC65C491D4231379F3298 /* ofxOscReceiver.cpp */; };
 		67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B361208CD4107E479F04E7B /* NetworkingUtils.cpp */; };
 		69930F292133561E8E277BCF /* ofxSoundObjectsUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F88ABDE7EA40FF80BEB35DCC /* ofxSoundObjectsUtils.cpp */; };
+		6A68CD22FB8C3DCEC673984A /* AudioFileEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 460596CBF09EC16B55EAAB0E /* AudioFileEffect.cpp */; };
 		72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65EEFA3DA3526E9CDD9C21F9 /* ofxOscBundle.cpp */; };
+		776E00BD51A4D4ACEB62B4A7 /* VoiceWave.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 261D28287D6FFFD97851451B /* VoiceWave.cpp */; };
 		7840F332D7330DAAD11D2250 /* ofxSoundMixer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F768214F9048463922BAE31 /* ofxSoundMixer.cpp */; };
 		7CAF1A5AEF6F06B39340FF34 /* ofxSoundPlayerObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32760A1072C0D245FD13490D /* ofxSoundPlayerObject.cpp */; };
 		837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15F2C6477A769C03A56D1401 /* ofxSlider.cpp */; };
@@ -37,35 +46,30 @@
 		8D60C222CBD3F869382832E9 /* ofxSyphonServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 32D6F27DC6308427F9A278C1 /* ofxSyphonServer.mm */; };
 		8F5205AEF8861EF234F0651A /* ofxOscSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81967292BFC87A0144BD32C6 /* ofxOscSender.cpp */; };
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
-		9AFB6F2722907CA3005AE512 /* WipeEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6F0322907CA0005AE512 /* WipeEffect.cpp */; };
-		9AFB6F2822907CA3005AE512 /* FrameEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6F0722907CA1005AE512 /* FrameEffect.cpp */; };
-		9AFB6F2922907CA3005AE512 /* NoEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6F0B22907CA1005AE512 /* NoEffect.cpp */; };
-		9AFB6F2A22907CA3005AE512 /* GreenScanLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6F0D22907CA1005AE512 /* GreenScanLine.cpp */; };
-		9AFB6F2B22907CA3005AE512 /* LaserEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6F0F22907CA1005AE512 /* LaserEffect.cpp */; };
-		9AFB6F2C22907CA3005AE512 /* MicrophoneEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6F1322907CA1005AE512 /* MicrophoneEffect.cpp */; };
-		9AFB6F2D22907CA3005AE512 /* NodeJoinEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6F1722907CA2005AE512 /* NodeJoinEffect.cpp */; };
-		9AFB6F2E22907CA3005AE512 /* VoiceWave.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6F1B22907CA2005AE512 /* VoiceWave.cpp */; };
-		9AFB6F2F22907CA3005AE512 /* AudioFileEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6F2322907CA2005AE512 /* AudioFileEffect.cpp */; };
-		9AFB6F3122907D7F005AE512 /* SyphonManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6F3022907D7F005AE512 /* SyphonManager.cpp */; };
-		9AFB6F3922947A3A005AE512 /* DualLaserManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB6F3822947A3A005AE512 /* DualLaserManager.cpp */; };
+		940190F44CA4C4004752DF5B /* MicrophoneEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10F3A51CA34D6544DB26F094 /* MicrophoneEffect.cpp */; };
 		9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832BDC407620CDBA568B713D /* tinyxmlerror.cpp */; };
 		A7936996C1DBDACFDC89B3A1 /* % in Sources */ = {isa = PBXBuildFile; fileRef = B2E1EB0F30B9F14A9B7FA4D6 /* % */; };
+		AAD2D6D8A31353B5D4218B38 /* WipeEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 719859856B3BAB2F4913C803 /* WipeEffect.cpp */; };
 		ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ADD194746185E2DA11468377 /* IpEndpointName.cpp */; };
 		AE4927F8533E9F44EF99F6C7 /* ofxEtherdream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84EA9FD3F01D59BACFEFDFA3 /* ofxEtherdream.cpp */; };
 		B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECF8674C7975F1063C5E30CA /* ofxGuiGroup.cpp */; };
 		B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 802251BAF1B35B1D67B32FD0 /* ofxSliderGroup.cpp */; };
+		B6CCB525EC86EDBB7EDC128F /* LaserEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F55DBEC00829B07A9FE9C6 /* LaserEffect.cpp */; };
 		BBD9844681A294B282AAB320 /* ofxSoundFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1517C892632CE73885FA803C /* ofxSoundFile.cpp */; };
 		BE536BA5791C07A98B8365B0 /* audiodecodercoreaudio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 132DE600BC2D5A7FF190F13D /* audiodecodercoreaudio.cpp */; };
+		BEDFEE7400C58EA4E412B757 /* ofxJSONElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2B099E6BD1199664C48B177 /* ofxJSONElement.cpp */; };
 		BF0439F3AB70F86B9B264FC4 /* VisualWipe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8382A0A6C9C7B46E4091F61 /* VisualWipe.cpp */; };
 		C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BC8881B3C8C0A1C45F042E7A /* OscPrintReceivedElements.cpp */; };
 		C9109422648B170B07A778CF /* SyphonNameboundClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E3405C5AE387BDDC2AD19473 /* SyphonNameboundClient.m */; };
 		CCAF7622973DABAB7ACE8634 /* OscManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D110A575A8CA4CF91ECCBDF7 /* OscManager.cpp */; };
+		CF65DCFF0D4DB2242B494395 /* NodeJoinEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0C96437055DF36871F868FE1 /* NodeJoinEffect.cpp */; };
 		DE762D814B7CCA3791FEE510 /* Timeline.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B8F196757CB9ABD91A5F87A /* Timeline.cpp */; };
 		E1A3FD40C8BCD507345F1126 /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58DCB2C0AEFDE6171E29540 /* Syphon.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
 		F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E112B3AEBEA2C091BF2B40AE /* ofxPanel.cpp */; };
+		FB84AAF8D1B7A95266DB5C09 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 21BDE665988474F1B1F4D302 /* jsoncpp.cpp */; };
 		FB8B04BAF4F0B6676B3B2E67 /* LaserManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F89EFB6AE4B769205D3C641A /* LaserManager.cpp */; };
 /* End PBXBuildFile section */
 
@@ -106,25 +110,38 @@
 		029684CF678F70F6D3537A29 /* OscOutboundPacketStream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscOutboundPacketStream.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.h; sourceTree = SOURCE_ROOT; };
 		03EA4DA95B5E1B8409FC058E /* ofxSyphonClient.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 30; name = ofxSyphonClient.mm; path = ../../../addons/ofxSyphon/src/ofxSyphonClient.mm; sourceTree = SOURCE_ROOT; };
 		06FFBD5EEB0697F8724A8DD1 /* LaserManager.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = LaserManager.hpp; path = src/LaserManager.hpp; sourceTree = SOURCE_ROOT; };
+		07310A554019E4D15BE9B755 /* AudioFileEffect.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = AudioFileEffect.hpp; path = src/LaserEffects/AudioFileEffect.hpp; sourceTree = SOURCE_ROOT; };
 		08102CADCDFED739CB531D60 /* DigitalDelay.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = DigitalDelay.h; path = ../../../addons/ofxSoundObjects/src/SoundObjects/DigitalDelay.h; sourceTree = SOURCE_ROOT; };
 		0A1DAC09F322AE313A40706D /* ofxToggle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxToggle.h; path = ../../../addons/ofxGui/src/ofxToggle.h; sourceTree = SOURCE_ROOT; };
+		0A9DBAC2B83C1645FA25BE7E /* DualLaserEffect.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = DualLaserEffect.h; path = src/DualLaserEffect.h; sourceTree = SOURCE_ROOT; };
 		0AED834CE4DEC5260AF302A2 /* ofxOscParameterSync.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscParameterSync.cpp; path = ../../../addons/ofxOsc/src/ofxOscParameterSync.cpp; sourceTree = SOURCE_ROOT; };
+		0C0A5273460A97182CC4A0E5 /* NodeJoin.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = NodeJoin.h; path = src/LaserEffects/NodeJoin.h; sourceTree = SOURCE_ROOT; };
+		0C96437055DF36871F868FE1 /* NodeJoinEffect.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = NodeJoinEffect.cpp; path = src/LaserEffects/NodeJoinEffect.cpp; sourceTree = SOURCE_ROOT; };
 		0E08C3779A6B40C22BD6ADEC /* ofxSoundFile.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSoundFile.h; path = ../../../addons/ofxSoundObjects/src/ofxSoundFile.h; sourceTree = SOURCE_ROOT; };
 		0FB83AC7747296DD35C1C295 /* ofxSyphon.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSyphon.h; path = ../../../addons/ofxSyphon/src/ofxSyphon.h; sourceTree = SOURCE_ROOT; };
+		10F3A51CA34D6544DB26F094 /* MicrophoneEffect.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = MicrophoneEffect.cpp; path = src/LaserEffects/MicrophoneEffect.cpp; sourceTree = SOURCE_ROOT; };
+		11F55DBEC00829B07A9FE9C6 /* LaserEffect.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = LaserEffect.cpp; path = src/LaserEffects/LaserEffect.cpp; sourceTree = SOURCE_ROOT; };
 		132DE600BC2D5A7FF190F13D /* audiodecodercoreaudio.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = audiodecodercoreaudio.cpp; path = ../../../addons/ofxSoundObjects/libs/libaudiodecoder/src/audiodecodercoreaudio.cpp; sourceTree = SOURCE_ROOT; };
 		1517C892632CE73885FA803C /* ofxSoundFile.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSoundFile.cpp; path = ../../../addons/ofxSoundObjects/src/ofxSoundFile.cpp; sourceTree = SOURCE_ROOT; };
 		15F2C6477A769C03A56D1401 /* ofxSlider.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSlider.cpp; path = ../../../addons/ofxGui/src/ofxSlider.cpp; sourceTree = SOURCE_ROOT; };
 		1602920CA9506139A0D594F8 /* ofxSoundObject.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSoundObject.h; path = ../../../addons/ofxSoundObjects/src/ofxSoundObject.h; sourceTree = SOURCE_ROOT; };
+		1645F56257269CD0356320BD /* ofxJSON.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxJSON.h; path = ../../../addons/ofxJSON/src/ofxJSON.h; sourceTree = SOURCE_ROOT; };
 		17E65988300FBD9AAA2CD0CA /* ofxGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGui.h; path = ../../../addons/ofxGui/src/ofxGui.h; sourceTree = SOURCE_ROOT; };
 		1C0DA2561397A7DE0246858B /* ofxGuiGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxGuiGroup.h; path = ../../../addons/ofxGui/src/ofxGuiGroup.h; sourceTree = SOURCE_ROOT; };
 		1CBC36432FB26826AFDBB241 /* audiodecoderbase.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = audiodecoderbase.h; path = ../../../addons/ofxSoundObjects/libs/libaudiodecoder/include/audiodecoderbase.h; sourceTree = SOURCE_ROOT; };
 		1D7E7C28922E7C507DD56160 /* audiodecoder.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = audiodecoder.h; path = ../../../addons/ofxSoundObjects/libs/libaudiodecoder/include/audiodecoder.h; sourceTree = SOURCE_ROOT; };
 		20F35AFADAF0068B067E713F /* OscReceivedElements.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscReceivedElements.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.h; sourceTree = SOURCE_ROOT; };
+		21BDE665988474F1B1F4D302 /* jsoncpp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = jsoncpp.cpp; path = ../../../addons/ofxJSON/libs/jsoncpp/src/jsoncpp.cpp; sourceTree = SOURCE_ROOT; };
 		22A1DBFA03997EABFB8709CF /* OscManager.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscManager.hpp; path = src/OscManager.hpp; sourceTree = SOURCE_ROOT; };
 		23640F57DF6C4BB6BFC5DA4C /* PacketListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PacketListener.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/PacketListener.h; sourceTree = SOURCE_ROOT; };
 		23F3707AC2C550C3F34520BC /* etherdream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = etherdream.h; path = ../../../addons/ofxEtherdream/libs/driver/libetherdream/etherdream.h; sourceTree = SOURCE_ROOT; };
+		24084214C03E62041DF5CD65 /* EffectTime.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = EffectTime.h; path = src/EffectTime.h; sourceTree = SOURCE_ROOT; };
+		261D28287D6FFFD97851451B /* VoiceWave.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = VoiceWave.cpp; path = src/LaserEffects/VoiceWave.cpp; sourceTree = SOURCE_ROOT; };
+		26A541233BC6F736E758F718 /* ofxJSONElement.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxJSONElement.h; path = ../../../addons/ofxJSON/src/ofxJSONElement.h; sourceTree = SOURCE_ROOT; };
 		2834D88A62CD23F3DE2C47D1 /* ofxButton.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxButton.h; path = ../../../addons/ofxGui/src/ofxButton.h; sourceTree = SOURCE_ROOT; };
 		2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxml.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxml.cpp; sourceTree = SOURCE_ROOT; };
+		2C7CF000B7B4F782C187C353 /* json.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = json.h; path = ../../../addons/ofxJSON/libs/jsoncpp/include/json/json.h; sourceTree = SOURCE_ROOT; };
+		2F96E7B188787E3ACE20873B /* WipeEffect.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = WipeEffect.hpp; path = src/LaserEffects/WipeEffect.hpp; sourceTree = SOURCE_ROOT; };
 		2FD4B0329909D3527F003494 /* UdpSocket.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = UdpSocket.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/UdpSocket.h; sourceTree = SOURCE_ROOT; };
 		30DCC93B735A036EF265E101 /* DEFINITIONS.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = DEFINITIONS.h; path = src/DEFINITIONS.h; sourceTree = SOURCE_ROOT; };
 		32760A1072C0D245FD13490D /* ofxSoundPlayerObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSoundPlayerObject.cpp; path = ../../../addons/ofxSoundObjects/src/ofxSoundPlayerObject.cpp; sourceTree = SOURCE_ROOT; };
@@ -133,23 +150,45 @@
 		3479F59CF46E8638FC4FECE2 /* ofxIldaPoint.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxIldaPoint.h; path = ../../../addons/ofxIlda/src/ofxIldaPoint.h; sourceTree = SOURCE_ROOT; };
 		38B07F5B47E7C4ADA696600E /* ofxIldaPolyProcessor.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxIldaPolyProcessor.h; path = ../../../addons/ofxIlda/src/ofxIldaPolyProcessor.h; sourceTree = SOURCE_ROOT; };
 		3B361208CD4107E479F04E7B /* NetworkingUtils.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = NetworkingUtils.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/posix/NetworkingUtils.cpp; sourceTree = SOURCE_ROOT; };
+		4179C0C4642985C3B098260E /* KeystoneWarper.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = KeystoneWarper.cpp; path = src/KeystoneWarper.cpp; sourceTree = SOURCE_ROOT; };
+		4393C9620C7131F1755FA3DB /* Frame.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Frame.h; path = src/LaserEffects/Frame.h; sourceTree = SOURCE_ROOT; };
 		444657A12E59D0ED86981498 /* TimerListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = TimerListener.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/TimerListener.h; sourceTree = SOURCE_ROOT; };
+		4484078095DFB0860FDE142F /* LaserGui2.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = LaserGui2.h; path = src/LaserEffects/LaserGui2.h; sourceTree = SOURCE_ROOT; };
+		460596CBF09EC16B55EAAB0E /* AudioFileEffect.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = AudioFileEffect.cpp; path = src/LaserEffects/AudioFileEffect.cpp; sourceTree = SOURCE_ROOT; };
 		46BBCC26D60B589958BF0D03 /* ofxSyphonServer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSyphonServer.h; path = ../../../addons/ofxSyphon/src/ofxSyphonServer.h; sourceTree = SOURCE_ROOT; };
+		46C829259DE9713AA1387B0F /* LaserGui.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = LaserGui.hpp; path = src/LaserEffects/LaserGui.hpp; sourceTree = SOURCE_ROOT; };
 		486582E0863B80FABE19AA90 /* waveformDraw.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = waveformDraw.h; path = ../../../addons/ofxSoundObjects/src/SoundObjects/waveformDraw.h; sourceTree = SOURCE_ROOT; };
+		486D45B473F8E768D082514F /* FrameEffect.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = FrameEffect.hpp; path = src/LaserEffects/FrameEffect.hpp; sourceTree = SOURCE_ROOT; };
 		48974F980F51769171D0B2F5 /* IpEndpointName.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = IpEndpointName.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.h; sourceTree = SOURCE_ROOT; };
+		4D155FB05C42045CD9B0E4F1 /* DualLaserManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = DualLaserManager.h; path = src/DualLaserManager.h; sourceTree = SOURCE_ROOT; };
+		4D17A14620172A79E6A3BDB9 /* CursorEffect.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = CursorEffect.h; path = src/LaserEffects/CursorEffect.h; sourceTree = SOURCE_ROOT; };
 		4DDD5A51152F1581BDF9CCCF /* NoiseGenerator.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = NoiseGenerator.h; path = ../../../addons/ofxSoundObjects/src/SoundObjects/NoiseGenerator.h; sourceTree = SOURCE_ROOT; };
 		4E95FB446A9C9C6F0DE12D75 /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscPrintReceivedElements.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscPrintReceivedElements.h; sourceTree = SOURCE_ROOT; };
 		4F565F42275196FC67B85122 /* ofxSoundPlayerObject.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSoundPlayerObject.h; path = ../../../addons/ofxSoundObjects/src/ofxSoundPlayerObject.h; sourceTree = SOURCE_ROOT; };
 		50DF87D612C5AAE17AAFA6C0 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxXmlSettings.cpp; path = ../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
+		51C9AF05C9571B4479134D41 /* MicrophoneEffect.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = MicrophoneEffect.hpp; path = src/LaserEffects/MicrophoneEffect.hpp; sourceTree = SOURCE_ROOT; };
+		51E7ADFFB837CFD3AD3B33ED /* VoiceWave.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = VoiceWave.hpp; path = src/LaserEffects/VoiceWave.hpp; sourceTree = SOURCE_ROOT; };
 		52AFA1F08C420992CAAAE648 /* ofxSlider.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSlider.h; path = ../../../addons/ofxGui/src/ofxSlider.h; sourceTree = SOURCE_ROOT; };
+		570C0A54C0BA24103BFB29D5 /* FrameEffect.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = FrameEffect.cpp; path = src/LaserEffects/FrameEffect.cpp; sourceTree = SOURCE_ROOT; };
+		595471E4345E2434702EE974 /* ShapeExplorer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ShapeExplorer.h; path = src/LaserEffects/ShapeExplorer.h; sourceTree = SOURCE_ROOT; };
+		59650B4AE47797D78BDD001B /* GlitchEffect.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = GlitchEffect.h; path = src/LaserEffects/GlitchEffect.h; sourceTree = SOURCE_ROOT; };
+		5A1469496881119FD1AC2F63 /* LaserGuiCircle.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = LaserGuiCircle.hpp; path = src/LaserEffects/LaserGuiCircle.hpp; sourceTree = SOURCE_ROOT; };
 		5AD5C0C0E99DAF876B40FFA9 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = CAStreamBasicDescription.h; path = ../../../addons/ofxSoundObjects/libs/libaudiodecoder/include/apple/CAStreamBasicDescription.h; sourceTree = SOURCE_ROOT; };
+		5BDC50FD38D839301C5B807B /* LoadingBar.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = LoadingBar.h; path = src/LaserEffects/LoadingBar.h; sourceTree = SOURCE_ROOT; };
 		5E58FB869D1E4A5628BDDB4F /* Timeline.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Timeline.hpp; path = src/Timeline.hpp; sourceTree = SOURCE_ROOT; };
+		61313493CDB52744E22A604D /* json-forwards.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = "json-forwards.h"; path = "../../../addons/ofxJSON/libs/jsoncpp/include/json/json-forwards.h"; sourceTree = SOURCE_ROOT; };
 		62FB582D26192322C46E53AA /* VisualGen.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = VisualGen.h; path = src/VisualGenerator/VisualGen.h; sourceTree = SOURCE_ROOT; };
 		63A47AC60FFAFC3BF093EC0F /* OscOutboundPacketStream.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscOutboundPacketStream.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscOutboundPacketStream.cpp; sourceTree = SOURCE_ROOT; };
 		65EEFA3DA3526E9CDD9C21F9 /* ofxOscBundle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscBundle.cpp; path = ../../../addons/ofxOsc/src/ofxOscBundle.cpp; sourceTree = SOURCE_ROOT; };
+		6676296F87FC5CF9EE967E00 /* DualLaserGrid.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = DualLaserGrid.cpp; path = src/DualLaserGrid.cpp; sourceTree = SOURCE_ROOT; };
+		679A9F647FD4C18526937A24 /* LoadingLines.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = LoadingLines.h; path = src/LaserEffects/LoadingLines.h; sourceTree = SOURCE_ROOT; };
+		69E16FFD6CA71D0B08C256DF /* LiquidVoice.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = LiquidVoice.h; path = src/LaserEffects/LiquidVoice.h; sourceTree = SOURCE_ROOT; };
 		6B65E6930994CC4B2D2B8B33 /* OscPacketListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscPacketListener.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscPacketListener.h; sourceTree = SOURCE_ROOT; };
+		6DE68F556D777177EEF35263 /* Grid.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Grid.h; path = src/LaserEffects/Grid.h; sourceTree = SOURCE_ROOT; };
 		70F5DA63DD8360DE10639BF0 /* ofxSoundMixer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSoundMixer.h; path = ../../../addons/ofxSoundObjects/src/ofxSoundMixer.h; sourceTree = SOURCE_ROOT; };
+		719859856B3BAB2F4913C803 /* WipeEffect.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = WipeEffect.cpp; path = src/LaserEffects/WipeEffect.cpp; sourceTree = SOURCE_ROOT; };
 		71FFD50EA75BCC76F0C58D12 /* SyphonNameboundClient.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = SyphonNameboundClient.h; path = ../../../addons/ofxSyphon/libs/Syphon/src/SyphonNameboundClient.h; sourceTree = SOURCE_ROOT; };
+		7334676F223096F129E530ED /* GreenScanLine.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = GreenScanLine.cpp; path = src/LaserEffects/GreenScanLine.cpp; sourceTree = SOURCE_ROOT; };
 		756DEC6073CC0C21D760831D /* ofxIldaPoly.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxIldaPoly.h; path = ../../../addons/ofxIlda/src/ofxIldaPoly.h; sourceTree = SOURCE_ROOT; };
 		7689F8A0F3D0B7635A8C3104 /* ofxOscArg.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscArg.h; path = ../../../addons/ofxOsc/src/ofxOscArg.h; sourceTree = SOURCE_ROOT; };
 		76E1D3269E2C2DA8EB5BC4A5 /* ofxEtherdream.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxEtherdream.h; path = ../../../addons/ofxEtherdream/src/ofxEtherdream.h; sourceTree = SOURCE_ROOT; };
@@ -163,78 +202,45 @@
 		87F26B4B24CBD428AD9EEBAA /* ofxBaseGui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBaseGui.h; path = ../../../addons/ofxGui/src/ofxBaseGui.h; sourceTree = SOURCE_ROOT; };
 		89449E3044D456F7DE7BEA14 /* ofxPanel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxPanel.h; path = ../../../addons/ofxGui/src/ofxPanel.h; sourceTree = SOURCE_ROOT; };
 		89D5795EEC647196E421147A /* ofxIldaFrame.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxIldaFrame.h; path = ../../../addons/ofxIlda/src/ofxIldaFrame.h; sourceTree = SOURCE_ROOT; };
+		8A56732C054C485378A61362 /* MorphShape.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = MorphShape.h; path = src/LaserEffects/MorphShape.h; sourceTree = SOURCE_ROOT; };
 		8B30E93FD3D3475EED522A0E /* ofxOscBundle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscBundle.h; path = ../../../addons/ofxOsc/src/ofxOscBundle.h; sourceTree = SOURCE_ROOT; };
 		8C48E4B693CA266E50AF3E1B /* protocol.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = protocol.h; path = ../../../addons/ofxEtherdream/libs/common/protocol.h; sourceTree = SOURCE_ROOT; };
 		8C75AFC8774A62495DD53464 /* ofxOscReceiver.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscReceiver.h; path = ../../../addons/ofxOsc/src/ofxOscReceiver.h; sourceTree = SOURCE_ROOT; };
 		8DBA83218A516984291067D1 /* SyphonManager.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = SyphonManager.h; path = src/SyphonManager.h; sourceTree = SOURCE_ROOT; };
 		907C5B5E104864A2D3A25745 /* ofxToggle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxToggle.cpp; path = ../../../addons/ofxGui/src/ofxToggle.cpp; sourceTree = SOURCE_ROOT; };
+		90EB7257E0523AFDA861EB1D /* DualLaserManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = DualLaserManager.cpp; path = src/DualLaserManager.cpp; sourceTree = SOURCE_ROOT; };
+		9210E1382A1DEED7286B234C /* LaserEffect.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = LaserEffect.hpp; path = src/LaserEffects/LaserEffect.hpp; sourceTree = SOURCE_ROOT; };
 		9604B925D32EE39065747725 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseGui.cpp; path = ../../../addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
 		998154314347A01197567C72 /* test.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = test.c; path = ../../../addons/ofxEtherdream/libs/driver/libetherdream/test.c; sourceTree = SOURCE_ROOT; };
-		9AFB6EFC22907CA0005AE512 /* LoadingBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingBar.h; path = LaserEffects/LoadingBar.h; sourceTree = "<group>"; };
-		9AFB6EFD22907CA0005AE512 /* NodeJoin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NodeJoin.h; path = LaserEffects/NodeJoin.h; sourceTree = "<group>"; };
-		9AFB6EFE22907CA0005AE512 /* LoadingCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingCircle.h; path = LaserEffects/LoadingCircle.h; sourceTree = "<group>"; };
-		9AFB6EFF22907CA0005AE512 /* LaserGui2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LaserGui2.h; path = LaserEffects/LaserGui2.h; sourceTree = "<group>"; };
-		9AFB6F0022907CA0005AE512 /* MorphShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MorphShape.h; path = LaserEffects/MorphShape.h; sourceTree = "<group>"; };
-		9AFB6F0122907CA0005AE512 /* NodeJoinEffect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = NodeJoinEffect.hpp; path = LaserEffects/NodeJoinEffect.hpp; sourceTree = "<group>"; };
-		9AFB6F0222907CA0005AE512 /* Wipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wipe.h; path = LaserEffects/Wipe.h; sourceTree = "<group>"; };
-		9AFB6F0322907CA0005AE512 /* WipeEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WipeEffect.cpp; path = LaserEffects/WipeEffect.cpp; sourceTree = "<group>"; };
-		9AFB6F0422907CA0005AE512 /* GlitchEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GlitchEffect.h; path = LaserEffects/GlitchEffect.h; sourceTree = "<group>"; };
-		9AFB6F0522907CA1005AE512 /* LaserEffect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = LaserEffect.hpp; path = LaserEffects/LaserEffect.hpp; sourceTree = "<group>"; };
-		9AFB6F0622907CA1005AE512 /* VoiceSpikes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoiceSpikes.h; path = LaserEffects/VoiceSpikes.h; sourceTree = "<group>"; };
-		9AFB6F0722907CA1005AE512 /* FrameEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FrameEffect.cpp; path = LaserEffects/FrameEffect.cpp; sourceTree = "<group>"; };
-		9AFB6F0822907CA1005AE512 /* VoiceWaveTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VoiceWaveTime.h; path = LaserEffects/VoiceWaveTime.h; sourceTree = "<group>"; };
-		9AFB6F0922907CA1005AE512 /* WipeEffect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = WipeEffect.hpp; path = LaserEffects/WipeEffect.hpp; sourceTree = "<group>"; };
-		9AFB6F0A22907CA1005AE512 /* EffectTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EffectTime.h; path = LaserEffects/EffectTime.h; sourceTree = "<group>"; };
-		9AFB6F0B22907CA1005AE512 /* NoEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NoEffect.cpp; path = LaserEffects/NoEffect.cpp; sourceTree = "<group>"; };
-		9AFB6F0C22907CA1005AE512 /* VoiceWave.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VoiceWave.hpp; path = LaserEffects/VoiceWave.hpp; sourceTree = "<group>"; };
-		9AFB6F0D22907CA1005AE512 /* GreenScanLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GreenScanLine.cpp; path = LaserEffects/GreenScanLine.cpp; sourceTree = "<group>"; };
-		9AFB6F0E22907CA1005AE512 /* ScanLineTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanLineTime.h; path = LaserEffects/ScanLineTime.h; sourceTree = "<group>"; };
-		9AFB6F0F22907CA1005AE512 /* LaserEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LaserEffect.cpp; path = LaserEffects/LaserEffect.cpp; sourceTree = "<group>"; };
-		9AFB6F1022907CA1005AE512 /* LaserGui.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = LaserGui.hpp; path = LaserEffects/LaserGui.hpp; sourceTree = "<group>"; };
-		9AFB6F1122907CA1005AE512 /* LaserGuiCircle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = LaserGuiCircle.hpp; path = LaserEffects/LaserGuiCircle.hpp; sourceTree = "<group>"; };
-		9AFB6F1222907CA1005AE512 /* Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Frame.h; path = LaserEffects/Frame.h; sourceTree = "<group>"; };
-		9AFB6F1322907CA1005AE512 /* MicrophoneEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MicrophoneEffect.cpp; path = LaserEffects/MicrophoneEffect.cpp; sourceTree = "<group>"; };
-		9AFB6F1422907CA1005AE512 /* FrameEffect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = FrameEffect.hpp; path = LaserEffects/FrameEffect.hpp; sourceTree = "<group>"; };
-		9AFB6F1522907CA1005AE512 /* LoadingLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingLines.h; path = LaserEffects/LoadingLines.h; sourceTree = "<group>"; };
-		9AFB6F1622907CA2005AE512 /* GreenScanLine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GreenScanLine.hpp; path = LaserEffects/GreenScanLine.hpp; sourceTree = "<group>"; };
-		9AFB6F1722907CA2005AE512 /* NodeJoinEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NodeJoinEffect.cpp; path = LaserEffects/NodeJoinEffect.cpp; sourceTree = "<group>"; };
-		9AFB6F1822907CA2005AE512 /* MicrophoneEffect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MicrophoneEffect.hpp; path = LaserEffects/MicrophoneEffect.hpp; sourceTree = "<group>"; };
-		9AFB6F1922907CA2005AE512 /* LiquidVoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LiquidVoice.h; path = LaserEffects/LiquidVoice.h; sourceTree = "<group>"; };
-		9AFB6F1A22907CA2005AE512 /* NoEffect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = NoEffect.hpp; path = LaserEffects/NoEffect.hpp; sourceTree = "<group>"; };
-		9AFB6F1B22907CA2005AE512 /* VoiceWave.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VoiceWave.cpp; path = LaserEffects/VoiceWave.cpp; sourceTree = "<group>"; };
-		9AFB6F1C22907CA2005AE512 /* Grid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Grid.h; path = LaserEffects/Grid.h; sourceTree = "<group>"; };
-		9AFB6F1D22907CA2005AE512 /* GridVanishing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GridVanishing.h; path = LaserEffects/GridVanishing.h; sourceTree = "<group>"; };
-		9AFB6F1E22907CA2005AE512 /* TerrainContours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TerrainContours.h; path = LaserEffects/TerrainContours.h; sourceTree = "<group>"; };
-		9AFB6F1F22907CA2005AE512 /* GridHorAndVer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GridHorAndVer.h; path = LaserEffects/GridHorAndVer.h; sourceTree = "<group>"; };
-		9AFB6F2022907CA2005AE512 /* MicroWaveTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MicroWaveTime.h; path = LaserEffects/MicroWaveTime.h; sourceTree = "<group>"; };
-		9AFB6F2122907CA2005AE512 /* AudioFileEffect.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = AudioFileEffect.hpp; path = LaserEffects/AudioFileEffect.hpp; sourceTree = "<group>"; };
-		9AFB6F2222907CA2005AE512 /* ConnectedGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConnectedGraph.h; path = LaserEffects/ConnectedGraph.h; sourceTree = "<group>"; };
-		9AFB6F2322907CA2005AE512 /* AudioFileEffect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AudioFileEffect.cpp; path = LaserEffects/AudioFileEffect.cpp; sourceTree = "<group>"; };
-		9AFB6F2422907CA2005AE512 /* CursorEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CursorEffect.h; path = LaserEffects/CursorEffect.h; sourceTree = "<group>"; };
-		9AFB6F2522907CA3005AE512 /* ShapeExplorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShapeExplorer.h; path = LaserEffects/ShapeExplorer.h; sourceTree = "<group>"; };
-		9AFB6F2622907CA3005AE512 /* LineHighlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineHighlight.h; path = LaserEffects/LineHighlight.h; sourceTree = "<group>"; };
-		9AFB6F3022907D7F005AE512 /* SyphonManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SyphonManager.cpp; sourceTree = "<group>"; };
-		9AFB6F3622947966005AE512 /* DualLaserEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DualLaserEffect.h; sourceTree = "<group>"; };
-		9AFB6F3722947A2C005AE512 /* DualLaserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DualLaserManager.h; sourceTree = "<group>"; };
-		9AFB6F3822947A3A005AE512 /* DualLaserManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DualLaserManager.cpp; sourceTree = "<group>"; };
+		9A8E4C0B2296D9390030D92C /* LaserLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaserLine.h; sourceTree = "<group>"; };
 		9B8F196757CB9ABD91A5F87A /* Timeline.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = Timeline.cpp; path = src/Timeline.cpp; sourceTree = SOURCE_ROOT; };
 		9BF3AA0D4FAA89D0F8A0E545 /* OscReceivedElements.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscReceivedElements.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscReceivedElements.cpp; sourceTree = SOURCE_ROOT; };
 		9C10C5DAD721456271310627 /* audiodecodercoreaudio.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = audiodecodercoreaudio.h; path = ../../../addons/ofxSoundObjects/libs/libaudiodecoder/include/audiodecodercoreaudio.h; sourceTree = SOURCE_ROOT; };
 		9D053D385D8B26721FCE4F99 /* VisualWipe.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = VisualWipe.h; path = src/VisualGenerator/VisualWipe.h; sourceTree = SOURCE_ROOT; };
+		9E13C66DEB15CEC8FCC07FFC /* SyphonManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = SyphonManager.cpp; path = src/SyphonManager.cpp; sourceTree = SOURCE_ROOT; };
+		9E63669ACAF459FD3BDC0B44 /* Wipe.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Wipe.h; path = src/LaserEffects/Wipe.h; sourceTree = SOURCE_ROOT; };
 		9F768214F9048463922BAE31 /* ofxSoundMixer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSoundMixer.cpp; path = ../../../addons/ofxSoundObjects/src/ofxSoundMixer.cpp; sourceTree = SOURCE_ROOT; };
 		9F7986DC4EB05E75FCE2C777 /* ofxOscSender.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscSender.h; path = ../../../addons/ofxOsc/src/ofxOscSender.h; sourceTree = SOURCE_ROOT; };
+		A17D7F9C810F176475357B82 /* VoiceWaveTime.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = VoiceWaveTime.h; path = src/LaserEffects/VoiceWaveTime.h; sourceTree = SOURCE_ROOT; };
+		A1D85AAE0905BF03C0486FDF /* KeystoneWarper.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = KeystoneWarper.h; path = src/KeystoneWarper.h; sourceTree = SOURCE_ROOT; };
 		A2AAA8CA403479E6FCDF920E /* OscHostEndianness.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscHostEndianness.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscHostEndianness.h; sourceTree = SOURCE_ROOT; };
 		A3AD8F94BAD3A849BA69DA14 /* ofxSoundMultiplexer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSoundMultiplexer.cpp; path = ../../../addons/ofxSoundObjects/src/ofxSoundMultiplexer.cpp; sourceTree = SOURCE_ROOT; };
+		A469D44A12D6C5297469CCB3 /* MicroWaveTime.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = MicroWaveTime.h; path = src/LaserEffects/MicroWaveTime.h; sourceTree = SOURCE_ROOT; };
 		A4EE2673D8B0F4E160BEB4DA /* sndfile.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = sndfile.h; path = ../../../addons/ofxSoundObjects/libs/libsndfile/include/include/sndfile.h; sourceTree = SOURCE_ROOT; };
+		AA43BC7A975207993718E39D /* TerrainContours.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = TerrainContours.h; path = src/LaserEffects/TerrainContours.h; sourceTree = SOURCE_ROOT; };
+		AD9FCF429434F3F085639F5A /* VoiceSpikes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = VoiceSpikes.h; path = src/LaserEffects/VoiceSpikes.h; sourceTree = SOURCE_ROOT; };
 		ADD194746185E2DA11468377 /* IpEndpointName.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = IpEndpointName.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.cpp; sourceTree = SOURCE_ROOT; };
 		AE335EB4709BFD4671EEAC84 /* MessageMappingOscPacketListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = MessageMappingOscPacketListener.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/MessageMappingOscPacketListener.h; sourceTree = SOURCE_ROOT; };
+		B1480B12C25B371B23AA79AC /* GridVanishing.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = GridVanishing.h; path = src/LaserEffects/GridVanishing.h; sourceTree = SOURCE_ROOT; };
 		B14AC0DEB6082D5B5B722764 /* CADebugMacros.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = CADebugMacros.h; path = ../../../addons/ofxSoundObjects/libs/libaudiodecoder/include/apple/CADebugMacros.h; sourceTree = SOURCE_ROOT; };
 		B21E7E5F548EEA92F368040B /* tinyxml.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = tinyxml.h; path = ../../../addons/ofxXmlSettings/libs/tinyxml.h; sourceTree = SOURCE_ROOT; };
 		B2E1EB0F30B9F14A9B7FA4D6 /* % */ = {isa = PBXFileReference; explicitFileType = file; fileEncoding = 30; name = "%"; path = "../../../addons/ofxSoundObjects/libs/libaudiodecoder/include/apple/%"; sourceTree = SOURCE_ROOT; };
 		B31C608870ECEB2490A93736 /* ofxOscParameterSync.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxOscParameterSync.h; path = ../../../addons/ofxOsc/src/ofxOscParameterSync.h; sourceTree = SOURCE_ROOT; };
 		B5F7E28947C6F07328E09C1D /* ofxSoundObjectsUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSoundObjectsUtils.h; path = ../../../addons/ofxSoundObjects/src/ofxSoundObjectsUtils.h; sourceTree = SOURCE_ROOT; };
+		B83034E045308A97D06D8751 /* LineHighlight.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = LineHighlight.h; path = src/LaserEffects/LineHighlight.h; sourceTree = SOURCE_ROOT; };
 		B87C60311EC1FE841C1ECD89 /* ofxLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxLabel.h; path = ../../../addons/ofxGui/src/ofxLabel.h; sourceTree = SOURCE_ROOT; };
 		BC8881B3C8C0A1C45F042E7A /* OscPrintReceivedElements.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscPrintReceivedElements.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscPrintReceivedElements.cpp; sourceTree = SOURCE_ROOT; };
+		BCF72AB90A09D839439FFABA /* GridHorAndVer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = GridHorAndVer.h; path = src/LaserEffects/GridHorAndVer.h; sourceTree = SOURCE_ROOT; };
 		C0CA360E2A954D03DF99AFB3 /* ofxIldaRenderTarget.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxIldaRenderTarget.h; path = ../../../addons/ofxIlda/src/ofxIldaRenderTarget.h; sourceTree = SOURCE_ROOT; };
 		C2DBFF6E0A9F7007105C9541 /* ofxSoundObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSoundObject.cpp; path = ../../../addons/ofxSoundObjects/src/ofxSoundObject.cpp; sourceTree = SOURCE_ROOT; };
 		C2FAC65C491D4231379F3298 /* ofxOscReceiver.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscReceiver.cpp; path = ../../../addons/ofxOsc/src/ofxOscReceiver.cpp; sourceTree = SOURCE_ROOT; };
@@ -243,15 +249,19 @@
 		C70D8946940288799E82131E /* ofxSliderGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSliderGroup.h; path = ../../../addons/ofxGui/src/ofxSliderGroup.h; sourceTree = SOURCE_ROOT; };
 		C88333E71C9457E441C33474 /* ofxButton.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxButton.cpp; path = ../../../addons/ofxGui/src/ofxButton.cpp; sourceTree = SOURCE_ROOT; };
 		D110A575A8CA4CF91ECCBDF7 /* OscManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscManager.cpp; path = src/OscManager.cpp; sourceTree = SOURCE_ROOT; };
+		D3A08BD65F62FA4619455874 /* GreenScanLine.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = GreenScanLine.hpp; path = src/LaserEffects/GreenScanLine.hpp; sourceTree = SOURCE_ROOT; };
 		D58DCB2C0AEFDE6171E29540 /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Syphon.framework; path = ../../../addons/ofxSyphon/libs/Syphon/lib/osx/Syphon.framework; sourceTree = "<group>"; };
 		D8382A0A6C9C7B46E4091F61 /* VisualWipe.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = VisualWipe.cpp; path = src/VisualGenerator/VisualWipe.cpp; sourceTree = SOURCE_ROOT; };
 		D9BFFBBF4CC43DEE890B3C3E /* OscTypes.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscTypes.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscTypes.cpp; sourceTree = SOURCE_ROOT; };
 		DBF555CF2E50BC6F8C44A805 /* LowPassFilter.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = LowPassFilter.h; path = ../../../addons/ofxSoundObjects/src/SoundObjects/LowPassFilter.h; sourceTree = SOURCE_ROOT; };
 		DC8BB4888D53830E1BCB1732 /* audiodecoderbase.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = audiodecoderbase.cpp; path = ../../../addons/ofxSoundObjects/libs/libaudiodecoder/src/audiodecoderbase.cpp; sourceTree = SOURCE_ROOT; };
+		DCCEFA4D51E27BCAA14C896C /* ConnectedGraph.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ConnectedGraph.h; path = src/LaserEffects/ConnectedGraph.h; sourceTree = SOURCE_ROOT; };
 		DF49D76C45D5DB505A234880 /* ofxOscMessage.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscMessage.cpp; path = ../../../addons/ofxOsc/src/ofxOscMessage.cpp; sourceTree = SOURCE_ROOT; };
 		E112B3AEBEA2C091BF2B40AE /* ofxPanel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxPanel.cpp; path = ../../../addons/ofxGui/src/ofxPanel.cpp; sourceTree = SOURCE_ROOT; };
+		E18D6AE24CE52C888FFBCED1 /* NodeJoinEffect.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = NodeJoinEffect.hpp; path = src/LaserEffects/NodeJoinEffect.hpp; sourceTree = SOURCE_ROOT; };
 		E3405C5AE387BDDC2AD19473 /* SyphonNameboundClient.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 30; name = SyphonNameboundClient.m; path = ../../../addons/ofxSyphon/libs/Syphon/src/SyphonNameboundClient.m; sourceTree = SOURCE_ROOT; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
+		E46C9D5BBB2F16EC634AC04E /* NoEffect.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = NoEffect.hpp; path = src/LaserEffects/NoEffect.hpp; sourceTree = SOURCE_ROOT; };
 		E472D66E13960563DF74BB41 /* etherdream.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = etherdream.c; path = ../../../addons/ofxEtherdream/libs/driver/libetherdream/etherdream.c; sourceTree = SOURCE_ROOT; };
 		E4B69B5B0A3A1756003C02F2 /* MarijaSonicActsDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarijaSonicActsDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
@@ -264,10 +274,15 @@
 		E723BEF4C55D236E24639608 /* ofxSyphonServerDirectory.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 30; name = ofxSyphonServerDirectory.mm; path = ../../../addons/ofxSyphon/src/ofxSyphonServerDirectory.mm; sourceTree = SOURCE_ROOT; };
 		EB0153789FDCEF9B5303141A /* ofxSoundObjects.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSoundObjects.h; path = ../../../addons/ofxSoundObjects/src/ofxSoundObjects.h; sourceTree = SOURCE_ROOT; };
 		ECF8674C7975F1063C5E30CA /* ofxGuiGroup.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxGuiGroup.cpp; path = ../../../addons/ofxGui/src/ofxGuiGroup.cpp; sourceTree = SOURCE_ROOT; };
+		EF847E698D652AE71C45B0D1 /* ScanLineTime.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ScanLineTime.h; path = src/LaserEffects/ScanLineTime.h; sourceTree = SOURCE_ROOT; };
+		F2B099E6BD1199664C48B177 /* ofxJSONElement.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxJSONElement.cpp; path = ../../../addons/ofxJSON/src/ofxJSONElement.cpp; sourceTree = SOURCE_ROOT; };
+		F322299472CC1735F0A727BB /* LoadingCircle.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = LoadingCircle.h; path = src/LaserEffects/LoadingCircle.h; sourceTree = SOURCE_ROOT; };
 		F4F5B6B8BA2BD52C646ED908 /* OscException.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscException.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscException.h; sourceTree = SOURCE_ROOT; };
 		F7FBC56859535E597B24BB91 /* NetworkingUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = NetworkingUtils.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/NetworkingUtils.h; sourceTree = SOURCE_ROOT; };
 		F88ABDE7EA40FF80BEB35DCC /* ofxSoundObjectsUtils.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxSoundObjectsUtils.cpp; path = ../../../addons/ofxSoundObjects/src/ofxSoundObjectsUtils.cpp; sourceTree = SOURCE_ROOT; };
 		F89EFB6AE4B769205D3C641A /* LaserManager.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = LaserManager.cpp; path = src/LaserManager.cpp; sourceTree = SOURCE_ROOT; };
+		FA0760BA25D8DB25347840B8 /* NoEffect.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = NoEffect.cpp; path = src/LaserEffects/NoEffect.cpp; sourceTree = SOURCE_ROOT; };
+		FAFA3DCAF896CBFA0B162C58 /* DualLaserGrid.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = DualLaserGrid.h; path = src/DualLaserGrid.h; sourceTree = SOURCE_ROOT; };
 		FC5DA1C87211D4F6377DA719 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = tinyxmlparser.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxmlparser.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -338,6 +353,25 @@
 				65F3085962B3A8825746C3C2 /* Syphon */,
 			);
 			name = libs;
+			sourceTree = "<group>";
+		};
+		2865DAEF86B1907A704CA70B /* ofxJSON */ = {
+			isa = PBXGroup;
+			children = (
+				292AF6148769654D0DF26018 /* src */,
+				F40E80CB2D443CBA9581DD03 /* libs */,
+			);
+			name = ofxJSON;
+			sourceTree = "<group>";
+		};
+		292AF6148769654D0DF26018 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				F2B099E6BD1199664C48B177 /* ofxJSONElement.cpp */,
+				1645F56257269CD0356320BD /* ofxJSON.h */,
+				26A541233BC6F736E758F718 /* ofxJSONElement.h */,
+			);
+			name = src;
 			sourceTree = "<group>";
 		};
 		30CB364908817057B430D528 /* osc */ = {
@@ -432,6 +466,15 @@
 			name = src;
 			sourceTree = "<group>";
 		};
+		58AD3BD71B781D9BC25763C8 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				61313493CDB52744E22A604D /* json-forwards.h */,
+				2C7CF000B7B4F782C187C353 /* json.h */,
+			);
+			name = json;
+			sourceTree = "<group>";
+		};
 		641362CA659FAFEE4E81001B /* posix */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,6 +521,55 @@
 				2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */,
 			);
 			name = libs;
+			sourceTree = "<group>";
+		};
+		6EBBA9C283F3682843662892 /* LaserEffects */ = {
+			isa = PBXGroup;
+			children = (
+				5A1469496881119FD1AC2F63 /* LaserGuiCircle.hpp */,
+				69E16FFD6CA71D0B08C256DF /* LiquidVoice.h */,
+				0C0A5273460A97182CC4A0E5 /* NodeJoin.h */,
+				595471E4345E2434702EE974 /* ShapeExplorer.h */,
+				51C9AF05C9571B4479134D41 /* MicrophoneEffect.hpp */,
+				261D28287D6FFFD97851451B /* VoiceWave.cpp */,
+				D3A08BD65F62FA4619455874 /* GreenScanLine.hpp */,
+				BCF72AB90A09D839439FFABA /* GridHorAndVer.h */,
+				0C96437055DF36871F868FE1 /* NodeJoinEffect.cpp */,
+				46C829259DE9713AA1387B0F /* LaserGui.hpp */,
+				4484078095DFB0860FDE142F /* LaserGui2.h */,
+				DCCEFA4D51E27BCAA14C896C /* ConnectedGraph.h */,
+				B1480B12C25B371B23AA79AC /* GridVanishing.h */,
+				F322299472CC1735F0A727BB /* LoadingCircle.h */,
+				4393C9620C7131F1755FA3DB /* Frame.h */,
+				8A56732C054C485378A61362 /* MorphShape.h */,
+				719859856B3BAB2F4913C803 /* WipeEffect.cpp */,
+				E46C9D5BBB2F16EC634AC04E /* NoEffect.hpp */,
+				9210E1382A1DEED7286B234C /* LaserEffect.hpp */,
+				A17D7F9C810F176475357B82 /* VoiceWaveTime.h */,
+				A469D44A12D6C5297469CCB3 /* MicroWaveTime.h */,
+				486D45B473F8E768D082514F /* FrameEffect.hpp */,
+				6DE68F556D777177EEF35263 /* Grid.h */,
+				460596CBF09EC16B55EAAB0E /* AudioFileEffect.cpp */,
+				B83034E045308A97D06D8751 /* LineHighlight.h */,
+				5BDC50FD38D839301C5B807B /* LoadingBar.h */,
+				2F96E7B188787E3ACE20873B /* WipeEffect.hpp */,
+				FA0760BA25D8DB25347840B8 /* NoEffect.cpp */,
+				11F55DBEC00829B07A9FE9C6 /* LaserEffect.cpp */,
+				4D17A14620172A79E6A3BDB9 /* CursorEffect.h */,
+				679A9F647FD4C18526937A24 /* LoadingLines.h */,
+				570C0A54C0BA24103BFB29D5 /* FrameEffect.cpp */,
+				AD9FCF429434F3F085639F5A /* VoiceSpikes.h */,
+				59650B4AE47797D78BDD001B /* GlitchEffect.h */,
+				07310A554019E4D15BE9B755 /* AudioFileEffect.hpp */,
+				EF847E698D652AE71C45B0D1 /* ScanLineTime.h */,
+				9E63669ACAF459FD3BDC0B44 /* Wipe.h */,
+				AA43BC7A975207993718E39D /* TerrainContours.h */,
+				10F3A51CA34D6544DB26F094 /* MicrophoneEffect.cpp */,
+				7334676F223096F129E530ED /* GreenScanLine.cpp */,
+				51E7ADFFB837CFD3AD3B33ED /* VoiceWave.hpp */,
+				E18D6AE24CE52C888FFBCED1 /* NodeJoinEffect.hpp */,
+			);
+			name = LaserEffects;
 			sourceTree = "<group>";
 		};
 		6ECEF0D76BC33727823EADFF /* src */ = {
@@ -561,62 +653,31 @@
 			name = include;
 			sourceTree = "<group>";
 		};
-		9A66902022907AB200EE4BAF /* Recovered References */ = {
+		977A836DD2C489CCC5E330FF /* jsoncpp */ = {
+			isa = PBXGroup;
+			children = (
+				D486FC87F063317BB47E9FAC /* include */,
+				CCDC6F9CCF925CC402160B85 /* src */,
+			);
+			name = jsoncpp;
+			sourceTree = "<group>";
+		};
+		9A8E4C0C2297044C0030D92C /* DualLaserEffects */ = {
+			isa = PBXGroup;
+			children = (
+				0A9DBAC2B83C1645FA25BE7E /* DualLaserEffect.h */,
+				FAFA3DCAF896CBFA0B162C58 /* DualLaserGrid.h */,
+				6676296F87FC5CF9EE967E00 /* DualLaserGrid.cpp */,
+			);
+			name = DualLaserEffects;
+			sourceTree = "<group>";
+		};
+		9AE25D122295949200D477F1 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
 				B2E1EB0F30B9F14A9B7FA4D6 /* % */,
 			);
 			name = "Recovered References";
-			sourceTree = "<group>";
-		};
-		9AFB6EFB22907C98005AE512 /* LaserEffects */ = {
-			isa = PBXGroup;
-			children = (
-				9AFB6F2322907CA2005AE512 /* AudioFileEffect.cpp */,
-				9AFB6F2122907CA2005AE512 /* AudioFileEffect.hpp */,
-				9AFB6F2222907CA2005AE512 /* ConnectedGraph.h */,
-				9AFB6F2422907CA2005AE512 /* CursorEffect.h */,
-				9AFB6F0A22907CA1005AE512 /* EffectTime.h */,
-				9AFB6F1222907CA1005AE512 /* Frame.h */,
-				9AFB6F0722907CA1005AE512 /* FrameEffect.cpp */,
-				9AFB6F1422907CA1005AE512 /* FrameEffect.hpp */,
-				9AFB6F0422907CA0005AE512 /* GlitchEffect.h */,
-				9AFB6F0D22907CA1005AE512 /* GreenScanLine.cpp */,
-				9AFB6F1622907CA2005AE512 /* GreenScanLine.hpp */,
-				9AFB6F1C22907CA2005AE512 /* Grid.h */,
-				9AFB6F1F22907CA2005AE512 /* GridHorAndVer.h */,
-				9AFB6F1D22907CA2005AE512 /* GridVanishing.h */,
-				9AFB6F0F22907CA1005AE512 /* LaserEffect.cpp */,
-				9AFB6F0522907CA1005AE512 /* LaserEffect.hpp */,
-				9AFB6F1022907CA1005AE512 /* LaserGui.hpp */,
-				9AFB6EFF22907CA0005AE512 /* LaserGui2.h */,
-				9AFB6F1122907CA1005AE512 /* LaserGuiCircle.hpp */,
-				9AFB6F2622907CA3005AE512 /* LineHighlight.h */,
-				9AFB6F1922907CA2005AE512 /* LiquidVoice.h */,
-				9AFB6EFC22907CA0005AE512 /* LoadingBar.h */,
-				9AFB6EFE22907CA0005AE512 /* LoadingCircle.h */,
-				9AFB6F1522907CA1005AE512 /* LoadingLines.h */,
-				9AFB6F1322907CA1005AE512 /* MicrophoneEffect.cpp */,
-				9AFB6F1822907CA2005AE512 /* MicrophoneEffect.hpp */,
-				9AFB6F2022907CA2005AE512 /* MicroWaveTime.h */,
-				9AFB6F0022907CA0005AE512 /* MorphShape.h */,
-				9AFB6EFD22907CA0005AE512 /* NodeJoin.h */,
-				9AFB6F1722907CA2005AE512 /* NodeJoinEffect.cpp */,
-				9AFB6F0122907CA0005AE512 /* NodeJoinEffect.hpp */,
-				9AFB6F0B22907CA1005AE512 /* NoEffect.cpp */,
-				9AFB6F1A22907CA2005AE512 /* NoEffect.hpp */,
-				9AFB6F0E22907CA1005AE512 /* ScanLineTime.h */,
-				9AFB6F2522907CA3005AE512 /* ShapeExplorer.h */,
-				9AFB6F1E22907CA2005AE512 /* TerrainContours.h */,
-				9AFB6F0622907CA1005AE512 /* VoiceSpikes.h */,
-				9AFB6F1B22907CA2005AE512 /* VoiceWave.cpp */,
-				9AFB6F0C22907CA1005AE512 /* VoiceWave.hpp */,
-				9AFB6F0822907CA1005AE512 /* VoiceWaveTime.h */,
-				9AFB6F0222907CA0005AE512 /* Wipe.h */,
-				9AFB6F0322907CA0005AE512 /* WipeEffect.cpp */,
-				9AFB6F0922907CA1005AE512 /* WipeEffect.hpp */,
-			);
-			name = LaserEffects;
 			sourceTree = "<group>";
 		};
 		A763ED608B35AE3310251DEE /* src */ = {
@@ -666,6 +727,7 @@
 				0D22F8A7486446F7D3418EBF /* ofxEtherdream */,
 				480A780D8D0308AE4A368801 /* ofxGui */,
 				8147F44D8E1384EFC607CC71 /* ofxIlda */,
+				2865DAEF86B1907A704CA70B /* ofxJSON */,
 				E6053AB7FEC63D5F83825B88 /* ofxOsc */,
 				41B26342D97D99EEEB93B344 /* ofxSoundObjects */,
 				7F3C04577424427D348B1425 /* ofxSyphon */,
@@ -701,6 +763,14 @@
 			name = driver;
 			sourceTree = "<group>";
 		};
+		CCDC6F9CCF925CC402160B85 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				21BDE665988474F1B1F4D302 /* jsoncpp.cpp */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
 		D27B2221A225CA523C019676 /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -708,6 +778,14 @@
 				FF8CDF57858E9B94E3237115 /* ip */,
 			);
 			name = src;
+			sourceTree = "<group>";
+		};
+		D486FC87F063317BB47E9FAC /* include */ = {
+			isa = PBXGroup;
+			children = (
+				58AD3BD71B781D9BC25763C8 /* json */,
+			);
+			name = include;
 			sourceTree = "<group>";
 		};
 		DFFC7CFC295FB1816D40F88E /* src */ = {
@@ -737,30 +815,34 @@
 				BB4B014C10F69532006C3DED /* addons */,
 				6948EE371B920CB800B5AC1A /* local_addons */,
 				E4B69B5B0A3A1756003C02F2 /* MarijaSonicActsDebug.app */,
-				9A66902022907AB200EE4BAF /* Recovered References */,
+				9AE25D122295949200D477F1 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				9AFB6F3722947A2C005AE512 /* DualLaserManager.h */,
-				9AFB6F3822947A3A005AE512 /* DualLaserManager.cpp */,
-				9AFB6F3622947966005AE512 /* DualLaserEffect.h */,
-				9AFB6EFB22907C98005AE512 /* LaserEffects */,
+				9A8E4C0C2297044C0030D92C /* DualLaserEffects */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
 				22A1DBFA03997EABFB8709CF /* OscManager.hpp */,
+				24084214C03E62041DF5CD65 /* EffectTime.h */,
+				90EB7257E0523AFDA861EB1D /* DualLaserManager.cpp */,
+				4D155FB05C42045CD9B0E4F1 /* DualLaserManager.h */,
+				9E13C66DEB15CEC8FCC07FFC /* SyphonManager.cpp */,
 				F89EFB6AE4B769205D3C641A /* LaserManager.cpp */,
+				A1D85AAE0905BF03C0486FDF /* KeystoneWarper.h */,
+				4179C0C4642985C3B098260E /* KeystoneWarper.cpp */,
 				9B8F196757CB9ABD91A5F87A /* Timeline.cpp */,
 				834AD81F9DA182ED04268588 /* VisualGenerator */,
+				6EBBA9C283F3682843662892 /* LaserEffects */,
 				5E58FB869D1E4A5628BDDB4F /* Timeline.hpp */,
 				D110A575A8CA4CF91ECCBDF7 /* OscManager.cpp */,
 				8DBA83218A516984291067D1 /* SyphonManager.h */,
-				9AFB6F3022907D7F005AE512 /* SyphonManager.cpp */,
 				30DCC93B735A036EF265E101 /* DEFINITIONS.h */,
 				06FFBD5EEB0697F8724A8DD1 /* LaserManager.hpp */,
+				9A8E4C0B2296D9390030D92C /* LaserLine.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -799,6 +881,14 @@
 				DFFC7CFC295FB1816D40F88E /* src */,
 			);
 			name = libaudiodecoder;
+			sourceTree = "<group>";
+		};
+		F40E80CB2D443CBA9581DD03 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				977A836DD2C489CCC5E330FF /* jsoncpp */,
+			);
+			name = libs;
 			sourceTree = "<group>";
 		};
 		F42C9F215CDA39097280C5D9 /* common */ = {
@@ -924,16 +1014,25 @@
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
-				9AFB6F2A22907CA3005AE512 /* GreenScanLine.cpp in Sources */,
+				08EF0231AD8A15BD002A68B4 /* DualLaserManager.cpp in Sources */,
+				153CC0AED6870061C578FD5F /* DualLaserGrid.cpp in Sources */,
+				422507DBF4FE2A2197364DEA /* SyphonManager.cpp in Sources */,
 				FB8B04BAF4F0B6676B3B2E67 /* LaserManager.cpp in Sources */,
+				56100385BAC2A3D8ABA304FE /* KeystoneWarper.cpp in Sources */,
 				DE762D814B7CCA3791FEE510 /* Timeline.cpp in Sources */,
 				BF0439F3AB70F86B9B264FC4 /* VisualWipe.cpp in Sources */,
+				776E00BD51A4D4ACEB62B4A7 /* VoiceWave.cpp in Sources */,
+				CF65DCFF0D4DB2242B494395 /* NodeJoinEffect.cpp in Sources */,
+				AAD2D6D8A31353B5D4218B38 /* WipeEffect.cpp in Sources */,
+				6A68CD22FB8C3DCEC673984A /* AudioFileEffect.cpp in Sources */,
+				446AC9835A9F52B70320E6C2 /* NoEffect.cpp in Sources */,
+				B6CCB525EC86EDBB7EDC128F /* LaserEffect.cpp in Sources */,
+				4D2726E8409267A764CB395D /* FrameEffect.cpp in Sources */,
+				940190F44CA4C4004752DF5B /* MicrophoneEffect.cpp in Sources */,
+				5380354EC9286E169E117B2C /* GreenScanLine.cpp in Sources */,
 				CCAF7622973DABAB7ACE8634 /* OscManager.cpp in Sources */,
 				AE4927F8533E9F44EF99F6C7 /* ofxEtherdream.cpp in Sources */,
 				24B475D09D396FD37823F959 /* test.c in Sources */,
-				9AFB6F2E22907CA3005AE512 /* VoiceWave.cpp in Sources */,
-				9AFB6F2B22907CA3005AE512 /* LaserEffect.cpp in Sources */,
-				9AFB6F2822907CA3005AE512 /* FrameEffect.cpp in Sources */,
 				87C50BA2BBD5B23272DAA6D5 /* etherdream.c in Sources */,
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
@@ -943,6 +1042,8 @@
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
+				BEDFEE7400C58EA4E412B757 /* ofxJSONElement.cpp in Sources */,
+				FB84AAF8D1B7A95266DB5C09 /* jsoncpp.cpp in Sources */,
 				4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */,
 				5864AD82E20F15536D054EA3 /* ofxOscMessage.cpp in Sources */,
 				72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */,
@@ -950,15 +1051,11 @@
 				8F5205AEF8861EF234F0651A /* ofxOscSender.cpp in Sources */,
 				62545D179C94265CA1389D4A /* OscOutboundPacketStream.cpp in Sources */,
 				879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */,
-				9AFB6F2722907CA3005AE512 /* WipeEffect.cpp in Sources */,
 				0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */,
-				9AFB6F3122907D7F005AE512 /* SyphonManager.cpp in Sources */,
 				C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */,
 				67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */,
 				510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */,
 				ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */,
-				9AFB6F3922947A3A005AE512 /* DualLaserManager.cpp in Sources */,
-				9AFB6F2922907CA3005AE512 /* NoEffect.cpp in Sources */,
 				7CAF1A5AEF6F06B39340FF34 /* ofxSoundPlayerObject.cpp in Sources */,
 				26A94B3736756ADEB2293EDD /* ofxSoundMultiplexer.cpp in Sources */,
 				7840F332D7330DAAD11D2250 /* ofxSoundMixer.cpp in Sources */,
@@ -967,14 +1064,11 @@
 				878C0EFF16E187226B0148FA /* ofxSoundObject.cpp in Sources */,
 				3BB5196CADF7BC9A7777C5D9 /* audiodecoderbase.cpp in Sources */,
 				BE536BA5791C07A98B8365B0 /* audiodecodercoreaudio.cpp in Sources */,
-				9AFB6F2C22907CA3005AE512 /* MicrophoneEffect.cpp in Sources */,
 				A7936996C1DBDACFDC89B3A1 /* % in Sources */,
 				8D60C222CBD3F869382832E9 /* ofxSyphonServer.mm in Sources */,
-				9AFB6F2F22907CA3005AE512 /* AudioFileEffect.cpp in Sources */,
 				1F558B76FB3412843DDAA031 /* ofxSyphonClient.mm in Sources */,
 				11DF9AB1B4EAA63E3B190CA0 /* ofxSyphonServerDirectory.mm in Sources */,
 				C9109422648B170B07A778CF /* SyphonNameboundClient.m in Sources */,
-				9AFB6F2D22907CA3005AE512 /* NodeJoinEffect.cpp in Sources */,
 				63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */,
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,
 				9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */,
@@ -1015,6 +1109,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
 					src,
+					src/LaserEffects,
 					src/VisualGenerator,
 					../../../addons/ofxEtherdream/libs,
 					../../../addons/ofxEtherdream/libs/common,
@@ -1023,6 +1118,12 @@
 					../../../addons/ofxEtherdream/src,
 					../../../addons/ofxGui/src,
 					../../../addons/ofxIlda/src,
+					../../../addons/ofxJSON/libs,
+					../../../addons/ofxJSON/libs/jsoncpp,
+					../../../addons/ofxJSON/libs/jsoncpp/include,
+					../../../addons/ofxJSON/libs/jsoncpp/include/json,
+					../../../addons/ofxJSON/libs/jsoncpp/src,
+					../../../addons/ofxJSON/src,
 					../../../addons/ofxOsc/libs,
 					../../../addons/ofxOsc/libs/oscpack,
 					../../../addons/ofxOsc/libs/oscpack/src,
@@ -1089,6 +1190,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
 					src,
+					src/LaserEffects,
 					src/VisualGenerator,
 					../../../addons/ofxEtherdream/libs,
 					../../../addons/ofxEtherdream/libs/common,
@@ -1097,6 +1199,12 @@
 					../../../addons/ofxEtherdream/src,
 					../../../addons/ofxGui/src,
 					../../../addons/ofxIlda/src,
+					../../../addons/ofxJSON/libs,
+					../../../addons/ofxJSON/libs/jsoncpp,
+					../../../addons/ofxJSON/libs/jsoncpp/include,
+					../../../addons/ofxJSON/libs/jsoncpp/include/json,
+					../../../addons/ofxJSON/libs/jsoncpp/src,
+					../../../addons/ofxJSON/src,
 					../../../addons/ofxOsc/libs,
 					../../../addons/ofxOsc/libs/oscpack,
 					../../../addons/ofxOsc/libs/oscpack/src,
@@ -1157,6 +1265,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
 					src,
+					src/LaserEffects,
 					src/VisualGenerator,
 					../../../addons/ofxEtherdream/libs,
 					../../../addons/ofxEtherdream/libs/common,
@@ -1165,6 +1274,12 @@
 					../../../addons/ofxEtherdream/src,
 					../../../addons/ofxGui/src,
 					../../../addons/ofxIlda/src,
+					../../../addons/ofxJSON/libs,
+					../../../addons/ofxJSON/libs/jsoncpp,
+					../../../addons/ofxJSON/libs/jsoncpp/include,
+					../../../addons/ofxJSON/libs/jsoncpp/include/json,
+					../../../addons/ofxJSON/libs/jsoncpp/src,
+					../../../addons/ofxJSON/src,
 					../../../addons/ofxOsc/libs,
 					../../../addons/ofxOsc/libs/oscpack,
 					../../../addons/ofxOsc/libs/oscpack/src,
@@ -1225,6 +1340,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
 					src,
+					src/LaserEffects,
 					src/VisualGenerator,
 					../../../addons/ofxEtherdream/libs,
 					../../../addons/ofxEtherdream/libs/common,
@@ -1233,6 +1349,12 @@
 					../../../addons/ofxEtherdream/src,
 					../../../addons/ofxGui/src,
 					../../../addons/ofxIlda/src,
+					../../../addons/ofxJSON/libs,
+					../../../addons/ofxJSON/libs/jsoncpp,
+					../../../addons/ofxJSON/libs/jsoncpp/include,
+					../../../addons/ofxJSON/libs/jsoncpp/include/json,
+					../../../addons/ofxJSON/libs/jsoncpp/src,
+					../../../addons/ofxJSON/src,
 					../../../addons/ofxOsc/libs,
 					../../../addons/ofxOsc/libs/oscpack,
 					../../../addons/ofxOsc/libs/oscpack/src,

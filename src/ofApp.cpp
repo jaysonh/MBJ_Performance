@@ -11,18 +11,28 @@ void ofApp::setup()
     gui.setup();
     gui.add(microphoneDamp.setup("microphoneDamp", 0.95, 0, 1));
     gui.add(microphoneMult.setup("microphoneMult", 5.0, 0, 20.0));
+   
+    testPatternLeftBtn.addListener(  &dualLaserManager,
+                                     &DualLaserManager::testPatternLeftToggle);
+    laserResetLeftBtn.addListener(   &dualLaserManager,
+                                     &DualLaserManager::resetLeft);
+    testPatternRightBtn.addListener( &dualLaserManager,
+                                     &DualLaserManager::testPatternRightToggle);
+    laserResetRightBtn.addListener(  &dualLaserManager,
+                                     &DualLaserManager::resetRight);
     
     
-    testPatternBtn.addListener(this, &ofApp::testPatternBtnPressed);
-    laserResetBtn.addListener(this, &ofApp::laserResetBtnPressed);
     blankLaserBtn.addListener(this, &ofApp::blankLaserBtnPressed);
     startPerformanceBtn.addListener(&oscManager, &OscManager::startPerformance);
     startFromSelectedBtn.addListener(&oscManager,&OscManager::startPerformanceFrom);
     revertStartBtn.addListener(&oscManager, &OscManager::revertSavedStartTime);
     clearOffsetBtn.addListener(&timeline, &Timeline::clearOffset);
     
-    gui.add(testPatternBtn.setup("test pattern"));
-    gui.add(laserResetBtn.setup("reset laser"));
+    gui.add(testPatternLeftBtn.setup("Left test pattern"));
+    gui.add(laserResetLeftBtn.setup("Left reset laser"));
+    gui.add(testPatternRightBtn.setup("Right test pattern"));
+    gui.add(laserResetRightBtn.setup("Right reset laser"));
+    
     gui.add(startPerformanceBtn.setup("start performance"));
     gui.add(noEffectBtn.setup("blank"));
     //gui.add(timeSourceAbleton.setup("TimeSourceAbleton"));
@@ -64,7 +74,8 @@ void ofApp::setup()
     ofSetFrameRate(60);
     oscManager.init();
     
-    laserManager.init();
+    dualLaserManager.init();
+    //laserManager.init();
 }
 
 void ofApp::timeSourceSelectionPressed()
@@ -85,36 +96,37 @@ void ofApp::timeSourceStartPressed()
 
 void ofApp::resetKeystone()
 {
-    laserManager.resetKeystone();
+    
+    //laserManager.resetKeystone();
 }
 
 void ofApp::saveKeystone()
 {
-    laserManager.saveKeystone();
+    //laserManager.saveKeystone();
 }
 
 void ofApp::loadKeystone()
 {
-    laserManager.loadKeystone();
+    //laserManager.loadKeystone();
 }
 
 
 void ofApp::laserResetBtnPressed()
 {
-    laserManager.reset();
+    //laserManager.reset();
     
 }
 
 void ofApp::blankLaserBtnPressed()
 {
     
-    laserManager.blank();
+    //laserManager.blank();
     
 }
 
 void ofApp::testPatternBtnPressed()
 {
-    laserManager.toggleTestPattern();
+   // laserManager.toggleTestPattern();
 }
 
 //--------------------------------------------------------------
@@ -129,7 +141,7 @@ void ofApp::update()
                      oscManager.getTotalOffset()
                     );
     
-    laserManager.update( oscManager.getTime());
+    //laserManager.update( oscManager.getTime());
     
     int w = ofGetWidth();
     int h = ofGetHeight();
@@ -144,16 +156,17 @@ void ofApp::draw(){
     glClearColor(0.0, 0.0, 0.0, 0.0);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-    ofPushMatrix();
+    /*ofPushMatrix();
     syphonManager.update();
     syphonManager.draw();
     ofPopMatrix();
-    
-    /*laserManager.draw( &font, oscManager.getTime() );
+    */
+    //laserManager.draw( &font, oscManager.getTime() );
+    dualLaserManager.draw( );
     timeline.draw( &font, &fontBig );
     
     gui.draw();
-    guiKeystone.draw();*/
+    guiKeystone.draw();
     
 }
 
@@ -174,17 +187,17 @@ void ofApp::mouseMoved(int x, int y ){
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
-    laserManager.mouseDragged(ofVec2f(x,y) );
+    //laserManager.mouseDragged(ofVec2f(x,y) );
 }
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-    laserManager.mousePressed(ofVec2f(x,y) );
+    //laserManager.mousePressed(ofVec2f(x,y) );
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-    laserManager.mousePressed( ofVec2f(x,y) );
+    //laserManager.mousePressed( ofVec2f(x,y) );
 }
 
 //--------------------------------------------------------------
@@ -214,7 +227,7 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 
 void ofApp::audioIn(float * input, int bufferSize, int nChannels)
 {
-    laserManager.sendAudio(input,bufferSize, microphoneDamp, microphoneMult,  oscManager.getTime());
+    //laserManager.sendAudio(input,bufferSize, microphoneDamp, microphoneMult,  oscManager.getTime());
     //LaserEffect * laserEffect = laserManager.getCurrEffect();
     //laserEffect->sendAudio(input,bufferSize, microphoneDamp, microphoneMult);
 }

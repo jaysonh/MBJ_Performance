@@ -1,6 +1,7 @@
 ofxEtherdream
 ofxGui
 ofxIlda
+ofxJSON
 ofxOsc
 ofxSoundObjects
 ofxSyphon
