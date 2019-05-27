@@ -1,3 +1,4 @@
+ofxDmx
 ofxEtherdream
 ofxGui
 ofxIlda

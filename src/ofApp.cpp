@@ -29,8 +29,9 @@ void ofApp::setup()
     clearOffsetBtn.addListener(&timeline, &Timeline::clearOffset);
     
     gui.add(testPatternLeftBtn.setup("Left test pattern"));
-    gui.add(laserResetLeftBtn.setup("Left reset laser"));
     gui.add(testPatternRightBtn.setup("Right test pattern"));
+    
+    gui.add(laserResetLeftBtn.setup("Left reset laser"));
     gui.add(laserResetRightBtn.setup("Right reset laser"));
     
     gui.add(startPerformanceBtn.setup("start performance"));
@@ -76,6 +77,8 @@ void ofApp::setup()
     
     dualLaserManager.init();
     //laserManager.init();
+    
+    soundStream.setup(this, 0, 2, 44100, 256, 4);
 }
 
 void ofApp::timeSourceSelectionPressed()
@@ -140,7 +143,7 @@ void ofApp::update()
                      oscManager.getTime(),
                      oscManager.getTotalOffset()
                     );
-    
+    dualLaserManager.update(oscManager.getTime(), curVol);
     //laserManager.update( oscManager.getTime());
     
     int w = ofGetWidth();
@@ -227,7 +230,20 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 
 void ofApp::audioIn(float * input, int bufferSize, int nChannels)
 {
-    //laserManager.sendAudio(input,bufferSize, microphoneDamp, microphoneMult,  oscManager.getTime());
-    //LaserEffect * laserEffect = laserManager.getCurrEffect();
-    //laserEffect->sendAudio(input,bufferSize, microphoneDamp, microphoneMult);
+    int numCounted = 0;
+    curVol=0;
+    
+    for (int i = 0; i < bufferSize; i++)
+    {
+        curVol += abs(input[i*2]*0.5); //left
+        numCounted++;
+    }
+    
+    curVol /= (float)numCounted;
+    curVol = sqrt( curVol );
+    //smoothedVol *= 0.93;
+    //smoothedVol += 0.07 * curVol;
+    
+    
+    
 }

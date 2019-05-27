@@ -10,21 +10,24 @@
 
 #include "ofxEtherDream.h"
 #include "EffectTime.h"
+#include "LaserLine.h"
 
 class DualLaserEffect
 {
 public:
     
-    ofxIlda::Frame getFrameLeft()  { return frameLeft;  }
-    ofxIlda::Frame getFrameRight() { return frameRight; }
+    vector <LaserLine> getFrameLeft()  { return frameLeft;  }
+    vector <LaserLine> getFrameRight() { return frameRight; }
+    vector <LaserLine> getFrameCentre() { return frameCentre; }
     
     bool isDisplay( float timelinePos ) { return time.isStart( timelinePos ); }
     
-    virtual void update( float timelinePos ) = 0;
+    virtual void update( float timelinePos, float audioLevel ) = 0;
 protected:
     
-    ofxIlda::Frame frameLeft;
-    ofxIlda::Frame frameRight;
+    vector<LaserLine> frameLeft;
+    vector<LaserLine> frameRight;
+    vector<LaserLine> frameCentre;
     
     EffectTime time;
     

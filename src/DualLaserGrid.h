@@ -16,7 +16,7 @@ public:
     
     DualLaserGrid( EffectTime time );
     
-    void update( float timelinePos );
+    void update( float timelinePos, float audioLevel );
     
 private:
     

@@ -8,6 +8,7 @@
 #include "DEFINITIONS.h"
 #include "SyphonManager.h"
 #include "DualLaserManager.h"
+#include "DMXHandler.h"
 
 #define WINDOW_WIDTH 1280
 #define WINDOW_HEIGHT 640
@@ -82,9 +83,12 @@ class ofApp : public ofBaseApp{
         ofxButton      skipForwardBtn;
     
     
-        ofxIntSlider      startTimeMinSlider;
-        ofxIntSlider      startTimeSecSlider;
+        ofxIntSlider  startTimeMinSlider;
+        ofxIntSlider  startTimeSecSlider;
         ofSoundStream soundStream;
     
         OscManager      oscManager;
+        DMXHandler      dmxHandler;
+    
+        float curVol = 0.0;
 };

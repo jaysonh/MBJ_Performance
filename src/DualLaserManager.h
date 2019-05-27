@@ -11,6 +11,8 @@
 #include "ofMain.h"
 #include "DualLaserEffect.h"
 #include "DualLaserGrid.h"
+#include "DualLaserCross.h"
+#include "DualLaserTunnel.h"
 #include "ofxEtherDream.h"
 #include "KeystoneWarper.h"
 
@@ -22,11 +24,15 @@ public:
     
     void init();
     void draw();
-    void update( float timelinePos );
+    void update( float timelinePos, float audioLevel );
+    
     void resetLeft();
     void resetRight();
+    void resetCentre();
+    
     void testPatternLeftToggle();
     void testPatternRightToggle();
+    void testPatternCentreToggle();
     
     void loadKeystoneLeft();
     void loadKeystoneRight();
@@ -34,7 +40,7 @@ public:
 private:
     
     void setupTimeline();
-    void initLaser(ofxEtherdream * laser);
+    void initLaser( int laserIndx );
     void loadTestPattern( ofxIlda::Frame * frame, string keystoneFile );
     void resetKeystone(   ofxIlda::Frame * frame );
 
@@ -45,22 +51,28 @@ private:
     KeystoneWarper keystoneLeft;
     KeystoneWarper keystoneRight;
     
-    ofxEtherdream laser[2];
+    static const int NUM_LASERS = 3;
+    
+    ofxEtherdream laser[ NUM_LASERS ];
     
     int leftIndx  = -1;
     int rightIndx = -1;
+    int centreIndx = -1;
     
     const long LEFT_ID  = 23234234;
     const long RIGHT_ID = 21231232;
     
     ofxIlda::Frame frameLeft;
     ofxIlda::Frame frameRight;
+    ofxIlda::Frame frameCentre;
     
     ofxIlda::Frame testPatternFrameLeft;
     ofxIlda::Frame testPatternFrameRight;
     
     bool testPatternRight = false;
     bool testPatternLeft  = false;
+    
+    
 };
 
 #endif /* DualLaserManager_h */

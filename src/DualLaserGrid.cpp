@@ -10,24 +10,26 @@
 DualLaserGrid::DualLaserGrid( EffectTime t )
 {
     time = t;
+    
 }
 
-void DualLaserGrid::update( float timelinePos )
+void DualLaserGrid::update( float timelinePos, float audioLevel )
 {
     if( time.isStart( timelinePos ))
     {
         float t = timelinePos - time.start;
         
         frameLeft.clear();
-        frameLeft.addPoly();
-        frameLeft.getLastPoly().color = ofFloatColor(0,1,0);
-        frameLeft.getLastPoly().lineTo(0,0);
-        frameLeft.getLastPoly().lineTo(1,0);
-        
         frameRight.clear();
-        frameRight.addPoly();
-        frameRight.getLastPoly().color = ofFloatColor(1,0,0);
-        frameRight.getLastPoly().lineTo(0,0);
-        frameRight.getLastPoly().lineTo(1,0);
+        
+        LaserLine lineLeft(ofVec2f(0,0), ofVec2f(1,0), ofFloatColor(1,0,0));
+        frameLeft.push_back( lineLeft );
+        
+        
+        LaserLine lineRight1(ofVec2f(1,0), ofVec2f(0,1), ofFloatColor(1,0,1));
+        LaserLine lineRight2(ofVec2f(1,1), ofVec2f(0,1), ofFloatColor(1,1,1));
+        frameRight.push_back( lineRight1 );
+        frameRight.push_back( lineRight2 );
+        
     }
 }

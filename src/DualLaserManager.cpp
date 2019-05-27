@@ -10,20 +10,37 @@
 
 void DualLaserManager::init()
 {
+    
+    for(int i = 0; i < NUM_LASERS;i++)
+    {
+        laser[i].setup(true, i);
+        laser[i].setPPS( ETHER_DREAM_PPS );
+        cout << "Init laser " << laser[i].getUniqueID() <<endl;
+    }
+   
+    
     if(laser[0].getUniqueID() == 14433133)
         leftIndx  = 0;
     if(laser[0].getUniqueID() == 14449524)
         rightIndx = 0;
+    if(laser[0].getUniqueID() == 14418711)
+        centreIndx = 0;
     
     if(laser[1].getUniqueID() == 14433133)
         leftIndx  = 1;
     if(laser[1].getUniqueID() == 14449524)
         rightIndx  = 1;
+    if(laser[1].getUniqueID() == 14418711)
+        centreIndx = 1;
     
-    if(leftIndx  > -1)
-        initLaser( &laser[leftIndx]  );
-    if(rightIndx > -1)
-        initLaser( &laser[rightIndx] );
+    if(laser[2].getUniqueID() == 14433133)
+        leftIndx  = 2;
+    if(laser[2].getUniqueID() == 14449524)
+        rightIndx  = 2;
+    if(laser[2].getUniqueID() == 14418711)
+        centreIndx = 2;
+    
+    
     
     setupTimeline();
     loadTestPattern( &testPatternFrameLeft,  "leftKeystone.xml"  );
@@ -67,34 +84,36 @@ void DualLaserManager::loadKeystoneRight(  )
 
 void DualLaserManager::setupTimeline()
 {
-    effectList.push_back( make_shared<DualLaserGrid>(EffectTime(0, 100.0)));
+    effectList.push_back( make_shared<DualLaserTunnel>(EffectTime(0, 600.0)));
 }
 
-void DualLaserManager::initLaser(ofxEtherdream * laser)
+void DualLaserManager::initLaser(int laserIndx)
 {
-    laser->stop();
-    laser->kill();
+    
+    laser[laserIndx].stop();
+    laser[laserIndx].kill();
     
     cout << "CONNECTING TO ETHERDREAM: " << ofToString(laser->getUniqueID()) << endl;
     
-    int laserID = 0;
-    
-    laser->setup(true, 0);
-    laser->setPPS( ETHER_DREAM_PPS );
+    laser[laserIndx].setup(true, laserIndx);
+    laser[laserIndx].setPPS( ETHER_DREAM_PPS );
     
 }
 
 void DualLaserManager::draw()
 {
-    
+    ofSetColor(255);
+    ofDrawBitmapString("Laser0: " + laser[0].getStateLabel() + " " + ofToString(leftIndx), 20,240);
+    ofDrawBitmapString("Laser1: " + laser[1].getStateLabel() + " " + ofToString(rightIndx), 20,260);
+    ofDrawBitmapString("Laser2: " + laser[2].getStateLabel() + " " + ofToString(centreIndx), 20,280);
 }
 void DualLaserManager::resetLeft()
 {
-    initLaser( &laser[leftIndx]  );
+    initLaser( leftIndx  );
 }
 void DualLaserManager::resetRight()
 {
-    initLaser( &laser[rightIndx]  );
+    initLaser( rightIndx  );
     
 }
 void DualLaserManager::testPatternLeftToggle()
@@ -106,7 +125,7 @@ void DualLaserManager::testPatternRightToggle()
     testPatternRight = !testPatternRight;
 }
 
-void DualLaserManager::update( float timelinePos )
+void DualLaserManager::update( float timelinePos, float audioLevel )
 {
     lastSavedTime = timelinePos;
     
@@ -114,11 +133,51 @@ void DualLaserManager::update( float timelinePos )
     {
         if(effect->isDisplay(timelinePos))
         {
-            frameLeft  = effect->getFrameLeft();
-            frameRight = effect->getFrameRight();
+            effect->update(timelinePos,audioLevel);
+            vector <LaserLine> rightLines   = effect->getFrameLeft();
+            vector <LaserLine> leftLines    = effect->getFrameRight();
+            vector <LaserLine> centreLines  = effect->getFrameCentre();
             
-            if(leftIndx  > -1 && !testPatternLeft)  laser[leftIndx ].setPoints(frameLeft);
-            if(rightIndx > -1 && !testPatternRight) laser[rightIndx].setPoints(frameRight);
+            frameLeft.clear();
+            frameRight.clear();
+            frameCentre.clear();
+            
+            for( auto line : leftLines )
+            {
+                frameLeft.addPoly();
+                frameLeft.getLastPoly().color = line.col;
+                frameLeft.getLastPoly().lineTo( line.begin.x, line.begin.y);
+                frameLeft.getLastPoly().lineTo( line.end.x,   line.end.y);
+            }
+            
+            for( auto line : rightLines )
+            {
+                frameRight.addPoly();
+                frameRight.getLastPoly().color = line.col;
+                frameRight.getLastPoly().lineTo( line.begin.x, line.begin.y);
+                frameRight.getLastPoly().lineTo( line.end.x,   line.end.y);
+            }
+            
+            for( auto line : centreLines )
+            {
+                frameCentre.addPoly();
+                frameCentre.getLastPoly().color = line.col;
+                frameCentre.getLastPoly().lineTo( line.begin.x, line.begin.y);
+                frameCentre.getLastPoly().lineTo( line.end.x,   line.end.y);
+            }
+            
+            frameLeft.update();
+            frameRight.update();
+            frameCentre.update();
+            
+            if(leftIndx  > -1/* && !testPatternLeft*/)
+            {
+                laser[leftIndx ].setPoints(frameLeft);
+                
+            }
+            if(rightIndx > -1/* && !testPatternRight*/) laser[rightIndx].setPoints(frameRight);
+            
+            if(centreIndx > -1/* && !testPatternRight*/) laser[centreIndx].setPoints(frameCentre);
         }
     }
     
