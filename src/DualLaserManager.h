@@ -13,6 +13,12 @@
 #include "DualLaserGrid.h"
 #include "DualLaserCross.h"
 #include "DualLaserTunnel.h"
+#include "DualLaserTest.h"
+#include "DualLaserStars.h"
+#include "DualLaserWipes.h"
+#include "DualLaserStriped.h"
+#include "DualLaserSnake.h"
+#include "DualLaserVoiceWave.h"
 #include "ofxEtherDream.h"
 #include "KeystoneWarper.h"
 
@@ -24,7 +30,7 @@ public:
     
     void init();
     void draw();
-    void update( float timelinePos, float audioLevel );
+    void update( float timelinePos, float audioLevel, shared_ptr<vector<float>>audioVals );
     
     void resetLeft();
     void resetRight();
@@ -71,7 +77,7 @@ private:
     
     bool testPatternRight = false;
     bool testPatternLeft  = false;
-    
+    vector<float> audioVals;
     
 };
 

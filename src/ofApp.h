@@ -89,6 +89,6 @@ class ofApp : public ofBaseApp{
     
         OscManager      oscManager;
         DMXHandler      dmxHandler;
-    
+        shared_ptr<vector <float>>audioVals;
         float curVol = 0.0;
 };

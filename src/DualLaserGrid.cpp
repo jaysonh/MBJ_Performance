@@ -13,7 +13,7 @@ DualLaserGrid::DualLaserGrid( EffectTime t )
     
 }
 
-void DualLaserGrid::update( float timelinePos, float audioLevel )
+void DualLaserGrid::update( float timelinePos, float audioLevel, shared_ptr<vector<float>>audioVals )
 {
     if( time.isStart( timelinePos ))
     {

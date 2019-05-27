@@ -7,7 +7,7 @@ DualLaserTunnel::DualLaserTunnel( EffectTime t )
     
 }
 
-void DualLaserTunnel::update( float timelinePos, float audioLevel )
+void DualLaserTunnel::update( float timelinePos, float audioLevel,shared_ptr<vector<float>>audioVals)
 {
     if( time.isStart( timelinePos ))
     {
@@ -17,14 +17,42 @@ void DualLaserTunnel::update( float timelinePos, float audioLevel )
         frameRight.clear();
         frameCentre.clear();
         
-        LaserLine lineLeft1(ofVec2f(0.5,0), ofVec2f(0.5,1), ofFloatColor(1,1,0));
+        float h = ofMap(ofGetMouseY(), 0,ofGetHeight(),0,1);
+    
+       // cout << h << endl;
+        
+        LaserLine lineLeft1(ofVec2f(0.232812,0.5),
+                            ofVec2f(0.232812,0.5+0.1),
+                            ofFloatColor(0,1,1));
         frameLeft.push_back( lineLeft1 );
         
-        LaserLine lineRight1(ofVec2f(0.5,0), ofVec2f(0.5,1), ofFloatColor(1,1,0));
+        /*
+        LaserLine lineRight1(ofVec2f(0,0.325+0.05),
+                             ofVec2f(0,0.325+0.125),
+                             ofFloatColor(0,1,1)); //0.523438
         frameRight.push_back( lineRight1 );
         
         
-        LaserLine lineCentre1(ofVec2f(0.275,0.5), ofVec2f(0.725,0.5), ofFloatColor(1,1,0));
+        LaserLine lineCentre1(ofVec2f(0.267188,0.325-0.03),
+                              ofVec2f(0.267188,0.325+0.07),
+                              ofFloatColor(0,1,1));
         frameCentre.push_back( lineCentre1 );
+        */
+        /*LaserLine lineLeft1(ofVec2f(0.5,0.5),
+                            ofVec2f(0.5,0.6),
+                            ofFloatColor(1,1,0));
+        frameLeft.push_back( lineLeft1 );
+        
+        
+        LaserLine lineRight1(ofVec2f(0,0.525),
+                             ofVec2f(0,0.6),
+                             ofFloatColor(1,1,0)); //0.523438
+        frameRight.push_back( lineRight1 );
+        
+        
+        LaserLine lineCentre1(ofVec2f(0.267188,0.47),
+                              ofVec2f(0.267188,0.57), ofFloatColor(1,1,0));
+        frameCentre.push_back( lineCentre1 );
+         */
     }
 }

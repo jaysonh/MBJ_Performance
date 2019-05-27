@@ -13,7 +13,7 @@ DualLaserCross::DualLaserCross( EffectTime t )
     
 }
 
-void DualLaserCross::update( float timelinePos, float audioLevel )
+void DualLaserCross::update( float timelinePos, float audioLevel, shared_ptr<vector<float>>audioVals  )
 {
     if( time.isStart( timelinePos ))
     {

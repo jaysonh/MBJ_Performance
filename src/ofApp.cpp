@@ -68,6 +68,7 @@ void ofApp::setup()
     float sampleRate = 22050;
     int bufferSize = 256;
     
+    audioVals = make_shared<vector <float>>();
     ofSoundStreamSetup(1, 1, this, sampleRate, bufferSize, 4);
     
     soundStream.setup(this, 0, 2, 44100, bufferSize, 4);
@@ -77,8 +78,6 @@ void ofApp::setup()
     
     dualLaserManager.init();
     //laserManager.init();
-    
-    soundStream.setup(this, 0, 2, 44100, 256, 4);
 }
 
 void ofApp::timeSourceSelectionPressed()
@@ -143,7 +142,9 @@ void ofApp::update()
                      oscManager.getTime(),
                      oscManager.getTotalOffset()
                     );
-    dualLaserManager.update(oscManager.getTime(), curVol);
+    
+    
+    dualLaserManager.update(oscManager.getTime(), curVol, audioVals);
     //laserManager.update( oscManager.getTime());
     
     int w = ofGetWidth();
@@ -232,9 +233,13 @@ void ofApp::audioIn(float * input, int bufferSize, int nChannels)
 {
     int numCounted = 0;
     curVol=0;
-    
+    audioVals.get()->clear();
     for (int i = 0; i < bufferSize; i++)
     {
+        if(i%4==0)
+        {
+            audioVals.get()->push_back(input[i*2]*0.5);
+        }
         curVol += abs(input[i*2]*0.5); //left
         numCounted++;
     }

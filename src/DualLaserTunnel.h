@@ -16,7 +16,7 @@ public:
     
     DualLaserTunnel( EffectTime time );
     
-    void update( float timelinePos, float audioLevel );
+    void update( float timelinePos, float audioLevel, shared_ptr<vector<float>>audioVals);
     
 private:
     

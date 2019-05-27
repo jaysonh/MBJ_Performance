@@ -22,7 +22,7 @@ public:
     
     bool isDisplay( float timelinePos ) { return time.isStart( timelinePos ); }
     
-    virtual void update( float timelinePos, float audioLevel ) = 0;
+    virtual void update( float timelinePos, float audioLevel, shared_ptr<vector<float>>audioVals ) = 0;
 protected:
     
     vector<LaserLine> frameLeft;

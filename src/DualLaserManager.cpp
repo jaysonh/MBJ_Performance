@@ -125,15 +125,15 @@ void DualLaserManager::testPatternRightToggle()
     testPatternRight = !testPatternRight;
 }
 
-void DualLaserManager::update( float timelinePos, float audioLevel )
+void DualLaserManager::update( float timelinePos, float audioLevel, shared_ptr<vector<float>>audioVals )
 {
     lastSavedTime = timelinePos;
     
     for( auto effect : effectList )
     {
-        if(effect->isDisplay(timelinePos))
+        if(effect->isDisplay(timelinePos) && ofGetElapsedTimef()> 5.0)
         {
-            effect->update(timelinePos,audioLevel);
+            effect->update(timelinePos,audioLevel, audioVals);
             vector <LaserLine> rightLines   = effect->getFrameLeft();
             vector <LaserLine> leftLines    = effect->getFrameRight();
             vector <LaserLine> centreLines  = effect->getFrameCentre();
@@ -144,26 +144,38 @@ void DualLaserManager::update( float timelinePos, float audioLevel )
             
             for( auto line : leftLines )
             {
-                frameLeft.addPoly();
-                frameLeft.getLastPoly().color = line.col;
-                frameLeft.getLastPoly().lineTo( line.begin.x, line.begin.y);
-                frameLeft.getLastPoly().lineTo( line.end.x,   line.end.y);
+                if(!line.continous)
+                {
+                    frameLeft.addPoly();
+                    frameLeft.getLastPoly().color = line.col;
+                    frameLeft.getLastPoly().lineTo( line.begin.x, line.begin.y);
+                    frameLeft.getLastPoly().lineTo( line.end.x,   line.end.y);
+                }else
+                    frameLeft.getLastPoly().lineTo( line.end.x,   line.end.y);
             }
             
             for( auto line : rightLines )
             {
-                frameRight.addPoly();
-                frameRight.getLastPoly().color = line.col;
-                frameRight.getLastPoly().lineTo( line.begin.x, line.begin.y);
-                frameRight.getLastPoly().lineTo( line.end.x,   line.end.y);
+                if(!line.continous)
+                {
+                    frameRight.addPoly();
+                    frameRight.getLastPoly().color = line.col;
+                    frameRight.getLastPoly().lineTo( line.begin.x, line.begin.y);
+                    frameRight.getLastPoly().lineTo( line.end.x,   line.end.y);
+                }else
+                    frameRight.getLastPoly().lineTo( line.end.x,   line.end.y);
             }
             
             for( auto line : centreLines )
             {
-                frameCentre.addPoly();
-                frameCentre.getLastPoly().color = line.col;
-                frameCentre.getLastPoly().lineTo( line.begin.x, line.begin.y);
-                frameCentre.getLastPoly().lineTo( line.end.x,   line.end.y);
+                if(!line.continous)
+                {
+                    frameCentre.addPoly();
+                    frameCentre.getLastPoly().color = line.col;
+                    frameCentre.getLastPoly().lineTo( line.begin.x, line.begin.y);
+                    frameCentre.getLastPoly().lineTo( line.end.x,   line.end.y);
+                }else
+                    frameCentre.getLastPoly().lineTo( line.end.x,   line.end.y);
             }
             
             frameLeft.update();
