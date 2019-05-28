@@ -17,27 +17,34 @@ void DualLaserTunnel::update( float timelinePos, float audioLevel,shared_ptr<vec
         frameRight.clear();
         frameCentre.clear();
         
-        float h = ofMap(ofGetMouseY(), 0,ofGetHeight(),0,1);
+        float h =ofMap(ofGetMouseY(), 0,ofGetHeight(),0,0.9);
     
-       // cout << h << endl;
-        
-        LaserLine lineLeft1(ofVec2f(0.232812,0.5),
-                            ofVec2f(0.232812,0.5+0.1),
+        cout << h << endl;
+        LaserLine lineLeft1(ofVec2f(0,0.621562),
+                            ofVec2f(0,0.621562+0.1),
                             ofFloatColor(0,1,1));
         frameLeft.push_back( lineLeft1 );
         
-        /*
-        LaserLine lineRight1(ofVec2f(0,0.325+0.05),
-                             ofVec2f(0,0.325+0.125),
+        LaserLine lineRight1(ofVec2f(0.584375,0.469844-0.05),
+                             ofVec2f(0.584375,0.469844+0.05),
+                             ofFloatColor(0,1,1)); //0.523438
+        frameRight.push_back( lineRight1 );
+       /* LaserLine lineLeft1(ofVec2f(0.232812,0.621562),
+                            ofVec2f(0.232812,0.621562+0.1),
+                            ofFloatColor(0,1,1));
+        frameLeft.push_back( lineLeft1 );
+        
+        LaserLine lineRight1(ofVec2f(0,0.459844),
+                             ofVec2f(0,0.459844+0.07),
                              ofFloatColor(0,1,1)); //0.523438
         frameRight.push_back( lineRight1 );
         
-        
-        LaserLine lineCentre1(ofVec2f(0.267188,0.325-0.03),
-                              ofVec2f(0.267188,0.325+0.07),
+        */
+        LaserLine lineCentre1(ofVec2f(1,h),
+                              ofVec2f(1,h+0.1),
                               ofFloatColor(0,1,1));
         frameCentre.push_back( lineCentre1 );
-        */
+        
         /*LaserLine lineLeft1(ofVec2f(0.5,0.5),
                             ofVec2f(0.5,0.6),
                             ofFloatColor(1,1,0));
