@@ -19,7 +19,7 @@ void DualLaserTunnel::update( float timelinePos, float audioLevel,shared_ptr<vec
         
         float h =ofMap(ofGetMouseY(), 0,ofGetHeight(),0,0.9);
     
-        cout << h << endl;
+        //cout << h << endl;
         LaserLine lineLeft1(ofVec2f(0,0.621562),
                             ofVec2f(0,0.621562+0.1),
                             ofFloatColor(0,1,1));

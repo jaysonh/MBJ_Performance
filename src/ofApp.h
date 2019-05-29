@@ -34,7 +34,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
         void laserResetBtnPressed();
-        void blankLaserBtnPressed();
+    
         void testPatternBtnPressed();
         void startPerformanceBtnPressed();
         void loadKeystone();
@@ -62,7 +62,9 @@ class ofApp : public ofBaseApp{
     
         ofxFloatSlider microphoneDamp;
         ofxFloatSlider microphoneMult;
-       
+    
+        ofxButton      testPatternCentreBtn;
+        ofxButton      laserResetCentreBtn;
         ofxButton      laserResetLeftBtn;
         ofxButton      testPatternLeftBtn;
         ofxButton      laserResetRightBtn;

@@ -43,8 +43,11 @@ public:
     void loadKeystoneLeft();
     void loadKeystoneRight();
     
-private:
+    void toggleBlankPressed();
     
+private:
+    ofTrueTypeFont font;
+    bool blank = false;
     void setupTimeline();
     void initLaser( int laserIndx );
     void loadTestPattern( ofxIlda::Frame * frame, string keystoneFile );
@@ -75,8 +78,9 @@ private:
     ofxIlda::Frame testPatternFrameLeft;
     ofxIlda::Frame testPatternFrameRight;
     
-    bool testPatternRight = false;
-    bool testPatternLeft  = false;
+    bool testPatternRight  = false;
+    bool testPatternLeft   = false;
+    bool testPatternCentre = false;
     vector<float> audioVals;
     
 };

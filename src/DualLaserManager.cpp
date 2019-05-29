@@ -10,12 +10,21 @@
 
 void DualLaserManager::init()
 {
+    if(!font.load("fonts/Helvetica.ttf",24))
+    {
+        cout << "Couldn't load font"<<endl;
+    }
     
     for(int i = 0; i < NUM_LASERS;i++)
     {
-        laser[i].setup(true, i);
-        laser[i].setPPS( ETHER_DREAM_PPS );
-        cout << "Init laser " << laser[i].getUniqueID() <<endl;
+        if(laser[i].setup(true, i))
+        {
+            laser[i].setPPS( ETHER_DREAM_PPS );
+            cout << ofToString(i) + " Init laser " << laser[i].getUniqueID() <<endl;
+        }else
+        {
+            cout << "Could not connect to laser: " << ofToString(i)<<endl;
+        }
     }
    
     
@@ -93,7 +102,7 @@ void DualLaserManager::initLaser(int laserIndx)
     laser[laserIndx].stop();
     laser[laserIndx].kill();
     
-    cout << "CONNECTING TO ETHERDREAM: " << ofToString(laser->getUniqueID()) << endl;
+    cout << "CONNECTING TO ETHERDREAM: " << ofToString(laser[laserIndx].getUniqueID()) << endl;
     
     laser[laserIndx].setup(true, laserIndx);
     laser[laserIndx].setPPS( ETHER_DREAM_PPS );
@@ -103,9 +112,36 @@ void DualLaserManager::initLaser(int laserIndx)
 void DualLaserManager::draw()
 {
     ofSetColor(255);
-    ofDrawBitmapString("Laser0: " + laser[0].getStateLabel() + " " + ofToString(leftIndx), 20,240);
-    ofDrawBitmapString("Laser1: " + laser[1].getStateLabel() + " " + ofToString(rightIndx), 20,260);
-    ofDrawBitmapString("Laser2: " + laser[2].getStateLabel() + " " + ofToString(centreIndx), 20,280);
+    ofDrawBitmapString("Laser Left:   " + ofToString(leftIndx) + " " + ofToString(laser[leftIndx].getUniqueID()) + " "                  +laser[leftIndx].getStateLabel(), 20,240);
+    
+    ofDrawBitmapString("Laser Right:  " + ofToString(rightIndx) + " " + ofToString(laser[rightIndx].getUniqueID()) + " "                  +laser[rightIndx].getStateLabel(), 20,260);
+    
+    ofDrawBitmapString("Laser Centre: " + ofToString(centreIndx) + " " + ofToString(laser[centreIndx].getUniqueID()) + " "                  +laser[centreIndx].getStateLabel(), 20,280);
+    float w = (ofGetWidth()/2)/3;
+    
+    // draw empty frame
+    ofPushStyle();
+    ofSetColor(125);
+    ofDrawRectangle(ofGetWidth()/2,10, w*3,w);
+    ofNoFill();
+    ofSetColor(255);
+    ofDrawRectangle(ofGetWidth()/2,10, w,w);
+    ofDrawRectangle(ofGetWidth()/2+w,10, w,w);
+    ofDrawRectangle(ofGetWidth()/2+w*2,10, w,w);
+    ofDrawBitmapString("LEFT",   ofGetWidth()/2+10,     30 );
+    ofDrawBitmapString("RIGHT",  ofGetWidth()/2+w+10,   30 );
+    ofDrawBitmapString("CENTRE", ofGetWidth()/2+w*2+10, 30 );
+    ofPopStyle();
+    ofSetColor(255);
+    frameLeft.draw(ofGetWidth()/2, 10,w,w);
+    frameRight.draw(ofGetWidth()/2+w, 10,w,w);
+    frameCentre.draw(ofGetWidth()/2+w*2, 10,w,w);
+    
+    if(blank)
+    {
+        ofSetColor(ofColor::red);
+        font.drawString("BLANKED", ofGetWidth()/2-100, ofGetHeight()/2 - 10);
+    }
 }
 void DualLaserManager::resetLeft()
 {
@@ -116,6 +152,12 @@ void DualLaserManager::resetRight()
     initLaser( rightIndx  );
     
 }
+
+void DualLaserManager::resetCentre()
+{
+    initLaser( centreIndx  );
+    
+}
 void DualLaserManager::testPatternLeftToggle()
 {
     testPatternLeft = !testPatternLeft;
@@ -124,6 +166,16 @@ void DualLaserManager::testPatternRightToggle()
 {
     testPatternRight = !testPatternRight;
 }
+void DualLaserManager::testPatternCentreToggle()
+{
+    testPatternCentre = !testPatternCentre;
+}
+
+
+void DualLaserManager::toggleBlankPressed()
+{
+    blank = !blank;
+}
 
 void DualLaserManager::update( float timelinePos, float audioLevel, shared_ptr<vector<float>>audioVals )
 {
@@ -131,7 +183,10 @@ void DualLaserManager::update( float timelinePos, float audioLevel, shared_ptr<v
     
     for( auto effect : effectList )
     {
-        if(effect->isDisplay(timelinePos) && ofGetElapsedTimef()> 5.0)
+        if( effect->isDisplay(timelinePos) &&
+            ofGetElapsedTimef()> 5.0 &&
+            !blank
+          )
         {
             effect->update(timelinePos,audioLevel, audioVals);
             vector <LaserLine> rightLines   = effect->getFrameLeft();

@@ -20,9 +20,14 @@ void ofApp::setup()
                                      &DualLaserManager::testPatternRightToggle);
     laserResetRightBtn.addListener(  &dualLaserManager,
                                      &DualLaserManager::resetRight);
+    testPatternCentreBtn.addListener(  &dualLaserManager,
+                                      &DualLaserManager::testPatternCentreToggle);
+    laserResetCentreBtn.addListener(   &dualLaserManager,
+                                      &DualLaserManager::resetCentre);
     
+    blankLaserBtn.addListener( &dualLaserManager,
+                               &DualLaserManager::toggleBlankPressed);
     
-    blankLaserBtn.addListener(this, &ofApp::blankLaserBtnPressed);
     startPerformanceBtn.addListener(&oscManager, &OscManager::startPerformance);
     startFromSelectedBtn.addListener(&oscManager,&OscManager::startPerformanceFrom);
     revertStartBtn.addListener(&oscManager, &OscManager::revertSavedStartTime);
@@ -30,12 +35,14 @@ void ofApp::setup()
     
     gui.add(testPatternLeftBtn.setup("Left test pattern"));
     gui.add(testPatternRightBtn.setup("Right test pattern"));
+    gui.add(testPatternCentreBtn.setup("Centre test pattern"));
     
     gui.add(laserResetLeftBtn.setup("Left reset laser"));
     gui.add(laserResetRightBtn.setup("Right reset laser"));
+    gui.add(laserResetCentreBtn.setup("Centre reset laser"));
     
     gui.add(startPerformanceBtn.setup("start performance"));
-    gui.add(noEffectBtn.setup("blank"));
+    gui.add(blankLaserBtn.setup("blank"));
     //gui.add(timeSourceAbleton.setup("TimeSourceAbleton"));
     //gui.add(timeSourceStart.setup("TimeSourceStart"));
     //gui.add(startFromSelectedBtn.setup("TimeStartSelection"));
@@ -57,7 +64,6 @@ void ofApp::setup()
     loadKeystoneBtn.addListener(this,  &ofApp::loadKeystone);
     saveKeystoneBtn.addListener(this,  &ofApp::saveKeystone);
     resetKeystoneBtn.addListener(this, &ofApp::resetKeystone);
-    noEffectBtn.addListener(this,      &ofApp::blankLaserBtnPressed);
     
     skipForwardBtn.addListener( &oscManager, &OscManager::skipForward);
     skipBackBtn.addListener(    &oscManager, &OscManager::skipBackward);
@@ -116,13 +122,6 @@ void ofApp::loadKeystone()
 void ofApp::laserResetBtnPressed()
 {
     //laserManager.reset();
-    
-}
-
-void ofApp::blankLaserBtnPressed()
-{
-    
-    //laserManager.blank();
     
 }
 

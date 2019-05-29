@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/DualLaserManager.cpp"
-            timestampString = "580677817.241469"
+            timestampString = "580754358.497679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "DualLaserManager::init()"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "DualLaserManager::loadKeystoneRight( )"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "src/DualLaserManager.cpp"
-            timestampString = "580677817.241537"
+            timestampString = "580754358.497749"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "DualLaserManager::loadKeystoneRight( )"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "DualLaserManager::init()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
