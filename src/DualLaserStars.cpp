@@ -11,6 +11,7 @@ DualLaserStars::DualLaserStars( EffectTime t )
 {
     time = t;
     
+    effectName="stars";
 }
 
 void DualLaserStars::update( float timelinePos, float audioLevel, shared_ptr<vector<float>>audioVals )

@@ -15,7 +15,10 @@
 class DualLaserEffect
 {
 public:
-    
+    DualLaserEffect()
+    {
+        effectCol = ofColor(ofRandom(255),0,ofRandom(255));
+    }
     vector <LaserLine> getFrameLeft()  { return frameLeft;  }
     vector <LaserLine> getFrameRight() { return frameRight; }
     vector <LaserLine> getFrameCentre() { return frameCentre; }
@@ -23,8 +26,14 @@ public:
     bool isDisplay( float timelinePos ) { return time.isStart( timelinePos ); }
     
     virtual void update( float timelinePos, float audioLevel, shared_ptr<vector<float>>audioVals ) = 0;
-protected:
     
+    EffectTime * getTime()  { return &time;      }
+    ofColor      getColor() { return effectCol;  }
+    string       getName()  { return effectName; }
+    
+protected:
+    string effectName="";
+    ofColor effectCol;
     vector<LaserLine> frameLeft;
     vector<LaserLine> frameRight;
     vector<LaserLine> frameCentre;

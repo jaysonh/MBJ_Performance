@@ -11,6 +11,7 @@ DualLaserCross::DualLaserCross( EffectTime t )
 {
     time = t;
     
+    effectName="cross";
 }
 
 void DualLaserCross::update( float timelinePos, float audioLevel, shared_ptr<vector<float>>audioVals  )

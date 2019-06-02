@@ -9,5 +9,5 @@
 
 DMXEffect::DMXEffect()
 {
-    
+    guiCol = ofColor( 0, ofRandom(0,255),ofRandom(0,255));
 }

@@ -10,14 +10,16 @@
 
 DMXEffectPulse::DMXEffectPulse( EffectTime t )
 {
+    time = new EffectTime(t.start,t.end);
     
+    effectName = "PULSE";
 }
 
 void DMXEffectPulse::update( float timelinePos )
 {
-    if(time.isStart(timelinePos))
+    if(time->isStart(timelinePos))
     {
-        float t = timelinePos - time.start;
+        float t = timelinePos - time->start;
         
         float bright = abs(sin(t)) *255.0;
         

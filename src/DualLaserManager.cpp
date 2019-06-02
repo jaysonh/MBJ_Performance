@@ -54,6 +54,11 @@ void DualLaserManager::init()
     setupTimeline();
     loadTestPattern( &testPatternFrameLeft,  "leftKeystone.xml"  );
     loadTestPattern( &testPatternFrameRight, "rightKeystone.xml" );
+    
+    timelineDrawSz  = ofVec2f( ofGetWidth()/2, (ofGetHeight()/6));
+    timelineDrawPos = ofVec2f(ofGetWidth()/2,
+                              ofGetHeight()/2 + (ofGetHeight()/6));
+    
 }
 
 void DualLaserManager::loadTestPattern( ofxIlda::Frame * frame, string keystoneFile)
@@ -142,6 +147,51 @@ void DualLaserManager::draw()
         ofSetColor(ofColor::red);
         font.drawString("BLANKED", ofGetWidth()/2-100, ofGetHeight()/2 - 10);
     }
+    
+    drawTimeline();
+}
+
+void DualLaserManager::drawTimeline()
+{
+    // Now draw timeline (bottom third)
+    ofPushStyle();
+    ofNoFill();
+    ofSetColor(ofColor::white);
+    ofDrawBitmapString("Laser Effects", timelineDrawPos.x, timelineDrawPos.y);
+    ofDrawRectangle( timelineDrawPos.x, timelineDrawPos.y, timelineDrawSz.x,timelineDrawSz.y);
+    ofPushMatrix();
+    
+    float currOff = ofMap( lastSavedTime,
+                          0,
+                          PERFORMANCE_LENGTH,
+                          timelineDrawPos.x,
+                          timelineDrawPos.x+ timelineDrawSz.x );
+    ofFill();
+    ofSetColor(0,255,0);
+    ofDrawLine( currOff, timelineDrawPos.y,
+               currOff, timelineDrawPos.y+timelineDrawSz.y);
+    
+    for( auto effect : effectList )
+    {
+        float offset = ofMap( effect->getTime()->start,
+                             0,
+                             PERFORMANCE_LENGTH,
+                             timelineDrawPos.x,
+                             timelineDrawPos.x+ timelineDrawSz.x );
+        float timeLength = ( effect->getTime()->getLength()/PERFORMANCE_LENGTH ) * timelineDrawSz.x;
+        ofRectangle bar = ofRectangle(offset,timelineDrawPos.y,
+                                      timeLength, timelineDrawSz.y);
+        ofSetColor(effect->getColor());
+        ofDrawRectangle(bar);
+        
+        if( bar.inside(ofGetMouseX(),ofGetMouseY()))
+        {
+            ofSetColor(ofColor::white);
+            ofDrawBitmapString( effect->getName(), bar.x, bar.y+10);
+        }
+    }
+    ofPopMatrix();
+    ofPopStyle();
 }
 void DualLaserManager::resetLeft()
 {

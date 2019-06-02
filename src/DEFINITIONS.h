@@ -8,6 +8,6 @@
 #ifndef DEFINITIONS_h
 #define DEFINITIONS_h
 
-#define PERFORMANCE_LENGTH 1068
+#define PERFORMANCE_LENGTH 1080.0
 
 #endif /* DEFINITIONS_h */

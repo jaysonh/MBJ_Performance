@@ -11,6 +11,7 @@
 #include "ofxDmx.h"
 #include "DMXEffect.h"
 #include "DMXEffectPulse.h"
+#include "DEFINITIONS.h"
 
 class DMXHandler
 {
@@ -23,7 +24,8 @@ public:
 private:
     float  currTime = 0.0;
     ofxDmx dmxOutput;
-    
+    ofVec2f timelineDrawPos;
+    ofVec2f timelineDrawSz;
     vector <shared_ptr<DMXEffect>> effectList;
     
 };

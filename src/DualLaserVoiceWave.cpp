@@ -11,6 +11,7 @@ DualLaserVoiceWave::DualLaserVoiceWave( EffectTime t )
 {
     time = t;
     
+    effectName="voice wave";
 }
 
 void DualLaserVoiceWave::update( float timelinePos, float audioLevel, shared_ptr<vector<float>>audioVals )

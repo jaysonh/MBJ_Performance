@@ -21,11 +21,18 @@ public:
         start = _start;
         end   = _end;
     }
-    
+    EffectTime& operator=(EffectTime other)
+    {
+        this->start = other.start;
+        this->end   = other.end;
+        
+        return *this;
+    }
     bool isStart( float timelinePos )
     {
         return( timelinePos > 0.0 && timelinePos >= start && timelinePos < end );
     }
+    float getLength() { return end-start; }
     float start, end;
 };
 

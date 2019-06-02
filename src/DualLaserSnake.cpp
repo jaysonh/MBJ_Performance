@@ -11,6 +11,7 @@ DualLaserSnake::DualLaserSnake( EffectTime t )
 {
     time = t;
     
+    effectName="snake";
 }
 
 void DualLaserSnake::update( float timelinePos, float audioLevel, shared_ptr<vector<float>>audioVals )

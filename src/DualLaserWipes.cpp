@@ -11,6 +11,7 @@ DualLaserWipes::DualLaserWipes( EffectTime t )
 {
     time = t;
     
+    effectName="laser wipes";
 }
 
 void DualLaserWipes::update( float timelinePos, float audioLevel, shared_ptr<vector<float>>audioVals)

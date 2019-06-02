@@ -10,6 +10,7 @@
 DualLaserTest::DualLaserTest( EffectTime t )
 {
     time = t;
+    effectName="test";
     
 }
 

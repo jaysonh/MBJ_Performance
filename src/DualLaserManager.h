@@ -9,6 +9,7 @@
 #define DualLaserManager_h
 
 #include "ofMain.h"
+#include "DEFINITIONS.h"
 #include "DualLaserEffect.h"
 #include "DualLaserGrid.h"
 #include "DualLaserCross.h"
@@ -46,6 +47,8 @@ public:
     void toggleBlankPressed();
     
 private:
+    void drawTimeline();
+    
     ofTrueTypeFont font;
     bool blank = false;
     void setupTimeline();
@@ -56,6 +59,9 @@ private:
     float lastSavedTime = 0.0;
     
     vector <shared_ptr<DualLaserEffect>> effectList;
+    
+    ofVec2f timelineDrawSz;
+    ofVec2f timelineDrawPos;
     
     KeystoneWarper keystoneLeft;
     KeystoneWarper keystoneRight;

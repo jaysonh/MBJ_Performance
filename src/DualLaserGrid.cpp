@@ -11,6 +11,7 @@ DualLaserGrid::DualLaserGrid( EffectTime t )
 {
     time = t;
     
+    effectName="grid";
 }
 
 void DualLaserGrid::update( float timelinePos, float audioLevel, shared_ptr<vector<float>>audioVals )

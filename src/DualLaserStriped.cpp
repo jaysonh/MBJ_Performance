@@ -11,6 +11,7 @@ DualLaserStriped::DualLaserStriped( EffectTime t )
 {
     time = t;
     
+    effectName="striped";
 }
 
 void DualLaserStriped::update( float timelinePos, float audioLevel, shared_ptr<vector<float>>audioVals)

@@ -5,6 +5,7 @@ DualLaserTunnel::DualLaserTunnel( EffectTime t )
 {
     time = t;
     
+    effectName="tunnel";
 }
 
 void DualLaserTunnel::update( float timelinePos, float audioLevel,shared_ptr<vector<float>>audioVals)

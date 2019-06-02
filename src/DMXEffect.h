@@ -22,9 +22,15 @@ public:
     
     static const int numLights   = 4;
     static const int numChannels = numLights * 3;
+    string getName() { return effectName; }
+    ofColor getColor() { return guiCol; }
+    EffectTime * getTime() { return time; }
+    
     
 protected:
-    EffectTime time;
+    ofColor guiCol;
+    string effectName = "";
+    EffectTime * time;
     int dmxChannels[ numChannels ];
 };
 #endif /* DMXEffect_h */

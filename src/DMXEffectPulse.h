@@ -17,8 +17,7 @@ public:
     DMXEffectPulse( EffectTime t );
     void update( float timelinePos );
     
-    
-private:
+protected:
     
 };
 
