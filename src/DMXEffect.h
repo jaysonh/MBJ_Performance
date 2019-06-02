@@ -14,10 +14,11 @@
 class DMXEffect
 {
 public:
+    DMXEffect();
     
     int * getChannels() { return dmxChannels; }
     
-    virtual void update( float timelinePos );
+    virtual void update( float timelinePos ) = 0;
     
     static const int numLights   = 4;
     static const int numChannels = numLights * 3;

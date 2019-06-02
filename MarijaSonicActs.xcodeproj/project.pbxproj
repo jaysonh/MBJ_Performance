@@ -48,6 +48,7 @@
 		8F5205AEF8861EF234F0651A /* ofxOscSender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81967292BFC87A0144BD32C6 /* ofxOscSender.cpp */; };
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
 		940190F44CA4C4004752DF5B /* MicrophoneEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10F3A51CA34D6544DB26F094 /* MicrophoneEffect.cpp */; };
+		9A8147A522A437DB00DDF19C /* DMXEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8147A422A437DB00DDF19C /* DMXEffect.cpp */; };
 		9A8E4C16229707A00030D92C /* DMXEffectPulse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E4C15229707A00030D92C /* DMXEffectPulse.cpp */; };
 		9A8E4C1F229C00B80030D92C /* DualLaserCross.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E4C1E229C00B80030D92C /* DualLaserCross.cpp */; };
 		9A8E4C24229C05F60030D92C /* DualLaserTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E4C23229C05F60030D92C /* DualLaserTest.cpp */; };
@@ -226,6 +227,7 @@
 		9210E1382A1DEED7286B234C /* LaserEffect.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = LaserEffect.hpp; path = src/LaserEffects/LaserEffect.hpp; sourceTree = SOURCE_ROOT; };
 		9604B925D32EE39065747725 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseGui.cpp; path = ../../../addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
 		998154314347A01197567C72 /* test.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = test.c; path = ../../../addons/ofxEtherdream/libs/driver/libetherdream/test.c; sourceTree = SOURCE_ROOT; };
+		9A8147A422A437DB00DDF19C /* DMXEffect.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DMXEffect.cpp; sourceTree = "<group>"; };
 		9A8E4C13229706D30030D92C /* DMXEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMXEffect.h; sourceTree = "<group>"; };
 		9A8E4C14229707940030D92C /* DMXEffectPulse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMXEffectPulse.h; sourceTree = "<group>"; };
 		9A8E4C15229707A00030D92C /* DMXEffectPulse.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DMXEffectPulse.cpp; sourceTree = "<group>"; };
@@ -866,6 +868,7 @@
 			children = (
 				30DCC93B735A036EF265E101 /* DEFINITIONS.h */,
 				9A8E4C13229706D30030D92C /* DMXEffect.h */,
+				9A8147A422A437DB00DDF19C /* DMXEffect.cpp */,
 				F1EF740B735B76020B13CEDC /* DMXHandler.cpp */,
 				8CC98E5DFBE2C5F3D4B53F7B /* DMXHandler.h */,
 				9A8E4C14229707940030D92C /* DMXEffectPulse.h */,
@@ -1085,6 +1088,7 @@
 				153CC0AED6870061C578FD5F /* DualLaserGrid.cpp in Sources */,
 				422507DBF4FE2A2197364DEA /* SyphonManager.cpp in Sources */,
 				FB8B04BAF4F0B6676B3B2E67 /* LaserManager.cpp in Sources */,
+				9A8147A522A437DB00DDF19C /* DMXEffect.cpp in Sources */,
 				56100385BAC2A3D8ABA304FE /* KeystoneWarper.cpp in Sources */,
 				DE762D814B7CCA3791FEE510 /* Timeline.cpp in Sources */,
 				CCB277A332BE7529A83B6890 /* DMXHandler.cpp in Sources */,

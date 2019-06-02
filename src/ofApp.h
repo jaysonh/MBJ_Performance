@@ -44,7 +44,6 @@ class ofApp : public ofBaseApp{
         void timeSourceStartPressed();
         void timeSourceSelectionPressed();
     
-    
         void audioIn(float * input, int bufferSize, int nChannels);
     
         SyphonManager syphonManager;

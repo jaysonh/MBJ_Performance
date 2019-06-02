@@ -13,7 +13,7 @@
 class DMXEffectPulse : public DMXEffect
 {
 public:
-    
+    DMXEffectPulse(){}
     DMXEffectPulse( EffectTime t );
     void update( float timelinePos );
     

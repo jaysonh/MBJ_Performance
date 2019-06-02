@@ -81,7 +81,7 @@ void ofApp::setup()
     
     ofSetFrameRate(60);
     oscManager.init();
-    
+    dmxHandler.init();
     dualLaserManager.init();
     //laserManager.init();
 }
@@ -135,6 +135,8 @@ void ofApp::update()
 {
     ofSetWindowTitle( ofToString(ofGetFrameRate()) );
     
+    dmxHandler.update( oscManager.getTime() );
+    
     oscManager.update();
     timeline.update( oscManager.getTimelinePos(),
                      oscManager.getAbletonPos(),
@@ -167,7 +169,7 @@ void ofApp::draw(){
     //laserManager.draw( &font, oscManager.getTime() );
     dualLaserManager.draw( );
     timeline.draw( &font, &fontBig );
-    
+    dmxHandler.draw();
     gui.draw();
     guiKeystone.draw();
     
