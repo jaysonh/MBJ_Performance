@@ -34,6 +34,8 @@ public:
     }
     float getLength() { return end-start; }
     float start, end;
+    
+    static float toSec(float min, float sec) { return min*60 + sec;}
 };
 
 

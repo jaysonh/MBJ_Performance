@@ -9,29 +9,54 @@
 
 void DMXHandler::init()
 {
-    effectList.push_back( make_shared<DMXEffectPulse>(EffectTime(10, 100.0)));
-
+    effectList.push_back( make_shared<DMXEffectIntroSection>(EffectTime(24.36, 106.0)));
+    effectList.push_back( make_shared<DMXEffectIPA>(EffectTime(160.0, 222.0)));
+    
+effectList.push_back( make_shared<DMXEffectHeartBeat>(EffectTime(EffectTime::toSec(6,23), EffectTime::toSec(6,42))));
+    
+    effectList.push_back( make_shared<DMXEffectTunnel>(EffectTime(EffectTime::toSec(9,10), EffectTime::toSec(9,14))));
+    
+    effectList.push_back( make_shared<DMXEffectTunnel>(EffectTime(EffectTime::toSec(9,38), EffectTime::toSec(9,57))));
+    effectList.push_back( make_shared<DMXEffectFinal>(EffectTime(EffectTime::toSec(15,30), EffectTime::toSec(16,8))));
+    
+    
     dmxOutput.connect("tty.usbserial-EN081467", DMXEffect::numChannels); // use the name
     timelineDrawSz  = ofVec2f( ofGetWidth()/2, (ofGetHeight()/6));
-    timelineDrawPos = ofVec2f(ofGetWidth()/2,
-                              ofGetHeight()/2 + (ofGetHeight()/6)*2);
+    timelineDrawPos = ofVec2f( ofGetWidth()/2,
+                               ofGetHeight()/2 + (ofGetHeight()/6)*2);
 }
 
-void DMXHandler::update( float time )
+void DMXHandler::update( float time, float voiceLevel )
 {
     currTime = time;
+    bool usedEffect=false;
     
     for( auto effect : effectList )
     {
-        effect->update( time );
-        
-        int * dmxChannels = effect->getChannels();
-        
-        for( int i = 1; i <= DMXEffect::numChannels; i++)
-            dmxOutput.setLevel(i, dmxChannels[i]);
+        if(effect->isRunning(time))
+        {
+            effect->update( time,voiceLevel );
+            //cout << "Setting channesl: " << effect->getName()<<endl;
+            int * dmxChannels = effect->getChannels();
+            usedEffect=true;
+            for( int i = 0; i < DMXEffect::numChannels; i++)
+                dmxOutput.setLevel(i+1, dmxChannels[i]);
+        }
     }
-    
+    if(!usedEffect)
+    {
+        //cout << "Not using effect turning off"<<endl;
+        for( int i = 0; i < DMXEffect::numChannels; i++)
+            dmxOutput.setLevel(i+1, 0);
+        dmxOutput.update();
+    }
     dmxOutput.update();
+}
+
+void DMXHandler::exit()
+{
+    for( int i = 0; i < DMXEffect::numChannels; i++)
+        dmxOutput.setLevel(i+1, 0);
 }
 
 void DMXHandler::draw()
@@ -62,10 +87,7 @@ void DMXHandler::draw()
                            timelineDrawPos.x,
                            timelineDrawPos.x+ timelineDrawSz.x );
     ofFill();
-    ofSetColor(0,255,0);
-    ofDrawLine( currOff, timelineDrawPos.y,
-                currOff, timelineDrawPos.y+timelineDrawSz.y);
-    
+  
     for( auto effect : effectList )
     {
         float offset = ofMap( effect->getTime()->start,
@@ -85,6 +107,10 @@ void DMXHandler::draw()
             ofDrawBitmapString( effect->getName(), bar.x, bar.y+10);
         }
     }
+    ofSetColor(0,255,0);
+    ofDrawLine( currOff, timelineDrawPos.y,
+               currOff, timelineDrawPos.y+timelineDrawSz.y);
+    
     ofPopMatrix();
     ofPopStyle();
 }

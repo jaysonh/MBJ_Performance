@@ -135,7 +135,7 @@ void ofApp::update()
 {
     ofSetWindowTitle( ofToString(ofGetFrameRate()) );
     
-    dmxHandler.update( oscManager.getTime() );
+    dmxHandler.update( oscManager.getTime(),curVol );
     
     oscManager.update();
     timeline.update( oscManager.getTimelinePos(),
@@ -209,6 +209,10 @@ void ofApp::mouseReleased(int x, int y, int button){
 void ofApp::mouseEntered(int x, int y){
 
 }
+void ofApp::exit()
+{
+    dmxHandler.exit();
+}
 
 //--------------------------------------------------------------
 void ofApp::mouseExited(int x, int y){
@@ -237,7 +241,7 @@ void ofApp::audioIn(float * input, int bufferSize, int nChannels)
     audioVals.get()->clear();
     for (int i = 0; i < bufferSize; i++)
     {
-        if(i%4==0)
+        if(i%2==0)
         {
             audioVals.get()->push_back(input[i*2]*0.5);
         }

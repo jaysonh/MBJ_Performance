@@ -49,6 +49,15 @@
 		933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B40EDA85BEB63E46785BC29 /* tinyxml.cpp */; };
 		940190F44CA4C4004752DF5B /* MicrophoneEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10F3A51CA34D6544DB26F094 /* MicrophoneEffect.cpp */; };
 		9A8147A522A437DB00DDF19C /* DMXEffect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8147A422A437DB00DDF19C /* DMXEffect.cpp */; };
+		9A8147A922A5115E00DDF19C /* DualLaserHeartBeat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8147A822A5115E00DDF19C /* DualLaserHeartBeat.cpp */; };
+		9A8147AC22A51A8700DDF19C /* DualLaserFollow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8147AB22A51A8700DDF19C /* DualLaserFollow.cpp */; };
+		9A8B248622A5598800B3CC4F /* DMXEffectIntroSection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8B248522A5598800B3CC4F /* DMXEffectIntroSection.cpp */; };
+		9A8B248922A5667900B3CC4F /* DMXEffectIPA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8B248822A5667900B3CC4F /* DMXEffectIPA.cpp */; };
+		9A8B248C22A5747D00B3CC4F /* DualLaserPanning.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8B248B22A5747D00B3CC4F /* DualLaserPanning.cpp */; };
+		9A8B248F22A586B200B3CC4F /* DMXEffectHeartBeat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8B248E22A586B200B3CC4F /* DMXEffectHeartBeat.cpp */; };
+		9A8B249222A59A9600B3CC4F /* DMXEffectTunnel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8B249122A59A9600B3CC4F /* DMXEffectTunnel.cpp */; };
+		9A8B249522A5A24100B3CC4F /* DualLaserYellowScan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8B249422A5A24100B3CC4F /* DualLaserYellowScan.cpp */; };
+		9A8B249822A5A6B100B3CC4F /* DMXEffectFinal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8B249722A5A6B100B3CC4F /* DMXEffectFinal.cpp */; };
 		9A8E4C16229707A00030D92C /* DMXEffectPulse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E4C15229707A00030D92C /* DMXEffectPulse.cpp */; };
 		9A8E4C1F229C00B80030D92C /* DualLaserCross.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E4C1E229C00B80030D92C /* DualLaserCross.cpp */; };
 		9A8E4C24229C05F60030D92C /* DualLaserTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E4C23229C05F60030D92C /* DualLaserTest.cpp */; };
@@ -228,6 +237,24 @@
 		9604B925D32EE39065747725 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseGui.cpp; path = ../../../addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
 		998154314347A01197567C72 /* test.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = test.c; path = ../../../addons/ofxEtherdream/libs/driver/libetherdream/test.c; sourceTree = SOURCE_ROOT; };
 		9A8147A422A437DB00DDF19C /* DMXEffect.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DMXEffect.cpp; sourceTree = "<group>"; };
+		9A8147A722A5115000DDF19C /* DualLaserHeartBeat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DualLaserHeartBeat.h; sourceTree = "<group>"; };
+		9A8147A822A5115E00DDF19C /* DualLaserHeartBeat.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DualLaserHeartBeat.cpp; sourceTree = "<group>"; };
+		9A8147AA22A51A7C00DDF19C /* DualLaserFollow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DualLaserFollow.h; sourceTree = "<group>"; };
+		9A8147AB22A51A8700DDF19C /* DualLaserFollow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DualLaserFollow.cpp; sourceTree = "<group>"; };
+		9A8B248422A5597B00B3CC4F /* DMXEffectIntroSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMXEffectIntroSection.h; sourceTree = "<group>"; };
+		9A8B248522A5598800B3CC4F /* DMXEffectIntroSection.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DMXEffectIntroSection.cpp; sourceTree = "<group>"; };
+		9A8B248722A5664400B3CC4F /* DMXEffectIPA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMXEffectIPA.h; sourceTree = "<group>"; };
+		9A8B248822A5667900B3CC4F /* DMXEffectIPA.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DMXEffectIPA.cpp; sourceTree = "<group>"; };
+		9A8B248A22A5747000B3CC4F /* DualLaserPanning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DualLaserPanning.h; sourceTree = "<group>"; };
+		9A8B248B22A5747D00B3CC4F /* DualLaserPanning.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DualLaserPanning.cpp; sourceTree = "<group>"; };
+		9A8B248D22A5867A00B3CC4F /* DMXEffectHeatBeat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMXEffectHeatBeat.h; sourceTree = "<group>"; };
+		9A8B248E22A586B200B3CC4F /* DMXEffectHeartBeat.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DMXEffectHeartBeat.cpp; sourceTree = "<group>"; };
+		9A8B249022A59A8700B3CC4F /* DMXEffectTunnel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMXEffectTunnel.h; sourceTree = "<group>"; };
+		9A8B249122A59A9600B3CC4F /* DMXEffectTunnel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DMXEffectTunnel.cpp; sourceTree = "<group>"; };
+		9A8B249322A5A22B00B3CC4F /* DualLaserYellowScan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DualLaserYellowScan.h; sourceTree = "<group>"; };
+		9A8B249422A5A24100B3CC4F /* DualLaserYellowScan.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DualLaserYellowScan.cpp; sourceTree = "<group>"; };
+		9A8B249622A5A66100B3CC4F /* DMXEffectFinal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMXEffectFinal.h; sourceTree = "<group>"; };
+		9A8B249722A5A6B100B3CC4F /* DMXEffectFinal.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DMXEffectFinal.cpp; sourceTree = "<group>"; };
 		9A8E4C13229706D30030D92C /* DMXEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMXEffect.h; sourceTree = "<group>"; };
 		9A8E4C14229707940030D92C /* DMXEffectPulse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DMXEffectPulse.h; sourceTree = "<group>"; };
 		9A8E4C15229707A00030D92C /* DMXEffectPulse.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DMXEffectPulse.cpp; sourceTree = "<group>"; };
@@ -866,13 +893,30 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				9A8B249022A59A8700B3CC4F /* DMXEffectTunnel.h */,
+				9A8B249122A59A9600B3CC4F /* DMXEffectTunnel.cpp */,
+				9A8B248D22A5867A00B3CC4F /* DMXEffectHeatBeat.h */,
+				9A8B248E22A586B200B3CC4F /* DMXEffectHeartBeat.cpp */,
+				F1EF740B735B76020B13CEDC /* DMXHandler.cpp */,
+				90EB7257E0523AFDA861EB1D /* DualLaserManager.cpp */,
+				9A8B249322A5A22B00B3CC4F /* DualLaserYellowScan.h */,
+				9A8B249422A5A24100B3CC4F /* DualLaserYellowScan.cpp */,
 				30DCC93B735A036EF265E101 /* DEFINITIONS.h */,
 				9A8E4C13229706D30030D92C /* DMXEffect.h */,
 				9A8147A422A437DB00DDF19C /* DMXEffect.cpp */,
-				F1EF740B735B76020B13CEDC /* DMXHandler.cpp */,
+				9A8B248422A5597B00B3CC4F /* DMXEffectIntroSection.h */,
+				9A8B248522A5598800B3CC4F /* DMXEffectIntroSection.cpp */,
+				9A8B248722A5664400B3CC4F /* DMXEffectIPA.h */,
+				9A8B248822A5667900B3CC4F /* DMXEffectIPA.cpp */,
 				8CC98E5DFBE2C5F3D4B53F7B /* DMXHandler.h */,
 				9A8E4C14229707940030D92C /* DMXEffectPulse.h */,
 				9A8E4C15229707A00030D92C /* DMXEffectPulse.cpp */,
+				9A8B248A22A5747000B3CC4F /* DualLaserPanning.h */,
+				9A8B248B22A5747D00B3CC4F /* DualLaserPanning.cpp */,
+				9A8147A722A5115000DDF19C /* DualLaserHeartBeat.h */,
+				9A8147A822A5115E00DDF19C /* DualLaserHeartBeat.cpp */,
+				9A8147AA22A51A7C00DDF19C /* DualLaserFollow.h */,
+				9A8147AB22A51A8700DDF19C /* DualLaserFollow.cpp */,
 				9AF3F131229C653A00B7737A /* DualLaserSnake.h */,
 				9AF3F132229C654400B7737A /* DualLaserSnake.cpp */,
 				9AF3F12E229C597300B7737A /* DualLaserVoiceWave.h */,
@@ -892,7 +936,6 @@
 				9A8E4C1E229C00B80030D92C /* DualLaserCross.cpp */,
 				6676296F87FC5CF9EE967E00 /* DualLaserGrid.cpp */,
 				FAFA3DCAF896CBFA0B162C58 /* DualLaserGrid.h */,
-				90EB7257E0523AFDA861EB1D /* DualLaserManager.cpp */,
 				4D155FB05C42045CD9B0E4F1 /* DualLaserManager.h */,
 				24084214C03E62041DF5CD65 /* EffectTime.h */,
 				4179C0C4642985C3B098260E /* KeystoneWarper.cpp */,
@@ -911,6 +954,8 @@
 				9B8F196757CB9ABD91A5F87A /* Timeline.cpp */,
 				5E58FB869D1E4A5628BDDB4F /* Timeline.hpp */,
 				834AD81F9DA182ED04268588 /* VisualGenerator */,
+				9A8B249622A5A66100B3CC4F /* DMXEffectFinal.h */,
+				9A8B249722A5A6B100B3CC4F /* DMXEffectFinal.cpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1084,17 +1129,20 @@
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				9AF3F133229C654400B7737A /* DualLaserSnake.cpp in Sources */,
 				9A8E4C16229707A00030D92C /* DMXEffectPulse.cpp in Sources */,
+				9A8B249522A5A24100B3CC4F /* DualLaserYellowScan.cpp in Sources */,
 				08EF0231AD8A15BD002A68B4 /* DualLaserManager.cpp in Sources */,
 				153CC0AED6870061C578FD5F /* DualLaserGrid.cpp in Sources */,
 				422507DBF4FE2A2197364DEA /* SyphonManager.cpp in Sources */,
 				FB8B04BAF4F0B6676B3B2E67 /* LaserManager.cpp in Sources */,
 				9A8147A522A437DB00DDF19C /* DMXEffect.cpp in Sources */,
+				9A8B248C22A5747D00B3CC4F /* DualLaserPanning.cpp in Sources */,
 				56100385BAC2A3D8ABA304FE /* KeystoneWarper.cpp in Sources */,
 				DE762D814B7CCA3791FEE510 /* Timeline.cpp in Sources */,
 				CCB277A332BE7529A83B6890 /* DMXHandler.cpp in Sources */,
 				BF0439F3AB70F86B9B264FC4 /* VisualWipe.cpp in Sources */,
 				776E00BD51A4D4ACEB62B4A7 /* VoiceWave.cpp in Sources */,
 				CF65DCFF0D4DB2242B494395 /* NodeJoinEffect.cpp in Sources */,
+				9A8B248922A5667900B3CC4F /* DMXEffectIPA.cpp in Sources */,
 				9A8E4C2B229C4F040030D92C /* DualLaserStars.cpp in Sources */,
 				AAD2D6D8A31353B5D4218B38 /* WipeEffect.cpp in Sources */,
 				6A68CD22FB8C3DCEC673984A /* AudioFileEffect.cpp in Sources */,
@@ -1105,15 +1153,18 @@
 				940190F44CA4C4004752DF5B /* MicrophoneEffect.cpp in Sources */,
 				5380354EC9286E169E117B2C /* GreenScanLine.cpp in Sources */,
 				CCAF7622973DABAB7ACE8634 /* OscManager.cpp in Sources */,
+				9A8B248F22A586B200B3CC4F /* DMXEffectHeartBeat.cpp in Sources */,
 				8BCF02B826253856D7DCF4D1 /* ofxDmx.cpp in Sources */,
 				AE4927F8533E9F44EF99F6C7 /* ofxEtherdream.cpp in Sources */,
 				24B475D09D396FD37823F959 /* test.c in Sources */,
 				9AF3F12D229C54D800B7737A /* DualLaserStriped.cpp in Sources */,
+				9A8B249222A59A9600B3CC4F /* DMXEffectTunnel.cpp in Sources */,
 				87C50BA2BBD5B23272DAA6D5 /* etherdream.c in Sources */,
 				856AA354D08AB4B323081444 /* ofxBaseGui.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
+				9A8B249822A5A6B100B3CC4F /* DMXEffectFinal.cpp in Sources */,
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
@@ -1132,6 +1183,7 @@
 				C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */,
 				67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */,
 				510CAFE035E576A4E1502D52 /* UdpSocket.cpp in Sources */,
+				9A8147A922A5115E00DDF19C /* DualLaserHeartBeat.cpp in Sources */,
 				ADE367465D2A8EBAD4C7A8D9 /* IpEndpointName.cpp in Sources */,
 				7CAF1A5AEF6F06B39340FF34 /* ofxSoundPlayerObject.cpp in Sources */,
 				26A94B3736756ADEB2293EDD /* ofxSoundMultiplexer.cpp in Sources */,
@@ -1144,10 +1196,12 @@
 				BE536BA5791C07A98B8365B0 /* audiodecodercoreaudio.cpp in Sources */,
 				A7936996C1DBDACFDC89B3A1 /* % in Sources */,
 				8D60C222CBD3F869382832E9 /* ofxSyphonServer.mm in Sources */,
+				9A8B248622A5598800B3CC4F /* DMXEffectIntroSection.cpp in Sources */,
 				9A8E4C2E229C512F0030D92C /* DualLaserWipes.cpp in Sources */,
 				1F558B76FB3412843DDAA031 /* ofxSyphonClient.mm in Sources */,
 				11DF9AB1B4EAA63E3B190CA0 /* ofxSyphonServerDirectory.mm in Sources */,
 				C9109422648B170B07A778CF /* SyphonNameboundClient.m in Sources */,
+				9A8147AC22A51A8700DDF19C /* DualLaserFollow.cpp in Sources */,
 				63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */,
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,
 				9A8E4C28229C35470030D92C /* DualLaserTunnel.cpp in Sources */,

@@ -11,6 +11,11 @@
 #include "ofxDmx.h"
 #include "DMXEffect.h"
 #include "DMXEffectPulse.h"
+#include "DMXEffectIntroSection.h"
+#include "DMXEffectHeatBeat.h"
+#include "DMXEffectIPA.h"
+#include "DMXEffectFinal.h"
+#include "DMXEffectTunnel.h"
 #include "DEFINITIONS.h"
 
 class DMXHandler
@@ -18,9 +23,9 @@ class DMXHandler
 public:
     
     void init();
-    void update( float time );
+    void update( float time, float voiceLevel );
     void draw();
-    
+    void exit();
 private:
     float  currTime = 0.0;
     ofxDmx dmxOutput;

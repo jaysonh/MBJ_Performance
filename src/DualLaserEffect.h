@@ -31,6 +31,7 @@ public:
     ofColor      getColor() { return effectCol;  }
     string       getName()  { return effectName; }
     
+    ColourMode colMode;
 protected:
     string effectName="";
     ofColor effectCol;

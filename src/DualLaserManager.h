@@ -20,8 +20,12 @@
 #include "DualLaserStriped.h"
 #include "DualLaserSnake.h"
 #include "DualLaserVoiceWave.h"
+#include "DualLaserHeartBeat.h"
+#include "DualLaserFollow.h"
 #include "ofxEtherDream.h"
 #include "KeystoneWarper.h"
+#include "DualLaserPanning.h"
+#include "DualLaserYellowScan.h"
 
 #define ETHER_DREAM_PPS  40000
 

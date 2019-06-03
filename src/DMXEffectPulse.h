@@ -15,10 +15,10 @@ class DMXEffectPulse : public DMXEffect
 public:
     DMXEffectPulse(){}
     DMXEffectPulse( EffectTime t );
-    void update( float timelinePos );
+    void update( float timelinePos, float voiceLevel );
     
 protected:
-    
+    int white = 0;
 };
 
 #endif /* DMXEffectPulse_h */

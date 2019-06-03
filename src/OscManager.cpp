@@ -39,8 +39,9 @@ float OscManager::getTime()
     else if(useAbletonTime == 2)
         return mManualTime;*/
     
+    return ofGetElapsedTimef() + (60.0 * 14.0 + 51.0);
     //return mVDMXTime;
-    return ofGetElapsedTimef();
+    //return ofGetElapsedTimef();
 }
 
 void  OscManager::setUseAbletonTime(int status)

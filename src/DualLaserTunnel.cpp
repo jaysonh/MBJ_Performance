@@ -18,49 +18,60 @@ void DualLaserTunnel::update( float timelinePos, float audioLevel,shared_ptr<vec
         frameRight.clear();
         frameCentre.clear();
         
-        float h =ofMap(ofGetMouseY(), 0,ofGetHeight(),0,0.9);
-    
-        //cout << h << endl;
-        LaserLine lineLeft1(ofVec2f(0,0.621562),
-                            ofVec2f(0,0.621562+0.1),
-                            ofFloatColor(0,1,1));
-        frameLeft.push_back( lineLeft1 );
+        float h =0.5;
         
-        LaserLine lineRight1(ofVec2f(0.584375,0.469844-0.05),
-                             ofVec2f(0.584375,0.469844+0.05),
-                             ofFloatColor(0,1,1)); //0.523438
-        frameRight.push_back( lineRight1 );
-       /* LaserLine lineLeft1(ofVec2f(0.232812,0.621562),
-                            ofVec2f(0.232812,0.621562+0.1),
-                            ofFloatColor(0,1,1));
-        frameLeft.push_back( lineLeft1 );
+        colMode = ColourMode::PLAIN;
         
-        LaserLine lineRight1(ofVec2f(0,0.459844),
-                             ofVec2f(0,0.459844+0.07),
-                             ofFloatColor(0,1,1)); //0.523438
-        frameRight.push_back( lineRight1 );
+        // Column1
+        ofFloatColor col = ofFloatColor(0,1,1);
+        float xLeft = 0.753906;
+        float yLeft = 0.70875;
+        float xRight = 0.0;
+        float yRight = 0.762187;
         
+        if(timelinePos > EffectTime::toSec(10,43))
+        {
+             col = ofFloatColor(1,1,0);
+         // Column2
+         xLeft = 0.110937;
+         yLeft = 0.72;
+         xRight = 0.861719;
+         yRight = 0.833906;
+            
+        }
+        
+        /*LaserLine lineLeft1(ofVec2f(xLeft,yLeft),
+                            ofVec2f(xLeft,yLeft+0.1),
+                            col);
+        
+        
+        LaserLine lineRight(ofVec2f(xRight,yRight),
+                            ofVec2f(xRight,yRight+0.15),
+                            col); //0.523438
         */
-        LaserLine lineCentre1(ofVec2f(1,h),
-                              ofVec2f(1,h+0.1),
-                              ofFloatColor(0,1,1));
-        frameCentre.push_back( lineCentre1 );
+        LaserLine lineLeft1(ofVec2f(xLeft,yLeft),
+                            ofVec2f(xLeft+0.1,yLeft),
+                            col);
         
-        /*LaserLine lineLeft1(ofVec2f(0.5,0.5),
-                            ofVec2f(0.5,0.6),
-                            ofFloatColor(1,1,0));
+        
+        LaserLine lineRight(ofVec2f(xRight,yRight),
+                            ofVec2f(xRight+0.1,yRight),
+                            col);
+        frameRight.push_back( lineRight );
         frameLeft.push_back( lineLeft1 );
+        // pos1
+        // float xLeft = 0.753906;
+        // float yLeft = 0.70875;
+        // float xRight = 0.0;
+        // float yRight = 0.762187
+        // pos2
+        // float yLeft = 0.110937;
+        // float yLeft = 0.72;
+        // float xRight = 0.861719;
+        // float yRight = 0.833906;
+        //cout <<"right: " << xRight << " y " << yRight <<endl;
         
         
-        LaserLine lineRight1(ofVec2f(0,0.525),
-                             ofVec2f(0,0.6),
-                             ofFloatColor(1,1,0)); //0.523438
-        frameRight.push_back( lineRight1 );
         
-        
-        LaserLine lineCentre1(ofVec2f(0.267188,0.47),
-                              ofVec2f(0.267188,0.57), ofFloatColor(1,1,0));
-        frameCentre.push_back( lineCentre1 );
-         */
     }
 }

@@ -98,7 +98,25 @@ void DualLaserManager::loadKeystoneRight(  )
 
 void DualLaserManager::setupTimeline()
 {
-    effectList.push_back( make_shared<DualLaserTunnel>(EffectTime(0, 600.0)));
+    effectList.push_back( make_shared<DualLaserVoiceWave>(EffectTime(126.0, 177.0)));
+    effectList.push_back( make_shared<DualLaserVoiceWave>(EffectTime(188.0, 222.0)));
+    effectList.push_back( make_shared<DualLaserPanning>
+                         (EffectTime( EffectTime::toSec(4,13),
+                                      EffectTime::toSec(5,50))));
+    effectList.push_back( make_shared<DualLaserHeartBeat>
+                         (EffectTime( EffectTime::toSec(5,50),
+                                      EffectTime::toSec(6,28)), ColourMode::WHITE_YELLOW));  // 6.18 start disappearing
+    effectList.push_back( make_shared<DualLaserStriped>(EffectTime(EffectTime::toSec(6,44), EffectTime::toSec(8,43))));
+     effectList.push_back( make_shared<DualLaserTunnel>(EffectTime(EffectTime::toSec(8,53), EffectTime::toSec(11,37))));
+    
+    effectList.push_back( make_shared<DualLaserHeartBeat>(EffectTime(EffectTime::toSec(11,38), EffectTime::toSec(11,52)), ColourMode::WHITE_YELLOW));
+    
+    effectList.push_back( make_shared<DualLaserHeartBeat>(EffectTime(EffectTime::toSec(12,14), EffectTime::toSec(12,38)), ColourMode::WHITE_YELLOW));
+    
+    effectList.push_back( make_shared<DualLaserYellowScan>(EffectTime(EffectTime::toSec(13,27), EffectTime::toSec(13,51))));
+     effectList.push_back( make_shared<DualLaserStars>(EffectTime(EffectTime::toSec(14,14), EffectTime::toSec(14,51))));
+    
+    effectList.push_back( make_shared<DualLaserSnake>(EffectTime(EffectTime::toSec(14,51), EffectTime::toSec(15,30))));
 }
 
 void DualLaserManager::initLaser(int laserIndx)
@@ -167,9 +185,7 @@ void DualLaserManager::drawTimeline()
                           timelineDrawPos.x,
                           timelineDrawPos.x+ timelineDrawSz.x );
     ofFill();
-    ofSetColor(0,255,0);
-    ofDrawLine( currOff, timelineDrawPos.y,
-               currOff, timelineDrawPos.y+timelineDrawSz.y);
+    
     
     for( auto effect : effectList )
     {
@@ -190,6 +206,9 @@ void DualLaserManager::drawTimeline()
             ofDrawBitmapString( effect->getName(), bar.x, bar.y+10);
         }
     }
+    ofSetColor(0,255,0);
+    ofDrawLine( currOff, timelineDrawPos.y,
+               currOff, timelineDrawPos.y+timelineDrawSz.y);
     ofPopMatrix();
     ofPopStyle();
 }
@@ -257,6 +276,7 @@ void DualLaserManager::update( float timelinePos, float audioLevel, shared_ptr<v
                     frameLeft.getLastPoly().lineTo( line.end.x,   line.end.y);
                 }else
                     frameLeft.getLastPoly().lineTo( line.end.x,   line.end.y);
+                frameLeft.colMode = effect->colMode;
             }
             
             for( auto line : rightLines )
@@ -264,11 +284,12 @@ void DualLaserManager::update( float timelinePos, float audioLevel, shared_ptr<v
                 if(!line.continous)
                 {
                     frameRight.addPoly();
-                    frameRight.getLastPoly().color = line.col;
+                    frameRight.colMode = effect->colMode;
                     frameRight.getLastPoly().lineTo( line.begin.x, line.begin.y);
                     frameRight.getLastPoly().lineTo( line.end.x,   line.end.y);
                 }else
                     frameRight.getLastPoly().lineTo( line.end.x,   line.end.y);
+                frameRight.getLastPoly().color = line.col;
             }
             
             for( auto line : centreLines )
@@ -281,6 +302,7 @@ void DualLaserManager::update( float timelinePos, float audioLevel, shared_ptr<v
                     frameCentre.getLastPoly().lineTo( line.end.x,   line.end.y);
                 }else
                     frameCentre.getLastPoly().lineTo( line.end.x,   line.end.y);
+                frameCentre.colMode = effect->colMode;
             }
             
             frameLeft.update();

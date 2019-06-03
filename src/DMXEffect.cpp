@@ -11,3 +11,8 @@ DMXEffect::DMXEffect()
 {
     guiCol = ofColor( 0, ofRandom(0,255),ofRandom(0,255));
 }
+
+bool DMXEffect::isRunning( float timelinePos)
+{
+    return time->isStart(timelinePos);
+}
